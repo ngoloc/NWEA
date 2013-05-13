@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+
+.SectionTitle {
+	text-align: left;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: normal;
+	background-image: url(../images/table-title-bg.png);
+	background-repeat: repeat-x;
+	background-position: top left;
+	border: 1px solid #389FC8;
+	padding: 3px 0 3px 8px;
+	height:17px;
+}
+
+.Section {
+	border: 1px solid #82afd4;
+	padding: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	margin-bottom:10px;
+}

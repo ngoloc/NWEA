@@ -1,0 +1,10 @@
+@CHARSET "ISO-8859-1";
+contact-summary-table-output,
+.invoice-summary-table{
+	width: 100%;
+}
+
+
+.paymentmethod-summary-table{
+    width: 90%;
+}

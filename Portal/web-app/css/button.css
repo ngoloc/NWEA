@@ -1,0 +1,27 @@
+@CHARSET "ISO-8859-1";
+
+.button{
+	display: inline-block;
+	background-color: #37B6E2;
+	font-family: "GraublauSans-Book",Verdana,sans-serif;
+	font-size: 13px;
+	text-decoration: none;
+	color: #fff;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding: 7px;
+	padding-top: 5pxurl(0/);
+	border-top: 1px solid #5c9bcb;
+	border-left: 1px solid #5c9bcb;
+	border-right: 1px solid #004477;
+	border-bottom: 1px solid #004477;
+	text-decoration:none;
+}
+
+.button:hover{
+	background-color:#D7D7D7;
+	border:1px solid #D7D7D7;
+	text-decoration:none;
+	color:#FFF;
+}

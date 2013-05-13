@@ -1,0 +1,146 @@
+@CHARSET "ISO-8859-1";
+
+.home{
+	padding:10px;
+}
+
+.home #ButtonContainer {
+	text-align: center;
+	padding: 5px;
+}
+
+.home .HomeSection,
+.home .HomeSectionTitle{
+}
+
+.pmiframecontianer{
+	text-align:center;
+	overflow:hidden;
+    width:600px;
+    height: 625px;
+    max-height: none;
+}
+
+#ccmodal{
+    width: 625px;
+    position:absolute;
+}
+
+#pmiframe{
+	border:none;
+}
+
+.NoneMessage{
+    padding: 10px;
+}
+
+.TotalColumn{
+	width: 100px;
+}
+
+.DashboardTitle{
+    color: #1EB8F0;
+                              font-weight: bold;
+}
+
+#DashboardTable {
+    min-width: 500px;
+    text-align: left;
+    border-top: 2px solid #EBEBEB;
+    border-bottom: 2px solid #EBEBEB;
+    margin-bottom: 5px;
+}
+
+#DashboardTable th{
+    text-align: left;
+}
+
+#DashboardTable td{
+    padding:5px;
+}
+
+.SectionInstructions{
+    color: #1CB9F3;
+    background-color: #F8F8F8;
+    border: 1px solid #E8E8E8;
+    padding:5px;
+    font-weight: bold;
+}
+
+.ChooseType{
+    display: inline-block;
+    padding:10px;
+    vertical-align: top;
+}
+
+.TypeDetails{
+    display:inline-block;
+    width: 500px;
+    padding:10px;
+
+}
+
+.UpdateDetails{
+    background-color: #F6F6F6;
+    padding: 10px;
+
+}
+
+.CurrentEnrollmentCount,
+.UpdateEnrollmentCount,
+.EnrollmentFloorCount{
+    color: #F27337 !important;
+}
+
+.UpdateSubscriptionRow{
+    background-color: #F6F6F6;
+    text-align: center;
+    padding:5px;
+}
+
+.ToUpdateNote{
+    padding: 5px;
+}
+
+.OnlineRenewalNote{
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+.RenewOption{
+    color: #797979;
+}
+
+.RenewOption label{
+    display:inline-block;
+    margin-left: 5px;
+}
+
+#SubscriptionsTable {
+    width: 100%;
+}
+
+#SubscriptionsTable th {
+    background-color: #F6F6F6;
+    color: #1CB9F3;
+}
+
+#SubscriptionsTable th.Center,
+#SubscriptionsTable td.Center{
+    text-align: center;
+}
+
+td.LeftBorder{
+    border-left: 1px solid lightgray;
+}
+
+.ServiceNameCell{
+    padding: 5px;
+}
+
+
+.DashboardMetricColumn{
+    width: 140px;
+
+}

@@ -1,0 +1,49 @@
+html{
+	height: 100%;
+	background-image: url(../images/bg-gradient.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+	overflow-y: scroll;
+}
+
+body{
+}
+
+.Container{
+	width: 855px;
+	margin:auto;
+	background-color:#FFF;
+}
+
+.spinner {
+	background: url(../images/loading.gif) 50% 50% no-repeat transparent;
+	height: 100%;
+	width: 100%;
+    padding: 0.5em;
+    position: fixed;
+    right: 0;
+	top: 0;
+	text-indent: -9999px;
+	background-color:rgba(255,255,255,0.5);
+	z-index:2000;
+}
+
+.loading {
+	background: url(../images/loader.gif) 50% 50% no-repeat transparent;
+	height: 50px;
+	width: 100%;
+    padding: 0.5em;
+	text-indent: -9999px;
+}
+
+.Title{
+
+}
+
+.body{
+	min-height: 300px;
+}
+
+.ForogotPasswordLinkContainer{
+	padding: 5px;
+}

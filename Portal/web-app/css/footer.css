@@ -1,0 +1,58 @@
+@CHARSET "ISO-8859-1";
+
+#footer {
+	height: 50px;
+	margin-top:50px;
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+#footer .left {
+	width: 545px;
+	float: left;
+	font-family: Arial, Sans-serif, sans;
+	text-align: left;
+}
+
+#footer .right {
+	float: right;
+	width: 290px;
+	background: url(../images/footer-tag.png) no-repeat top right;
+	text-indent: -9999px;
+}
+
+#footer .content {
+	color: #999;
+	font-size: 11px;
+}
+
+#footer .right-buttons {
+	float: right;
+	margin-top: 4px;
+}
+
+#footer .right-buttons a {
+	display: block;
+	height: 16px;
+	float: left;
+	margin-right: 5px;
+	text-indent: -9999px;
+	width: 16px;
+	text-decoration: none;
+}
+
+#footer .right-buttons a.facebook-btn {
+	background: url(../images/social-btn-facebook.png) no-repeat;
+}
+
+#footer .right-buttons a.twitter-btn {
+	background: url(../images/social-btn-twitter.png) no-repeat;
+}
+
+#footer .right-buttons a.youtube-btn {
+	background: url(../images/social-btn-youtube.png) no-repeat;
+}
+
+#footer .right-buttons a.slideshare-btn {
+	background: url(../images/social-btn-slideshare.png) no-repeat;
+}

@@ -1,0 +1,73 @@
+@CHARSET "ISO-8859-1";
+
+
+.loginitemcontainer{
+	display: inline-block;
+	vertical-align:top;
+	border:1px solid #82afd4;
+	border-radius:5px;
+	margin:10px;
+	padding:10px;
+	background-color:#FFF;
+	box-shadow: 5px 10px 5px #888888;
+	width: 360px;
+}
+
+.loginitemcontainer input[type=text],
+.loginitemcontainer input[type=password] {
+	padding:5px;
+	height: auto;
+	width: 348px;
+}
+
+.loginitemcontainer .submitcontainer{
+	text-align:center;
+}
+
+.loginitemcontainer input[type=submit]{
+	margin:auto;
+}
+
+.loginitemcontainer .title{
+	color: #028dbb;
+	font-family: "GraublauSans-Book",Verdana,sans-serif;
+	font-size: 23px;
+	line-height: 25px;
+	font-weight: normal;
+	text-transform: uppercase;
+	text-align: center;
+	padding:5px;
+}
+
+.loginitemcontainer .field-validation-valid{
+}
+
+.adminlogincontainer {
+	text-align:center;
+	
+}
+
+.mainlogincontainer{
+	text-align:center;
+}
+
+.submitcontainer .button{
+	width:150px;
+	
+}
+
+#forgot{
+	display:none;	
+}
+
+.ShowLoginLinkContainer{
+	padding: 5px;
+}
+
+.LoginTitle{
+    padding:5px;
+    font-size:2em;
+    text-align: center;
+    padding-top:45px;
+
+}
