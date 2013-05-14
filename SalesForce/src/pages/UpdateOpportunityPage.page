@@ -1,0 +1,18 @@
+<apex:page standardController="zqu__Quote__c" 
+extensions="UpdateOpportunityPageExtensions" 
+sidebar="false"
+action="{!updateopp}">
+	
+    <div style="text-align:center;">
+    	<h1 style="display:inline-block;margin:10px;">Updating Opportunity...</h1>
+    	<div>&nbsp;</div>
+    	<img style="display:inline-block;margin:10px;" src="https://jira.avantassessment.com/s/en_US-uqmjb/785/4/6.1.2/_/download/resources/com.pyxis.greenhopper.jira:gh-rapid-common/images/rapid/gh-spinner.gif" />
+	</div>
+<script type="text/javascript">
+setTimeout(function(){
+window.location.href = '{!viewOpportunityUrl}';
+}, 0);
+        
+    </script>
+
+</apex:page>

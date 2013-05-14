@@ -1,0 +1,13 @@
+#Thu May 02 19:10:31 PDT 2013
+eclipse.preferences.version=1
+endpointApiVersion=27.0
+endpointEnvironment=Other (Specify)
+endpointServer=test.salesforce.com
+httpsProtocol=true
+ideVersion=27.0
+keependpoint=false
+metadataFormatVersion=27.0
+namespacePrefix=
+packageName=unpackaged
+readTimeout=400
+username=saasei.user@nwea.org.test
