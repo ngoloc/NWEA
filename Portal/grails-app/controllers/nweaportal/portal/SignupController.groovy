@@ -49,6 +49,6 @@ class SignupController {
 
         session["username"] = params.email
 
-        redirect(action: 'index', controller: 'home');
+        redirect(action: 'index', controller: 'MyAccount');
     }
 }

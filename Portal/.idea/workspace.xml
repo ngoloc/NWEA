@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/js/licenseViewModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RelatedProductsViewModelBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/js/homeViewModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/home/_related.gsp" afterPath="$PROJECT_DIR$/grails-app/views/home/_related.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/api/RelatedProductsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/api/RelatedProductsController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/common/_adminnav.gsp" afterPath="$PROJECT_DIR$/grails-app/views/common/_adminnav.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SummaryViewModelBuilder.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SummaryViewModelBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/RepositoryBase.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/RepositoryBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/admin/AdminRelatedProductsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/admin/AdminRelatedProductsController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/ProductRepository.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/ProductRepository.java" />
-      <change type="MOVED" beforePath="C:\Users\Dana\Documents\GitHub\NWEAPortal\src\java\com\nwea\portal\viewmodels\RelatedViewModel.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/viewmodels/RelatedProductViewModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/api/object/Product.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/api/object/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/viewmodels/SummaryViewModel.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/viewmodels/SummaryViewModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/js/home.js" afterPath="$PROJECT_DIR$/web-app/js/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/home/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/home/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/header.css" afterPath="$PROJECT_DIR$/web-app/css/header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/common/_resources.gsp" afterPath="$PROJECT_DIR$/grails-app/views/common/_resources.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
     </list>
     <ignored path="NWEAPortal.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368423986332" ignored="false" />
+    <file path="/Dummy.txt" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368504205066" ignored="false" />
     <file path="/AccountDisabler.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367133938934" ignored="false" />
     <file path="/RepositoryBase.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367390017557" ignored="false" />
     <file path="/AccountRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367169221811" ignored="false" />
@@ -41,7 +24,7 @@
     <file path="/SubscriptionRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367182977389" ignored="false" />
     <file path="/HomeController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367854947238" ignored="false" />
     <file path="/a.dummy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367806742115" ignored="false" />
-    <file path="/LoginController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367212346006" ignored="false" />
+    <file path="/LoginController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368504242924" ignored="false" />
     <file path="/ProductRatePlanChargeRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367135995683" ignored="false" />
     <file path="/ProductRatePlanChargeTierRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367136145368" ignored="false" />
     <file path="/RatePlanChargeRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367183182055" ignored="false" />
@@ -218,15 +201,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SubscriptionsViewModel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web-app/js/SubscriptionsViewModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="1" selection-start="814" selection-end="814" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SubscriptionItemViewModel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/js/SubscriptionItemViewModel.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -239,16 +213,7 @@
       <file leaf-file-name="_banner.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/home/_banner.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_resources.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/common/_resources.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="83" selection-start="2029" selection-end="2029" vertical-scroll-proportion="-3.122449">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -266,7 +231,7 @@
       <file leaf-file-name="_current.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/home/_current.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="53" selection-start="1804" selection-end="1804" vertical-scroll-proportion="-12.142858">
+            <state line="44" column="53" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -275,7 +240,7 @@
       <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/home/index.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -284,16 +249,34 @@
       <file leaf-file-name="_dashboard.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/home/_dashboard.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="44" selection-start="669" selection-end="669" vertical-scroll-proportion="-4.163265">
+            <state line="18" column="44" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/css/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="22" selection-start="330" selection-end="330" vertical-scroll-proportion="0.75154006">
+            <state line="71" column="120" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="87" selection-start="1490" selection-end="1490" vertical-scroll-proportion="-15.391304">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignupController.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="56" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.8394333">
               <folding />
             </state>
           </provider>
@@ -302,7 +285,7 @@
       <file leaf-file-name="_entercc.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/home/_entercc.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="16" selection-start="9" selection-end="16" vertical-scroll-proportion="-0.0">
+            <state line="0" column="16" selection-start="9" selection-end="16" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -316,7 +299,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitLogSettings">
     <option name="myDateState">
@@ -326,14 +309,12 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web-app/js/homeViewModel.js" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/model/AmenderSubscription.java" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/model/AmenderPlan.java" />
         <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SubscribeSingle.java" />
         <option value="$PROJECT_DIR$/src/java/com/nwea/portal/viewmodels/LicenseViewModel.java" />
         <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SummaryViewModelBuilder.java" />
         <option value="$PROJECT_DIR$/web-app/js/home.js" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/HomeController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/home/_current.gsp" />
         <option value="$PROJECT_DIR$/web-app/js/SubscriptionsViewModel.js" />
@@ -342,6 +323,8 @@
         <option value="$PROJECT_DIR$/grails-app/views/home/_dashboard.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/home/_entercc.gsp" />
         <option value="$PROJECT_DIR$/web-app/css/home.css" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" />
       </list>
     </option>
   </component>
@@ -351,10 +334,10 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -382,8 +365,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -398,7 +379,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemId" value="Portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,29 +389,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemId" value="Portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="grails-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -440,39 +403,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemId" value="Portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -480,7 +411,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nweaportal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,7 +429,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemId" value="Portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -498,11 +437,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
+              <option name="myItemId" value="nweaportal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -512,7 +451,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemId" value="Portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -520,43 +459,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemId" value="nweaportal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -569,6 +504,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Grails.Grails:NWEAPortal">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -579,18 +520,25 @@
       <setting name="launchBrowser" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -619,19 +567,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -743,7 +678,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -766,8 +701,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20833333" sideWeight="0.9112628" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.088737205" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20811099" sideWeight="0.9112628" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08794788" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55915177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -842,44 +777,24 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/HomeController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="27" selection-start="709" selection-end="709" vertical-scroll-proportion="0.37988827" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="43" selection-start="3519" selection-end="3519" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="88" column="43" selection-start="3519" selection-end="3519" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/licenseViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/homeViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="51" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="16" column="51" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/js/SubscriptionsViewModel.js">
@@ -891,7 +806,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/common/_resources.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="83" selection-start="2029" selection-end="2029" vertical-scroll-proportion="-3.122449">
+        <state line="27" column="83" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -919,7 +834,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/home/_current.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="53" selection-start="1804" selection-end="1804" vertical-scroll-proportion="-12.142858">
+        <state line="44" column="53" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -933,7 +848,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/home/_dashboard.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="44" selection-start="669" selection-end="669" vertical-scroll-proportion="-4.163265">
+        <state line="18" column="44" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -947,7 +862,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/css/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="22" selection-start="330" selection-end="330" vertical-scroll-proportion="0.75154006">
+        <state line="71" column="120" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="87" selection-start="1490" selection-end="1490" vertical-scroll-proportion="-15.391304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="56" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.8394333">
           <folding />
         </state>
       </provider>

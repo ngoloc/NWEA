@@ -16,7 +16,7 @@ class LoginController {
     def index() {
         def showForgot = false
         if (authenticationService.sessionUser != null && authenticationService.isLoggedIn(request)) {
-            redirect(action: 'index', controller: 'home')
+            redirect(action: 'index', controller: 'MyAccount')
             return
         }
         render(view: 'index', model: [showForgot: false, hidenav: true])
@@ -29,7 +29,7 @@ class LoginController {
                 redirect(action: 'index', controller: 'manageDisabled')
             } else {
 
-                redirect(action: 'index', controller: 'home')
+                redirect(action: 'index', controller: 'MyAccount')
             }
         }
     }
