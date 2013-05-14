@@ -1,0 +1,116 @@
+<apex:component controller="SampleChargeSectionController"
+	allowDML="true">
+	<apex:includeScript value="{!$Resource.zqu__JQuery142}" />
+	<script>
+        function javascriptActionProxy(funcName, charges_pageblockId, type) {
+            var j$ = jQuery.noConflict();
+            switch (funcName) {
+                case 'disableInput4QuoteCharge': {
+                    (function(_charges_pageblockId) {
+                        j$("[id=" + _charges_pageblockId +"]" + " input[type$='text']").attr('disabled', 'disabled');
+                    })(charges_pageblockId);
+                    break;
+                }
+                case 'disableOpr4QuoteCharges': {
+                    (function(_charges_pageblockId, _type) {
+                        j$("[id=" + _charges_pageblockId +"]" + " [type$='submit']").attr('disabled', 'disabled');
+                        j$("[id=" + _charges_pageblockId +"]" + " [type$='submit']").attr('value', _type + '...    ');          
+                    })(charges_pageblockId, type);
+                    break;
+                }
+            }
+        }
+    </script>
+	<apex:attribute name="chargeGroupAttr" type="zqu.zChargeGroup"
+		assignTo="{!currentChargeGroup}" required="true"
+		description="Quote charges data for displaying and calculating." />
+	<apex:attribute name="quoteIdAttr" type="String"
+		assignTo="{!myquoteid}" required="true"
+		description="Quote Id is passed to the component." />
+
+	<apex:pageBlock id="chargeGroupBlock">
+		<apex:pageBlockButtons location="bottom">
+			<apex:actionStatus id="changeStatus"
+				onstart="javascriptActionProxy('disableInput4QuoteCharge', '{!$Component.chargeGrouppanel}'); javascriptActionProxy('disableOpr4QuoteCharges', '{!$Component.chargeGrouppanel}', 'Calculating');">
+			</apex:actionStatus>
+			<apex:commandButton value="Save" action="{!saveCharges}" />
+		</apex:pageBlockButtons>
+		<apex:outputPanel id="chargeGrouppanel">
+			<apex:pageBlockTable value="{!listWrappedCharges}" var="wc">
+				<apex:column >
+					<apex:facet name="header">CHARGE NAME</apex:facet>
+					<apex:outputText value="{!wc.wCharge['NAME']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">CHARGE TYPE</apex:facet>
+					<apex:outputText value="{!wc.wCharge['CHARGE_TYPE']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">MODEL</apex:facet>
+					<apex:outputText value="{!wc.wCharge['MODEL']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">UNIT OF MEASURE</apex:facet>
+					<apex:outputText value="{!wc.wCharge['UNIT_OF_MEASURE']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">PERIOD</apex:facet>
+					<apex:outputText value="{!wc.wCharge['PERIOD']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">LIST TOTAL</apex:facet>
+					<apex:outputText value="{!wc.wCharge['LIST_TOTAL']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">LIST PRICE</apex:facet>
+					<apex:outputText value="{!wc.wCharge['LIST_PRICE']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">QUANTITY</apex:facet>
+					<apex:inputText value="{!wc.wCharge['QUANTITY']}"
+						rendered="{!wc.wCharge['isQuantityEditable']}">
+						<apex:actionSupport event="onchange" action="{!quntityChange}"
+							status="changeStatus" reRender="changing,chargeGroupBlock" />
+					</apex:inputText>
+					<apex:outputText value="{!wc.wCharge['QUANTITY']}"
+						rendered="{!!wc.wCharge['isQuantityEditable']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">DISCOUNT</apex:facet>
+					<apex:inputText value="{!wc.wCharge['DISCOUNT']}"
+						rendered="{!wc.wCharge['isDiscountEditable']}">
+						<apex:actionSupport event="onchange" action="{!discountChange}"
+							status="changeStatus" reRender="changing,chargeGroupBlock" />
+					</apex:inputText>
+					<apex:outputText value="{!wc.wCharge['DISCOUNT']}"
+						rendered="{!!wc.wCharge['isDiscountEditable']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">EFFECTIVE_PRICE</apex:facet>
+					<apex:inputText value="{!wc.wCharge['EFFECTIVE_PRICE']}"
+						rendered="{!wc.wCharge['isEffectivePriceEditable']}">
+						<apex:actionSupport event="onchange" action="{!effectiveChange}"
+							status="changeStatus" reRender="changing,chargeGroupBlock" />
+					</apex:inputText>
+					<apex:outputText value="{!wc.wCharge['EFFECTIVE_PRICE']}"
+						rendered="{!!wc.wCharge['isEffectivePriceEditable']}" />
+				</apex:column>
+				<apex:column >
+					<apex:facet name="header">TOTAL</apex:facet>
+					<apex:inputText value="{!wc.wCharge['TOTAL']}"
+						rendered="{!wc.wCharge['isTotalEditable']}">
+						<apex:actionSupport event="onchange" action="{!totalChange}"
+							status="changeStatus" reRender="changing,chargeGroupBlock" />
+					</apex:inputText>
+					<apex:outputText value="{!wc.wCharge['TOTAL']}"
+						rendered="{!!wc.wCharge['isTotalEditable']}" />
+				</apex:column>
+				<!--  Put custom QuoteCharge Fields here within another apex:column. And process the value inside controller class -->
+				<apex:column >
+					<apex:facet name="header">Perpetual</apex:facet>
+					<apex:inputField value="{!wc.quoteCharge.Perpetual__c}" />
+				</apex:column>
+			</apex:pageBlockTable>
+		</apex:outputPanel>
+	</apex:pageBlock>
+</apex:component>
