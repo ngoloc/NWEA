@@ -34,6 +34,8 @@ public with sharing class CustomZQQuoteEditController {
 
 	public List<SelectOption> contacts {get;set;}
 
+	private Repository repo;
+
 	public CustomZQQuoteEditController(ApexPages.Standardcontroller controller){
 		
 		string id = controller.getId();
@@ -68,12 +70,8 @@ public with sharing class CustomZQQuoteEditController {
 
 	private void getOpportunity(string oppId)
 	{
-		GetOpportunity getOpp = new GetOpportunity();
-		Opportunity opp = getOpp.Execute(oppId);
-		
-		GetAccount getAcc = new GetAccount();
-		Account acc = getAcc.Execute(opp.AccountId);
-		
+		Opportunity opp = this.repo.getOpportunity(oppId);
+		Account acc = this.repo.getAccount(opp.AccountId);
 		this.accountName = acc.Name;
 	}
 

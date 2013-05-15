@@ -1,4 +1,4 @@
-public with sharing class CustomSendZBillingTiersController {
+public with sharing class CustomSendToZBillingController {
     
     public final List<zqu.ZChargeGroup> chargeGroupList {get; set;}
     private final ApexPages.StandardController controller;
@@ -23,7 +23,7 @@ public with sharing class CustomSendZBillingTiersController {
     public String batch {get;set;}
     public boolean InvoiceDeliveryPrefsEmail{get;set;}
     public boolean InvoiceDeliveryPrefsPrint{get;set;}
-    public String AdminId {get;set;}
+    public String AgencyCode {get;set;}
     
     //Contact Information (Used for BillToContact)
     public String firstName {get;set;}
@@ -123,13 +123,19 @@ public with sharing class CustomSendZBillingTiersController {
     
     public List<String> deleteChargeTiers {get;set;}
     
+    private Repository repo;
+    
+    private ZuoraRepository zrepo;
+    
     public void onload()
     {
         submitQuoteCheck();
     }
     
-    public CustomSendZBillingTiersController(ApexPages.StandardController controller) {
-        System.debug('CustomerZendZBillingTiersController controller constructor');
+    public CustomSendToZBillingController(ApexPages.StandardController controller) {
+    	this.repo = new Repository();
+    	this.zrepo = new ZuoraRepository();
+        System.debug('Custom send to zbilling controller constructor');
         this.controller = controller;
         
         //Get the quote id
@@ -184,27 +190,22 @@ public with sharing class CustomSendZBillingTiersController {
     
     private string getExistingAccountIdFromOpp(Id opportunityId){
     	System.debug('looking for exising account id');
-	    GetOpportunity getOpp = new GetOpportunity();
-	    Opportunity opp = getOpp.Execute(opportunityId);
+	    Opportunity opp = this.repo.getOpportunity(opportunityId);
 	    
-	    GetAccount getAcc = new GetAccount();
-	    Account acc = getAcc.Execute(opp.AccountId);
+	    Account acc = this.repo.getAccount(opp.AccountId);
 	    
-	    if(acc.CB_Admin_Account_id__c == null){
-	    	System.debug('opportunity account had empty cb admin account id');
+	    if(acc.Agency_Code__c == null){
+	    	System.debug('opportunity account had empty agency code');
 	    	return null;
 	    }
 	    
-	    System.debug('looking for account with account number of ' + acc.CB_Admin_Account_id__c);
-	    Zuora.zApi zApiInstance = new Zuora.zApi();
-        zApiInstance.zlogin();
-        string zoql = 'SELECT Id FROM Account WHERE AccountNumber = \'' + acc.CB_Admin_Account_id__c + '\'';
-        List<Zuora.zObject> objs = zApiInstance.zquery(zoql);
+	    System.debug('looking for account with account number of ' + acc.Agency_Code__c);
+        Zuora.zObject account = zrepo.GetAccountByNumber(acc.Agency_Code__c);
         
-        if(objs.size() == 1){
-        	return (String)objs[0].getValue('Id');
+        if(account == null){
+        	return null;
         }
-    	return null;
+    	return (String)account.getValue('Id');
     }
     
     //Updating values on the quote
@@ -260,18 +261,11 @@ public with sharing class CustomSendZBillingTiersController {
     
     public void getAccountInformation()
     {
+        Opportunity opp = this.repo.getOpportunity(this.quote.zqu__Opportunity__c);
+        Account account = this.repo.getAccount('' + opportunity.Account.Id);
         
-        List<Opportunity> opportunities = [Select Account.Id, Name FROM Opportunity  WHERE 
-            Id=:this.quote.zqu__Opportunity__c];
-        
-        Opportunity opportunity = opportunities[0];
-                
-        List<Account> accounts = [Select a.Name, a.Id, a.CB_Admin_Account_id__c From Account a WHERE 
-            Id=:opportunity.Account.Id];
-        
-        Account account = accounts[0];
         crmId = account.Id; 
-        AdminId = account.CB_Admin_Account_id__c;
+        AgencyCode = account.Agency_Code__c;
         accountName = account.Name;
         
         paymentTerm = this.quote.zqu__PaymentTerm__c;
@@ -612,7 +606,7 @@ public with sharing class CustomSendZBillingTiersController {
                     acc.setValue('Batch',batch); 
                     acc.setValue('InvoiceDeliveryPrefsPrint', 
                     InvoiceDeliveryPrefsPrint);
-                    acc.setValue('AccountNumber', AdminId);
+                    acc.setValue('AccountNumber', AgencyCode);
                 } 
                 else 
                 { 
@@ -736,7 +730,7 @@ public with sharing class CustomSendZBillingTiersController {
                             rpc.setValue('IncludedUnits', arpc.includedUnits);
                         }
                         
-                        rpc.setValue('Class__c', getClass(arpc));
+                        rpc.setValue('Perpetual__c', getPerpetual(arpc));
                         
                         System.debug('tiers');
                         //Add Charge Tiers
@@ -870,7 +864,7 @@ public with sharing class CustomSendZBillingTiersController {
         } 
     }
 
-	private string getClass(RatePlanChargeData rpc){
+	private string getPerpetual(RatePlanChargeData rpc){
 		System.debug('looking for zcharges with z id of ' + rpc.zId);
 	
 		zqu.zCharge thezcharge = null;
@@ -890,15 +884,11 @@ public with sharing class CustomSendZBillingTiersController {
 		
 		System.debug('looking for quote charges with id of ' + thezcharge.Id);
 		
-		List<zqu__QuoteCharge__c> quoteCharges = [SELECT Id, Class__c FROM zqu__QuoteCharge__c WHERE Id = :thezcharge.Id];
+		zqu__QuoteCharge__c charge = this.repo.getQuoteCharge(thezcharge.Id);
 		
-		System.debug('num quote charges found: ' + quoteCharges.size());
+		System.debug('using perpetual of ' + charge.Perpetual__c);
 		
-		zqu__QuoteCharge__c quoteCharge = quoteCharges[0];
-		
-		System.debug('using class of ' + quoteCharge.Class__c);
-		
-		return quoteCharge.Class__c;
+		return charge.Perpetual__c;
 	}
 
     private Boolean validate() {

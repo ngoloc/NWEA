@@ -17,21 +17,23 @@ public with sharing class CustomProductSelectorController {
     public final static Integer PRODUCT_TABLE_PAGE_SIZE = 2;
     public final static Integer RATEPLAN_TABLE_PAGE_SIZE = 2;
    
+   private Repository repo;
+   
     public CustomProductSelectorController(ApexPages.StandardController controller) {
         initFailed = true;
+        this.repo = new Repository();
         final String quoteId = controller.getId();
         if (null == quoteId || '' == quoteId) {
             appendErrorMessage('Need to specify the id of quote.');
             return;
         }  
-        List<zqu__Quote__c> quotelist = [SELECT Id, Name, zqu__Opportunity__r.Name, zqu__Opportunity__r.Account.Name, zqu__Opportunity__r.Account.Id, zqu__RecordReadOnly__c, zqu__Currency__c, zqu__Status__c, zqu__StartDate__c, RecordTypeId
-           FROM zqu__Quote__c WHERE Id = :quoteId LIMIT 1];
+        
+        this.quote = this.repo.getQuote(quoteId);
        
-        if(1 != quotelist.size()){
+        if(this.quote == null){
             appendErrorMessage('Invalid quote id.');
             return ;
         }
-        this.quote = quotelist[0];
         try {        
             this.chargeGroupList = zqu.zQuoteUtil.getChargeGroups(this.quote.Id);
             this.editMode = false;

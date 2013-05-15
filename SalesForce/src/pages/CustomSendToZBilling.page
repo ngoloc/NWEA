@@ -1,0 +1,52 @@
+<apex:page standardController="zqu__Quote__c" extensions="CustomSendToZBillingController" action="{!onload}"> 
+<!-- Begin Default Content REMOVE THIS -->
+    <!-- <apex:include pageName="HPMConfirm"/> -->
+	<apex:form >
+      <apex:pageMessages id="message"/>
+      <apex:pageBlock title="Quote Details" id="quote_details">
+          <apex:pageBlockButtons id="operations">
+              <apex:commandButton value="Submit Quote" action="{!subscribe}" reRender="operations, message,quote_details" disabled="{!!submitQuote}"/>
+          </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Account info">
+			<apex:outputText label="Account Name" value="{!accountName}"/>
+			<apex:outputText label="Payment Term" value="{!paymentTerm}"/>
+			<apex:outputText label="Currency" value="{!curr}"/>
+			<apex:outputText label="Bill Cycle Day" value="{!billCycleDay}"/>
+			<apex:outputText label="Batch" value="{!batch}"/>
+			<apex:outputText label="Account Number" value="{!agencyCode}"/>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="Contact info">
+			<apex:outputText label="First Name" value="{!firstName}"/>
+			<apex:outputText label="Last Name" value="{!lastName}"/>
+			<apex:outputText label="Work Email" value="{!workEmail}"/>
+			<apex:outputText label="State" value="{!state}"/>
+			<apex:outputText label="Country" value="{!country}"/>
+		</apex:pageBlockSection>
+		
+		<apex:pageBlockSection title="Subscription info">
+			<apex:outputText label="Subsciption Term Type" value="{!subType}"/>
+			<apex:outputText label="Effective Date" value="{!effectiveDate}"/>
+			<apex:outputText label="Initial Term" value="{!initialTerm}" rendered="{!showTermLengths}"/>
+			<apex:outputText label="Renewal Term" value="{!renewalTerm}" rendered="{!showTermLengths}"/>
+			<!-- <apex:outputText label="Auto Renew" value="{!autoRenew"/> -->
+		</apex:pageBlockSection>
+		            <apex:pageBlockSection title="Charge Groups" columns="1">
+                <apex:outputPanel >
+                     <apex:repeat value="{!chargeGroupList}" var="group">
+                         <!--   <zqu:zChargeGroup chargeGroup="{!group}" editMode="false" />-->
+                     </apex:repeat>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+		<apex:pageBlockSection title="Subscribe Request">
+			{!subscribeStatus}
+			{!subscribeMessage}
+		</apex:pageBlockSection>
+		<apex:pageBlock title="New Subscription Request" rendered="{!initFailed}">
+			<apex:pageBlockSection title="Error creating subscription">
+				<apex:outputText label="Error" value="{!initFailure}"/>
+			</apex:pageBlockSection>
+		</apex:pageBlock>		      
+      </apex:pageBlock>
+  </apex:form> 
+<!-- End Default Content REMOVE THIS -->
+</apex:page>

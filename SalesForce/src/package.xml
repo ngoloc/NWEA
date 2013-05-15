@@ -2,12 +2,12 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>CustomProductSelectorController</members>
-        <members>CustomSendZBillingTiersController</members>
+        <members>CustomSendToZBillingController</members>
         <members>CustomZQQuoteEditController</members>
-        <members>GetAccount</members>
-        <members>GetOpportunity</members>
+        <members>Repository</members>
         <members>SampleChargeSectionController</members>
         <members>UpdateOpportunityPageExtensions</members>
+        <members>ZuoraRepository</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -17,6 +17,7 @@
     <types>
         <members>CustomProductSelector</members>
         <members>CustomQuoteEdit</members>
+        <members>CustomSendToZBilling</members>
         <members>UpdateOpportunityPage</members>
         <name>ApexPage</name>
     </types>
