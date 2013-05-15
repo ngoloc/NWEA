@@ -6,7 +6,7 @@ public with sharing class Repository {
 	}
 	
 	public Opportunity getOpportunity(Id opportunityId){
-		List<Opportunity> opps = [SELECT Id, AccountId, Name FROM Opportunity WHERE Id = :opportunityId];
+		List<Opportunity> opps = [SELECT Id, Account.Id, Name FROM Opportunity WHERE Id = :opportunityId];
 		System.debug('found ' + opps.size() + ' opportunites');
 		if(opps.size() == 0){
 			return null;
