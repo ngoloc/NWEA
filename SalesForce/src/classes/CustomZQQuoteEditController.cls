@@ -37,7 +37,7 @@ public with sharing class CustomZQQuoteEditController {
 	private Repository repo;
 
 	public CustomZQQuoteEditController(ApexPages.Standardcontroller controller){
-		
+		this.repo = new Repository();
 		string id = controller.getId();
 		this.quote = (zqu__Quote__c)controller.getRecord();
 		System.debug('id is ' + quote.Id);

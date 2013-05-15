@@ -22,7 +22,6 @@
 			<apex:outputText label="State" value="{!state}"/>
 			<apex:outputText label="Country" value="{!country}"/>
 		</apex:pageBlockSection>
-		
 		<apex:pageBlockSection title="Subscription info">
 			<apex:outputText label="Subsciption Term Type" value="{!subType}"/>
 			<apex:outputText label="Effective Date" value="{!effectiveDate}"/>

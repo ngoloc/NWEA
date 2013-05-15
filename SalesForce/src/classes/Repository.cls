@@ -6,13 +6,21 @@ public with sharing class Repository {
 	}
 	
 	public Opportunity getOpportunity(Id opportunityId){
-		Opportunity opp = [SELECT AccountId, Name FROM Opportunity WHERE Id = :opportunityId];
-		return opp;
+		List<Opportunity> opps = [SELECT Id, AccountId, Name FROM Opportunity WHERE Id = :opportunityId];
+		System.debug('found ' + opps.size() + ' opportunites');
+		if(opps.size() == 0){
+			return null;
+		}
+		return opps[0];
 	}
 	
 	public zqu__QuoteCharge__c getQuoteCharge(Id id)
 	{
 		List<zqu__QuoteCharge__c> quoteCharges = [SELECT Id, Perpetual__c FROM zqu__QuoteCharge__c WHERE Id = :id];
+		System.debug('found ' + quoteCharges.size() + ' quote charges.');
+		if(quoteCharges.size() == 0){
+			return null;
+		}
 		return quoteCharges[0];
 	}
 	
@@ -43,5 +51,4 @@ public with sharing class Repository {
 				Id = :id];
 		return quotes[0];
 	}
-
 }
