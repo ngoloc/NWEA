@@ -14,7 +14,6 @@
     <div id="main" class="edit_dv">
         <g:render template="account"/>
         <g:render template="invoices"/>
-        <g:render template="paymentmethods"/>
         <g:render template="paymentsummaries"/>
         <g:render template="contactinfo"/>
         <g:render template="entercc"/>

@@ -1,7 +1,7 @@
 package nweaportal.portal
 
 import com.nwea.portal.domain.AccountDisabler
-import nweaportal.admin.Agency
+import com.nwea.portal.repository.ZuoraRepository
 
 class LoginController {
 
@@ -36,15 +36,17 @@ class LoginController {
 
     def isManagementDisabled() {
         def cache = grailsCacheManager.getCache('zuora')
-        def disabler = new AccountDisabler(cache);
-        return disabler.IsDisabled(user.zuoraAccountName);
+        def disabler = new AccountDisabler(cache)
+        return disabler.IsDisabled(user.agency.code)
     }
 
     def checklogin() {
-        def agency = new Agency()
-        agency.code = params.code
-        def agencies = agency.findAll(agency)
-        if (agencies.size() != 1) {
+
+        def cache = grailsCacheManager.getCache('zuora')
+        def repo = new ZuoraRepository(cache)
+        def agencyAccount = repo.AccountR.GetByNumber(params.code)
+
+        if (agencyAccount == null) {
             flash.loginmessage = 'Invalid agency code.'
             redirect(action: 'index', controller: 'login', params: params)
             return false
@@ -54,7 +56,7 @@ class LoginController {
         findUser.email = params.email
         def users = findUser.findAll(findUser);
         if (users.size() == 0) {
-            flash.loginmessage = 'Invalid username or password'
+            flash.loginmessage = 'Username not found.'
             redirect(action: 'index', controller: 'login', params: params)
             return false
         }
@@ -64,11 +66,14 @@ class LoginController {
         def authUser = authenticationService.login(params.email, params.password)
 
         if (!authUser.loggedIn) {
-            flash.loginmessage = 'Invalid username or password'
+            flash.loginmessage = 'Invalid password'
             redirect(action: 'index', controller: 'login', params: params)
             return false
         }
+
         session["username"] = params.email
+        session["accountid"] = user.zuoraAccountId
+
         return true
     }
 }

@@ -193,7 +193,6 @@ function loadPayments(acc){
 		loadContact(acc);
 		loadInvoice(acc);
 		loadSummary(acc);
-		loadPayments(acc);
 	}
 	
 	function getAccountSummary(){

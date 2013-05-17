@@ -55,7 +55,7 @@ public class PaymentManager {
      * @throws Exception
      * @author Eric Neto
      */
-    public ResponseAction getExistingIframeSrc(String accountName)
+    public ResponseAction getExistingIframeSrc(String accountid)
             throws Exception {
         ResponseAction resp = new ResponseAction();
         String iframeUrl = null;
@@ -70,7 +70,7 @@ public class PaymentManager {
         }
 
         Contact contact = null;
-        Account acc = zr.AccountR.GetByName(accountName);
+        Account acc = zr.AccountR.GetById(accountid);
 
         if (acc == null) {
             return null; // ACCOUNT_DOES_NOT_EXIST
@@ -227,12 +227,14 @@ public class PaymentManager {
     /**
      * Deletes the selected payment method from the logged in user's account.
      *
-     * @param accountName This should be the name of the logged in user, passed in to
+     * @param accountid This should be the name of the logged in user, passed in to
      *                    verify that the current usable is allowed to delete this
      *                    payment method
      * @param $pmId       ID of payment method to be removed
      */
-    public ResponseAction removePaymentMethod(String accountName, String pmId) {
+    public ResponseAction removePaymentMethod(
+            String accountid,
+            String pmId) {
         ResponseAction resp = new ResponseAction();
 
         if (pmId == null) {

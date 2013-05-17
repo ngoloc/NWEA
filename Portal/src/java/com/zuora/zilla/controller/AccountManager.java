@@ -29,12 +29,12 @@ public class AccountManager {
         this(new ZuoraRepository(c));
     }
 
-    public SummaryAccount getCompleteDetail(String accountName)
+    public SummaryAccount getCompleteDetail(String accountid)
             throws Exception {
         // Create the object and get the basic information
         SummaryAccount accountSummary = new SummaryAccount();
 
-        Account acc = zr.AccountR.GetByName(accountName);
+        Account acc = zr.AccountR.GetById(accountid);
 
         // Get Account Information
         accountSummary.setName(acc.getName());
@@ -111,22 +111,22 @@ public class AccountManager {
         accountSummary.setPaymentMethodSummaries(paymentSummaries);
 
         // Get the latest invoices
-        accountSummary.setInvoiceSummaries(this.invoiceManager.getLatestInvoices(accountName, 3));
+        accountSummary.setInvoiceSummaries(this.invoiceManager.getLatestInvoices(accountid, 3));
 
         // Get the latest payments
         accountSummary.setPaymentSummaries(paymentManager.getLatestPayment(
-                accountName, 10));
+                accountid, 10));
 
         accountSummary.setSuccess(true);
         return accountSummary;
     }
 
-    public SummaryAccount getPaymentMethodDetail(String accountName)
+    public SummaryAccount getPaymentMethodDetail(String accountid)
             throws Exception {
         // Create the object and get the basic information
         SummaryAccount accountSummary = new SummaryAccount();
 
-        Account acc = zr.AccountR.GetByName(accountName);
+        Account acc = zr.AccountR.GetById(accountid);
         ID defaultPaymentMethodId = acc.getDefaultPaymentMethodId();
 
         Payment[] payments = zr.PaymentR.GetByAccountId(acc.getId().getID());
@@ -258,17 +258,17 @@ public class AccountManager {
 
     }
 
-    public boolean checkEmailAvailability(String targetName) throws Exception {
+    public boolean checkEmailAvailability(String accountname) throws Exception {
 
         // Disallow apostrophes in account names
-        if (targetName.contains("'")) {
+        if (accountname.contains("'")) {
             return false;
         }
 
         // Find any accounts with this account name'
 
         // Get Account ID with this name
-        Account account = zr.AccountR.GetByName(targetName);
+        Account account = zr.AccountR.GetByName(accountname);
         return account == null;
     }
 

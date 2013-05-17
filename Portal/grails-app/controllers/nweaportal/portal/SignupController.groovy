@@ -1,7 +1,6 @@
 package nweaportal.portal
 
-import com.nwea.portal.domain.RegisterUser
-import nweaportal.admin.Agency
+import com.nwea.portal.repository.ZuoraRepository
 
 class SignupController {
 
@@ -13,15 +12,13 @@ class SignupController {
 
     def signup() {
         def cache = grailsCacheManager.getCache('zuora')
-        def agency = new Agency();
-        agency.code = params.code;
-        def agencies = agency.findAll(agency);
-        if (agencies.size() == 0) {
-            agency.name = params.code
-            agency.save()
-        }
-        else{
-            agency = agencies.first()
+        def repo = new ZuoraRepository(cache)
+
+        def agency = repo.AccountR.GetByNumber(params.code)
+        if (agency == null) {
+            flash.signupmessage = 'Agency ' + params.code + ' not found'
+            redirect(action: 'index', controller: 'login')
+            return
         }
 
         def user = new User()
@@ -34,20 +31,19 @@ class SignupController {
             return;
         }
 
-        RegisterUser reg = new RegisterUser(cache);
-        def zaccountid = reg.Register(params.email, params.code, params.name);
+        def accountid = repo.AccountR.GetIdByNumber(params.code)
 
         def newuser = new User()
         newuser.email = params.email
         newuser.name = params.name
-        newuser.agency = agency
+        newuser.agencyCode = params.code
         newuser.role = 'User'
-        newuser.zuoraAccountName = params.email
-        newuser.zuoraAccountId = zaccountid.toString()
+        newuser.zuoraAccountId = accountid
         newuser.save(flush: true, failOnError: true);
         authenticationService.signup([login: params.email, password: params.password, suppressConfirmation: true, immediate: true])
 
         session["username"] = params.email
+        session["accountid"] = accountid
 
         redirect(action: 'index', controller: 'MyAccount');
     }

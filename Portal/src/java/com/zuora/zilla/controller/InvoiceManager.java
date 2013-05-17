@@ -69,17 +69,14 @@ public class InvoiceManager {
     /**
      * Return the latest <max> invoices that has been posted to this account.
      *
-     * @param accountName Indicate which account to look at
+     * @param accountid Indicate which account to look at
      * @param maxInvoices Define the maximum number of invoices to retrieve
      * @return list of SummaryInvoice objects
      */
-    public List<SummaryInvoice> getLatestInvoices(String accountName,
+    public List<SummaryInvoice> getLatestInvoices(String accountid,
                                                   Integer maxInvoices) throws Exception {
-        // Step #1: get the associated account Id
-        String accountId = zr.AccountR.GetIdByName(accountName);
-
         // Step #2: get all invoices associated with this account ID
-        Invoice[] invoices = zr.InvoiceR.GetByAccountId(accountId);
+        Invoice[] invoices = zr.InvoiceR.GetByAccountId(accountid);
         List<Invoice> listInvoices = new ArrayList<Invoice>();
 
         for (ZObject z1 : invoices) {

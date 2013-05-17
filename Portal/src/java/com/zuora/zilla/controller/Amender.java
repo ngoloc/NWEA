@@ -36,7 +36,7 @@ public class Amender {
      * A quantity can also be supplied, that will apply to all recurring and
      * one-time charges on the rate plan that do not use flat fee pricing.
      *
-     * @param $accountName Name of the target account
+     * @param $accountid Name of the target account
      * @param $prpId       ID of the Rate Plan to be added.
      * @param $qty         Amount of UOM for the RatePlan being added. A null value can
      *                     be passed for product rate plans that use flat fee pricing
@@ -45,11 +45,14 @@ public class Amender {
      * @return Amend Result
      * @throws Exception
      */
-    public AmenderResult addRatePlan(String accountName, String prpId,
-                                     BigDecimal qty, boolean preview) throws Exception {
+    public AmenderResult addRatePlan(
+            String accountid,
+            String prpId,
+            BigDecimal qty,
+            boolean preview) throws Exception {
 
         AmenderSubscription subscription = subManager
-                .getCurrentSubscription(accountName);
+                .getCurrentSubscription(accountid);
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         df.setTimeZone(TimeZone.getTimeZone("America/Los_Angeles"));
@@ -153,7 +156,7 @@ public class Amender {
      * A quantity can also be supplied, that will apply to all recurring and
      * one-time charges on the rate plan that do not use flat fee pricing.
      *
-     * @param $accountName Name of the target account
+     * @param $accountid Name of the target account
      * @param $rpId        ID of the rate plan to be added.
      * @param $qty         Amount of UOM for the RatePlan being added. A null value can
      *                     be passed for product rate plans that use flat fee pricing
@@ -162,11 +165,13 @@ public class Amender {
      * @return Amend Result
      * @throws Exception
      */
-    public AmenderResult removeRatePlan(String accountName, String rpId,
-                                        boolean preview) throws Exception {
+    public AmenderResult removeRatePlan(
+            String accountid,
+            String rpId,
+            boolean preview) throws Exception {
 
         AmenderResult amRes = new AmenderResult();
-        AmenderSubscription subscription = subManager.getCurrentSubscription(accountName);
+        AmenderSubscription subscription = subManager.getCurrentSubscription(accountid);
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         df.setTimeZone(TimeZone.getTimeZone("America/Los_Angeles"));

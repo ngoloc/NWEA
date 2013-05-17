@@ -127,7 +127,6 @@ public class App {
 
         // Get the account name from the session
         // HttpSession session = request.getSession();
-        // String accountName = (String) session.getAttribute("username");
         HashMap<String, String[]> p = (HashMap<String, String[]>) request
                 .getParameterMap();
         // Create a new summary contact based on the query
@@ -202,8 +201,8 @@ public class App {
     public List<AmenderSubscription> getLatestSubscription(
             HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
-        String email = (String) session.getAttribute("username");
-        List<AmenderSubscription> subscriptions = subscriptionManager.getAllSubscription(email);
+        String accountid = (String) session.getAttribute("accountid");
+        List<AmenderSubscription> subscriptions = subscriptionManager.getAllSubscription(accountid);
 
         if (subscriptions == null) {
             // TODO This should have a response code that tells you why it
@@ -219,8 +218,8 @@ public class App {
      */
     public SummaryAccount getCompleteSummary(HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
-        String email = (String) session.getAttribute("username");
-        SummaryAccount summary = accountManager.getCompleteDetail(email);
+        String accountid = (String) session.getAttribute("accountid");
+        SummaryAccount summary = accountManager.getCompleteDetail(accountid);
         return summary;
     }
 
@@ -229,8 +228,8 @@ public class App {
      */
     public SummaryAccount getPaymentMethodSummary(HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
-        String email = (String) session.getAttribute("username");
-        SummaryAccount summary = accountManager.getPaymentMethodDetail(email);
+        String accountid = (String) session.getAttribute("accountid");
+        SummaryAccount summary = accountManager.getPaymentMethodDetail(accountid);
         return summary;
     }
 
@@ -240,7 +239,7 @@ public class App {
     public AmenderResult addRatePlan(HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
         AmenderResult amRes = null;
-        String username = (String) session.getAttribute("username");
+        String accountid = (String) session.getAttribute("accountid");
         String ratePlanId = (String) request.getAttribute("itemId");
         String qty = (String) request.getAttribute("itemQty");
         BigDecimal bdQty = null;
@@ -254,7 +253,7 @@ public class App {
                 return amRes;
             }
         }
-        amRes = amender.addRatePlan(username, ratePlanId, bdQty, false);
+        amRes = amender.addRatePlan(accountid, ratePlanId, bdQty, false);
         return amRes;
     }
 
@@ -264,7 +263,7 @@ public class App {
     public AmenderResult previewAddRatePlan(HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
         AmenderResult amRes = null;
-        String username = (String) session.getAttribute("username");
+        String accountid = (String) session.getAttribute("accountid");
         String ratePlanId = (String) request.getAttribute("itemId");
         String qty = (String) request.getAttribute("itemQty");
         BigDecimal bdQty = null;
@@ -278,7 +277,7 @@ public class App {
                 return amRes;
             }
         }
-        return amender.addRatePlan(username, ratePlanId, bdQty, true);
+        return amender.addRatePlan(accountid, ratePlanId, bdQty, true);
     }
 
     /**
@@ -286,9 +285,9 @@ public class App {
      */
     public AmenderResult removeRatePlan(HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
+        String accountid = (String) session.getAttribute("accountid");
         String ratePlanId = (String) request.getAttribute("itemId");
-        return amender.removeRatePlan(username, ratePlanId, false);
+        return amender.removeRatePlan(accountid, ratePlanId, false);
     }
 
     /**
@@ -296,9 +295,9 @@ public class App {
      */
     public AmenderResult previewRemoveRatePlan(HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
+        String accountid = (String) session.getAttribute("accountid");
         String ratePlanId = (String) request.getAttribute("itemId");
-        return amender.removeRatePlan(username, ratePlanId, true);
+        return amender.removeRatePlan(accountid, ratePlanId, true);
     }
 
     /**
@@ -407,10 +406,10 @@ public class App {
      */
     public ResponseAction getExistingIframeSrc(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        String email = (String) session.getAttribute("username");
+        String accountid = (String) session.getAttribute("accountid");
         ResponseAction iframeResp = null;
         try {
-            iframeResp = paymentManager.getExistingIframeSrc(email);
+            iframeResp = paymentManager.getExistingIframeSrc(accountid);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -424,9 +423,9 @@ public class App {
      */
     public ResponseAction removePaymentMethod(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        String accountName = (String) session.getAttribute("username");
+        String accountid = (String) session.getAttribute("accountid");
         String pmId = (String) (String) request.getParameter("pmId");
-        return paymentManager.removePaymentMethod(accountName, pmId);
+        return paymentManager.removePaymentMethod(accountid, pmId);
     }
 
     /**
@@ -460,13 +459,15 @@ public class App {
      */
     public ResponseSubscribe subscribeWithCurrentCart(HttpServletRequest request) throws Exception {
         // Get information from the POST request
-        String userEmail = (String) request.getAttribute("userEmail");
+        String accountid = (String) request.getAttribute("accountid");
         String pmId = (String) request.getAttribute("pmId");
         HttpSession session = request.getSession();
         CartHelper cartHelper = (CartHelper) session.getAttribute("cart");
 
         ResponseSubscribe data = subscriptionManager.subscribeWithCurrentCart(
-                userEmail, pmId, cartHelper);
+                accountid,
+                pmId,
+                cartHelper);
 
         if (!data.isSuccess()) {
             String msgError = (String) data.getError();
@@ -485,9 +486,6 @@ public class App {
                 return data;
             }
         }
-
-        // Put the return (user e-mail address) in the session
-        session.setAttribute("username", userEmail);
 
         data.setSuccess(true);
         return data;

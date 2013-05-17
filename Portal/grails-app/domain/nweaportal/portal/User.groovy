@@ -1,12 +1,11 @@
 package nweaportal.portal
 
-import nweaportal.admin.Agency
 
 class User {
 
     String email
 
-    Agency agency
+    String agencyCode
 
     String name
 
@@ -14,14 +13,11 @@ class User {
 
     String zuoraAccountId
 
-    String zuoraAccountName
-
     static constraints = {
         email blank: false, unique: true
         name blank: false
         role blank: false
-        agency nullable: true
+        agencyCode nullable: false
         zuoraAccountId blank: false
-        zuoraAccountName blank: false
     }
 }

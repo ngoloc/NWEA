@@ -35,25 +35,25 @@ public class SubscriptionManager {
      * Retrieve all details of the current and removed rateplans on the logged
      * in user's subscription.
      *
-     * @param userEmail User's given Email address
+     * @param accountid User's given Email address
      * @return Active Subscription details
      * @throws Exception
      */
-    public AmenderSubscription getCurrentSubscription(String accountName)
+    public AmenderSubscription getCurrentSubscription(String accountid)
             throws Exception {
         // Get Active Subscription
         AmenderSubscription activeSubscription = new AmenderSubscription();
 
         // Step #1: get the associated account Id
 
-        Account account = zrepo.AccountR.GetByName(accountName);
+        Account account = zrepo.AccountR.GetById(accountid);
         String accountId = account.getId().getID();
 
         Subscription[] subscriptions = zrepo.SubscriptionR
                 .GetSubscriptions(accountId);
         Subscription subscription = subscriptions[0];
 
-        activeSubscription.setUserEmail(accountName);
+        activeSubscription.setUserEmail("");
         activeSubscription.setSubscriptionId(subscription.getId().getID());
         activeSubscription.setVersion(subscription.getVersion());
 
@@ -199,13 +199,15 @@ public class SubscriptionManager {
         return activeSubscription;
     }
 
-    public ResponseSubscribe subscribeWithCurrentCart(String userEmail,
-                                                      String pmId, CartHelper cartHelper) throws Exception {
+    public ResponseSubscribe subscribeWithCurrentCart(
+            String accountname,
+            String pmId,
+            CartHelper cartHelper) throws Exception {
 
         ResponseSubscribe data = new ResponseSubscribe();
 
         try {
-            if (!accountManager.checkEmailAvailability(userEmail)) {
+            if (!accountManager.checkEmailAvailability(accountname)) {
                 data.setError("DUPLICATE_EMAIL");
                 data.setSuccess(false);
                 return data;
@@ -260,7 +262,7 @@ public class SubscriptionManager {
         Account acc = new Account();
         acc.setAutoPay(zuoraUtility.getDefaultAutopay());
         acc.setCurrency(zuoraUtility.getDefaultCurrency());
-        acc.setName(userEmail);
+        acc.setName(accountname);
         acc.setPaymentTerm(zuoraUtility.getDefaultPaymentTerm());
         acc.setBatch(zuoraUtility.getDefaultBatch());
         acc.setBillCycleDay(mday);
@@ -275,7 +277,7 @@ public class SubscriptionManager {
         billToContact.setLastName(lastName);
         billToContact.setPostalCode(postalCode);
         billToContact.setState(state);
-        billToContact.setWorkEmail(userEmail);
+        billToContact.setWorkEmail(accountname);
         billToContact.setWorkPhone(phone);
         billToContact.setCountry(country);
 
@@ -533,17 +535,17 @@ public class SubscriptionManager {
      * <p/>
      * CNET Custom work: retrieve all subscriptions.
      *
-     * @param userEmail User's given Email address
+     * @param accountid User's given Email address
      * @return Active Subscription details
      * @throws Exception
      */
-    public List<AmenderSubscription> getAllSubscription(String accountName)
+    public List<AmenderSubscription> getAllSubscription(String accountid)
             throws Exception {
 
         List<AmenderSubscription> subscriptionList = new ArrayList<AmenderSubscription>();
 
         // Step #1: get the associated account Id
-        Account account = zrepo.AccountR.GetByName(accountName);
+        Account account = zrepo.AccountR.GetById(accountid);
         String accountId = account.getId().getID();
 
         // Step #2: query all subscriptions with this account ID
@@ -561,7 +563,7 @@ public class SubscriptionManager {
         for (Subscription subscription : subscriptions) {
             AmenderSubscription activeSubscription = new AmenderSubscription();
 
-            activeSubscription.setUserEmail(accountName);
+            activeSubscription.setUserEmail("");
             activeSubscription.setSubscriptionId(subscription.getId().getID());
             activeSubscription.setVersion(subscription.getVersion());
 

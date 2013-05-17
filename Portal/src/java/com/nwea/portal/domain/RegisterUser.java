@@ -16,17 +16,16 @@ public class RegisterUser {
 
     public String Register(String email, String agencyCode, String name)
             throws Exception {
-        String accountId = zr.AccountR.GetIdByName(email);
-        if (accountId == null) {
-            accountId = CreateNewAccount(email, agencyCode, name);
-        }
+        String accountId = zr.AccountR.GetIdByName(agencyCode);
         return accountId;
     }
 
-    private String CreateNewAccount(String accountName, String agencyCode,
-                                    String name) throws Exception {
+    private String CreateNewAccount(
+            String email,
+            String agencyCode,
+            String name) throws Exception {
         Account acc = new Account();
-        acc.setName(accountName);
+        acc.setName(email);
         acc.setCurrency("USD");
         acc.setBillCycleDay(1);
         acc.setStatus("Draft");
