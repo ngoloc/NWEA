@@ -22,7 +22,8 @@ class MyAccountController {
         user = user.findAll(user)[0]
 
         def accountManager = new AccountManager(cache)
-        def summary = accountManager.getCompleteDetail(user.zuoraAccountName);
+        def accountid = (String)session.getAttribute("accountid")
+        def summary = accountManager.getCompleteDetail(accountid);
 
         render summary as JSON
     }

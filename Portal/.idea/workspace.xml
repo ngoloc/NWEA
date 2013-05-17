@@ -2,28 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Dana\Documents\GitHub\NWEA\Portal\grails-app\controllers\nweaportal\admin\AdminAgenciesController.groovy" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Dana\Documents\GitHub\NWEA\Portal\grails-app\domain\nweaportal\admin\Agency.groovy" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/AccountManager.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/AccountManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/Amender.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/Amender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/App.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/PaymentManager.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/PaymentManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RegisterUser.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RegisterUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginstatusController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginstatusController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/nweaportal/portal/User.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/nweaportal/portal/User.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/myAccount/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/myAccount/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/js/myaccount.js" afterPath="$PROJECT_DIR$/web-app/js/myaccount.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NWEAPortal.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368767866189" ignored="false" />
+    <file path="/Dummy.txt" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368801031369" ignored="false" />
     <file path="/AccountDisabler.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367133938934" ignored="false" />
     <file path="/RepositoryBase.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367390017557" ignored="false" />
     <file path="/AccountRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368777250583" ignored="false" />
@@ -37,13 +27,13 @@
     <file path="/fragment.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368722332362" ignored="false" />
     <file path="/SubscriptionRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367182977389" ignored="false" />
     <file path="/HomeController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367854947238" ignored="false" />
-    <file path="/a.dummy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368777996556" ignored="false" />
-    <file path="/LoginController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368777495965" ignored="false" />
+    <file path="/a.dummy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804416984" ignored="false" />
+    <file path="/LoginController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804342040" ignored="false" />
     <file path="/ProductRatePlanChargeRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367135995683" ignored="false" />
     <file path="/ProductRatePlanChargeTierRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367136145368" ignored="false" />
     <file path="/RatePlanChargeRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367183182055" ignored="false" />
     <file path="/RatePlanChargeTierRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367183232397" ignored="false" />
-    <file path="/MyAccountController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367170468567" ignored="false" />
+    <file path="/MyAccountController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804395325" ignored="false" />
     <file path="/PaymentRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367166487164" ignored="false" />
     <file path="/InvoiceRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367167206402" ignored="false" />
     <file path="/ZuoraRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367166805728" ignored="false" />
@@ -52,7 +42,7 @@
     <file path="/Backend.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367170462068" ignored="false" />
     <file path="/AccountManager.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368778049450" ignored="false" />
     <file path="/RegisterUser.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368720633276" ignored="false" />
-    <file path="/SignupController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368777306697" ignored="false" />
+    <file path="/SignupController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804312080" ignored="false" />
     <file path="/ZuoraUtility.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367169680848" ignored="false" />
     <file path="/build.xml" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367209226304" ignored="false" />
     <file path="/AccountActivator.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367182730820" ignored="false" />
@@ -100,6 +90,8 @@
     <file path="/AmenderPlan.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367801548319" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/Grails/lib/grails_integration.jar!/org/jetbrains/plugins/grails/lang/gsp/resolve/taglib/tld/grails.tld" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368720219902" ignored="false" />
     <file path="/User.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368777297287" ignored="false" />
+    <file path="/BootStrap.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368803688970" ignored="false" />
+    <file path="/LoginstatusController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804263865" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +152,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="3365" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
         <option name="ENABLED" value="true" />
@@ -208,6 +199,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -217,98 +209,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="App.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/App.java">
+      <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="467" column="25" selection-start="16731" selection-end="16731" vertical-scroll-proportion="0.0">
+            <state line="77" column="95" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClassUtils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/util/ClassUtils.java">
+      <file leaf-file-name="BootStrap.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="34" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PageFragmentCachingFilter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/web/filter/PageFragmentCachingFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="640" column="38" selection-start="23231" selection-end="23231" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#5611#5629#0" expanded="true" />
-                <element signature="e#5949#5959#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProxyAwareMixedGrailsControllerHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/web/ProxyAwareMixedGrailsControllerHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="40" selection-start="1406" selection-end="1406" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CacheTransformation.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/compiler/CacheTransformation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="30" selection-start="810" selection-end="810" vertical-scroll-proportion="0.2761733">
+            <state line="15" column="28" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaymentManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/PaymentManager.java">
+      <file leaf-file-name="AccountRepository.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="229" column="23" selection-start="7864" selection-end="7864" vertical-scroll-proportion="0.0">
+            <state line="44" column="39" selection-start="1435" selection-end="1435" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/AccountManager.java">
+      <file leaf-file-name="LoginController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="51" selection-start="5243" selection-end="5252" vertical-scroll-proportion="0.0">
+            <state line="75" column="51" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-11.869565">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvoiceManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java">
+      <file leaf-file-name="MyAccountController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="65" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0">
+            <state line="25" column="47" selection-start="723" selection-end="723" vertical-scroll-proportion="-11.347826">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubscriptionManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java">
+      <file leaf-file-name="SignupController.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="70" selection-start="1211" selection-end="1220" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Amender.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/Amender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="40" selection-start="6784" selection-end="6784" vertical-scroll-proportion="0.0">
+            <state line="29" column="54" selection-start="878" selection-end="878" vertical-scroll-proportion="0.7027027">
               <folding />
             </state>
           </provider>
@@ -332,22 +281,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/grails-app/views/home/_entercc.gsp" />
-        <option value="$PROJECT_DIR$/web-app/css/home.css" />
         <option value="$PROJECT_DIR$/grails-app/views/myAccount/index.gsp" />
         <option value="$PROJECT_DIR$/web-app/js/myaccount.js" />
         <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RegisterUser.java" />
-        <option value="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
-        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java" />
         <option value="$PROJECT_DIR$/grails-app/domain/nweaportal/portal/User.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/AccountManager.java" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/Amender.java" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/PaymentManager.java" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/App.java" />
+        <option value="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginstatusController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy" />
       </list>
     </option>
   </component>
@@ -389,6 +338,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -404,6 +354,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -469,9 +451,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nweaportal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -486,9 +511,9 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -501,12 +526,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Grails.Grails:NWEAPortal">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -517,25 +536,18 @@
       <setting name="launchBrowser" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -564,6 +576,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -676,23 +701,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32739422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6707589" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27505568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49665925" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43357933" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -700,12 +724,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19263607" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19263607" sideWeight="0.6726058" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55915177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -774,82 +799,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="95" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.2357019">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/nweaportal/portal/User.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="33" selection-start="99" selection-end="99" vertical-scroll-proportion="0.32136106">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="30" selection-start="1371" selection-end="1371" vertical-scroll-proportion="-15.130435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="16" selection-start="2252" selection-end="2263" vertical-scroll-proportion="-29.434782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="65" selection-start="2653" selection-end="2653" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/AccountManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="51" selection-start="5243" selection-end="5252" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="70" selection-start="1211" selection-end="1220" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/Amender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="40" selection-start="6784" selection-end="6784" vertical-scroll-proportion="0.0">
+        <state line="167" column="40" selection-start="6784" selection-end="6784" vertical-scroll-proportion="0.019495413">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/PaymentManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="229" column="23" selection-start="7864" selection-end="7864" vertical-scroll-proportion="0.0">
+        <state line="229" column="23" selection-start="7864" selection-end="7864" vertical-scroll-proportion="0.019495413">
           <folding />
         </state>
       </provider>
@@ -864,34 +823,92 @@
     <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/util/ClassUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="34" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/web/filter/PageFragmentCachingFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="640" column="38" selection-start="23231" selection-end="23231" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#5611#5629#0" expanded="true" />
-            <element signature="e#5949#5959#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/web/ProxyAwareMixedGrailsControllerHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="40" selection-start="1406" selection-end="1406" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/compiler/CacheTransformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="33" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.27293578">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.grails/2.2.1/projects/NWEAPortal/plugins/cache-1.0.1/src/java/grails/plugin/cache/compiler/CacheTransformation.java">
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="30" selection-start="810" selection-end="810" vertical-scroll-proportion="0.2761733">
+        <state line="77" column="95" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="28" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="39" selection-start="1435" selection-end="1435" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginstatusController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="64" selection-start="578" selection-end="578" vertical-scroll-proportion="0.6327543">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="51" selection-start="2338" selection-end="2338" vertical-scroll-proportion="-11.869565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="47" selection-start="723" selection-end="723" vertical-scroll-proportion="-11.347826">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/AccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="50" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.49295774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/stacktrace.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1878" column="107" selection-start="199242" selection-end="199242" vertical-scroll-proportion="0.031858407">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="54" selection-start="878" selection-end="878" vertical-scroll-proportion="0.7027027">
           <folding />
         </state>
       </provider>

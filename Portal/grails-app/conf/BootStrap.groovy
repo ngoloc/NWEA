@@ -12,9 +12,8 @@ class BootStrap {
             admin.role = 'Admin'
             admin.name = 'Administrator'
             admin.email = 'admin@nwea.org'
-            admin.agency = 'ADMIN'
+            admin.agencyCode = 'ADMIN'
             admin.zuoraAccountId = 'notused'
-            admin.zuoraAccountName = 'notused'
             admin.save(flush: true, failOnError: true)
             authenticationService.signup([login: admin.email, password: 'password'])
         }

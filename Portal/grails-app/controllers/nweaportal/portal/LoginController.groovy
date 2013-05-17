@@ -73,6 +73,7 @@ class LoginController {
 
         session["username"] = params.email
         session["accountid"] = user.zuoraAccountId
+        session["accountname"] = agencyAccount.name
 
         return true
     }

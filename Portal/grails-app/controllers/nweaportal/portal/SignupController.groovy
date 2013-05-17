@@ -17,7 +17,7 @@ class SignupController {
         def agency = repo.AccountR.GetByNumber(params.code)
         if (agency == null) {
             flash.signupmessage = 'Agency ' + params.code + ' not found'
-            redirect(action: 'index', controller: 'login')
+            redirect(action: 'index', controller: 'login', model: params)
             return
         }
 
@@ -44,6 +44,7 @@ class SignupController {
 
         session["username"] = params.email
         session["accountid"] = accountid
+        session["accountname"] = agency.name
 
         redirect(action: 'index', controller: 'MyAccount');
     }

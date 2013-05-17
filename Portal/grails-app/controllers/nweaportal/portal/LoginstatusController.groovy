@@ -16,9 +16,7 @@ class LoginstatusController {
                 user = users[0]
                 model.name = user.name
                 model.email = user.email
-                if (user.agency != null) {
-                    model.agency = user.agency.name
-                }
+                model.agency = session.getAttribute("accountname")
             }
         }
         render(view: "/loginstatus/_status", model: model)

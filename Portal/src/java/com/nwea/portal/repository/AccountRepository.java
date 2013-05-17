@@ -10,7 +10,7 @@ public class AccountRepository extends RepositoryBase {
     private static final String columns = "" +
             "Id, " +
             "Name, " +
-            "Number, " +
+            "AccountNumber, " +
             "AgencyCode__c, " +
             "DisableWebManagement__c, " +
             "Status, " +
@@ -36,7 +36,7 @@ public class AccountRepository extends RepositoryBase {
     }
 
     public String GetIdByNumber(String accountNumber) throws Exception {
-        ZObject[] results = Query("SELECT Id FROM Account WHERE Number = '" + accountNumber + "'", true);
+        ZObject[] results = Query("SELECT Id FROM Account WHERE AccountNumber = '" + accountNumber + "'", true);
         if (results.length == 0) {
             return null;
         }
@@ -52,7 +52,7 @@ public class AccountRepository extends RepositoryBase {
     }
 
     public Account GetByNumber(String accountNumber) throws Exception {
-        ZObject[] results = Query(String.format(query, columns, "Number", accountNumber));
+        ZObject[] results = Query(String.format(query, columns, "AccountNumber", accountNumber));
         if(results.length == 0){
             return null;
         }
