@@ -4,9 +4,11 @@ html{
 	background-repeat: repeat-x;
 	background-position: left top;
 	overflow-y: scroll;
+    font-family:proxima-nova,Helvetica,Arial,sans-serif;
+    font-size:100%;
 }
 
-body{
+body {
 }
 
 .Container{
@@ -46,4 +48,8 @@ body{
 
 .ForogotPasswordLinkContainer{
 	padding: 5px;
+}
+
+.hide{
+    display: none;
 }

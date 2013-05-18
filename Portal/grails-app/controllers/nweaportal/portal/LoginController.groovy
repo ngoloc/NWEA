@@ -37,7 +37,7 @@ class LoginController {
     def isManagementDisabled() {
         def cache = grailsCacheManager.getCache('zuora')
         def disabler = new AccountDisabler(cache)
-        return disabler.IsDisabled(user.agency.code)
+        return disabler.IsDisabled(user.zuoraAccountId)
     }
 
     def checklogin() {

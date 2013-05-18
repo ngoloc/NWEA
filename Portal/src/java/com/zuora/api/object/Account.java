@@ -29,6 +29,25 @@ public class Account extends com.zuora.api.object.ZObject implements
         this.localDisableWebManagement = param;
     }
 
+
+
+    protected String localEnrollment;
+    protected boolean localEnrollmentTracker = false;
+
+    public boolean isEnrollmentSpecified() {
+        return localEnrollmentTracker;
+    }
+
+    public String getEnrollment() {
+        return localEnrollment;
+    }
+
+    public void setLocalEnrollment(String param) {
+        this.localEnrollment = param;
+    }
+
+
+
     protected java.lang.String localAgencyCode;
     protected boolean localAgencyCodeTracker = false;
 
@@ -1738,6 +1757,26 @@ public class Account extends com.zuora.api.object.ZObject implements
             xmlWriter.writeEndElement();
         }
 
+        if (localEnrollmentTracker) {
+            namespace = "http://object.api.zuora.com/";
+            writeStartElement(null, namespace, "Enrollment__c", xmlWriter);
+
+            if (localEnrollment == null) {
+                // write the nil attribute
+
+                writeAttribute("xsi",
+                        "http://www.w3.org/2001/XMLSchema-instance", "nil",
+                        "1", xmlWriter);
+
+            } else {
+
+                xmlWriter.writeCharacters(localEnrollment);
+
+            }
+
+            xmlWriter.writeEndElement();
+        }
+
 
         if (localAdditionalEmailAddressesTracker) {
             namespace = "http://object.api.zuora.com/";
@@ -2759,6 +2798,14 @@ public class Account extends com.zuora.api.object.ZObject implements
             elementList.add(localDisableWebManagement == null ? null
                     : org.apache.axis2.databinding.utils.ConverterUtil
                     .convertToString(localDisableWebManagement));
+        }
+        if (localEnrollmentTracker) {
+            elementList.add(new javax.xml.namespace.QName(
+                    "http://object.api.zuora.com/", "Enrollment__c"));
+
+            elementList.add(localEnrollment == null ? null
+                    : org.apache.axis2.databinding.utils.ConverterUtil
+                    .convertToString(localEnrollment));
         }
         if (localAdditionalEmailAddressesTracker) {
             elementList

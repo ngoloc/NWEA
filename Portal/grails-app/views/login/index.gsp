@@ -9,7 +9,6 @@
 
 <body>
 <div class="mainlogincontainer">
-
     <g:render template="/login/login"/>
     <g:render template="/login/forgot"/>
     <g:render template="/login/signup"/>

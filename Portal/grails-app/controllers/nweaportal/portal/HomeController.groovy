@@ -12,12 +12,7 @@ class HomeController {
     def grailsCacheManager
 
     def index() {
-        def email = authenticationService.sessionUser.login
-        def user = new User()
-        user.email = email
-        user = User.findAll("FROM User as u WHERE u.email = '" + email + "'").first()
-
-        return [agency: user.agency.name]
+        return [agency: session.getAttribute("accountname")]
     }
 
     def summary() {
@@ -30,11 +25,11 @@ class HomeController {
         def cache = grailsCacheManager.getCache('zuora')
 
         def mng = new SummaryViewModelBuilder(cache)
-        def subs = mng.GetModel(user.zuoraAccountName)
-
+        String accountid = (String)session.getAttribute("accountid")
+        def subs = mng.GetModel(accountid)
 
         def paymngr = new PaymentManager(cache)
-        def r = paymngr.getExistingIframeSrc(user.zuoraAccountName)
+        def r = paymngr.getExistingIframeSrc(accountid)
         subs.setPmurl(r.getData())
 
         render subs as JSON
@@ -77,9 +72,9 @@ class HomeController {
                 def pid = productids[i];
                 def q = quantities[i];
                 def ss = new SubscribeSingle(zr)
-                String zname = user.zuoraAccountName;
+                String accountid = session.getAttribute("accountid");
 
-                String error = ss.Subscribe(zname, pid, q, m, ponum)
+                String error = ss.Subscribe(accountid, pid, q, m, ponum)
                 if (error != null && error.length() > 0) {
                     render([error: error] as JSON);
                     return

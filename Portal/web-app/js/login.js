@@ -1,9 +1,9 @@
 var LoginViewModel = function(){
 	
 	function _initialize(){
-		$.validator.unobtrusive.parse($('loginform')); 
-		$.validator.unobtrusive.parse($('signupform'));
-		$.validator.unobtrusive.parse($('forogotform'));
+		$.validator.unobtrusive.parse('#loginform');
+		$.validator.unobtrusive.parse('#signupform');
+		$.validator.unobtrusive.parse('#forogotform');
 		$('#ForgotPasswordLink').click(_showForgot);
 		$('#ShowLoginLink').click(_showLogin);
 		if(typeof showForgotOnLoad != 'undefined' && showForgotOnLoad){

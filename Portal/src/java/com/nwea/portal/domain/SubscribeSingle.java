@@ -11,8 +11,6 @@ import java.util.Calendar;
 
 public class SubscribeSingle {
 
-    String accountName;
-
     String accountId;
 
     String paymentMethodId;
@@ -32,16 +30,14 @@ public class SubscribeSingle {
     }
 
     public void Subscribe(
-            String accountName,
+            String accountid,
             String productId,
             String quantity,
             String type,
             String ponum) throws Exception {
-        this.accountName = accountName;
+        this.accountId = accountid;
         this.productId = productId;
         this.quantity = new BigDecimal(quantity);
-
-        getAccountId();
 
         this.account = zr.AccountR.GetById(this.accountId);
 
@@ -51,11 +47,6 @@ public class SubscribeSingle {
         } else {
             subscribePO(productId, ponum);
         }
-    }
-
-    private void getAccountId() throws Exception {
-        QueryResult qr1;
-        this.accountId = zr.AccountR.GetIdByName(this.accountName);
     }
 
     private void getCashPaymentMethod() throws Exception {

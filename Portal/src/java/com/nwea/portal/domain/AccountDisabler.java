@@ -12,8 +12,8 @@ public class AccountDisabler {
         this.zr = new ZuoraRepository(cache);
     }
 
-    public boolean IsDisabled(String accountName) throws Exception {
-        Account account = zr.AccountR.GetByName(accountName);
+    public boolean IsDisabled(String accountid) throws Exception {
+        Account account = zr.AccountR.GetById(accountid);
         return account.getDisableWebManagement() == "Yes";
     }
 

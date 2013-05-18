@@ -1,24 +1,38 @@
-<div id="forgot" class="loginitemcontainer">
-    <g:if test="${flash.forgotmessage}">
-        <div class="alert alert-error">
-            ${flash.forgotmessage}
-        </div>
-    </g:if>
-    <g:form name="forogotform"
+<div class="column hide cbform" id="forgot">
+    <h3>Reset Password</h3>
+    <g:form name="forogotform"  class="content"
             url="[action: 'reset', controller: 'forgot']">
-        <div class="control-group">
-            <input type="text" name="email" placeholder="Email" data-val="true"
-                   data-val-required="Required" data-val-email/> <br/> <span
-                class="field-validation-valid validationText help-inline"
-                data-valmsg-for="email" data-valmsg-replace="true"></span>
-        </div>
+        <fieldset>
+            <span class="required-label">
+                <span class="required">*</span> Required info
+            </span>
 
-        <div class="submitcontainer">
-            <input type="submit" class="button" value="Reset Password"></input>
-        </div>
+            <div class="formContainer">
+                <g:if test="${flash.forgotmessage}">
+                    <div class="errors">${flash.forgotmessage}</div>
+                </g:if>
+                <div class="inputs">
+                    <div class="control">
+                        <div class="labelContainer">
+                            <label for="email">Email</label>
+                        </div>
 
-        <div class="ShowLoginLinkContainer">
-            <a href="#" id="ShowLoginLink">Login</a>
-        </div>
+                        <div class="fieldContainer">
+                            <input type="text" class="text-input" id="email" name="email"
+                                   data-val="true" data-val-required="Required" data-val-email/>
+                        </div>
+                        <span class="field-validation-valid validationText errors"
+                              data-valmsg-for="email" data-valmsg-replace="true">
+                        </span>
+                    </div>
+                    <div class="form-footer">
+                        <p><a href="#" id="ShowLoginLink">Login</a>.</p>
+                        <span class="button">
+                            <input type="submit" id="accountSubmit" value="Reset Password">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
     </g:form>
 </div>

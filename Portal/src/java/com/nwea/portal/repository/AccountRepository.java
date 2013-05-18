@@ -60,10 +60,11 @@ public class AccountRepository extends RepositoryBase {
     }
 
     public Account GetById(String accountId) throws Exception {
-        Account acc = null;
         ZObject[] results = Query(String.format(query, columns, "Id", accountId));
-        acc = (Account) results[0];
-        return acc;
+        if(results.length == 0){
+            return null;
+        }
+        return (Account) results[0];
     }
 
     public void Update(Account account) throws Exception {
