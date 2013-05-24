@@ -1,19 +1,15 @@
 <apex:page standardController="zqu__Quote__c"
 	extensions="UpdateOpportunityPageExtensions" sidebar="false"
 	action="{!updateopp}">
-
-	<div style="text-align: center;">
-		<h1 style="display: inline-block; margin: 10px;">Updating
-			Opportunity...</h1>
-		<div>&nbsp;</div>
-		<img style="display: inline-block; margin: 10px;"
-			src="https://jira.avantassessment.com/s/en_US-uqmjb/785/4/6.1.2/_/download/resources/com.pyxis.greenhopper.jira:gh-rapid-common/images/rapid/gh-spinner.gif" />
-	</div>
-	<script type="text/javascript">
-setTimeout(function(){
-window.location.href = '{!viewOpportunityUrl}';
-}, 0);
-        
-    </script>
-
+	<apex:pageBlock id="">
+		<apex:pageBlockButtons location="bottom">
+			<apex:commandButton value="Exit" action="{!exit}" />
+		</apex:pageBlockButtons>
+		<apex:pageBlockSection title="Error"
+			rendered="{!!selectNewProductViewMode}" columns="1">
+			<apex:outputPanel id="charge_group_edit_panel">
+				<div style="color:red;">{!error}</div>
+			</apex:outputPanel>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
 </apex:page>

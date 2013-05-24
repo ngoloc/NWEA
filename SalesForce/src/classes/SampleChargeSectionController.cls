@@ -1,4 +1,4 @@
-public with sharing class SampleChargeSectionController {
+public with sharing class SampleChargeSectionController{
        
     public ID myquoteid { get; set; }
     public zqu.zChargeGroup currentChargeGroup 
@@ -7,10 +7,9 @@ public with sharing class SampleChargeSectionController {
     	set { 
     		System.debug('setting current charge group');
     		this.currentChargeGroup = value; 
-    		//System.debug('setting list wrapped charges to null MUHAHAHAHAHAHA');
-    		//this.listWrappedCharges = null; 
     		}
 	}
+	
     public List<zqu.zChargeGroup> chargeGroups { get; set; }
    
     public void discountChange() {
@@ -111,7 +110,21 @@ public with sharing class SampleChargeSectionController {
                             return null;
                     }
         }
-        return new PageReference('/'+this.myquoteid);
+        Repository repo = new Repository();
+        zqu__Quote__c q = repo.getQuote(this.myquoteid);
+        GetLegacyProductsForQuoteAction getLegacy = new GetLegacyProductsForQuoteAction();
+    	boolean hasLegacy = getLegacy.Execute(q);
+    	System.debug('has legacy products to port?: ' + hasLegacy);
+        if(!hasLegacy){
+        	return new PageReference('/'+this.myquoteid);
+        }
+        string url =  '/apex/AddLegacyProduct?id=' + this.myquoteid;
+		System.debug('transitioning to ' + url);
+		PageReference r = new PageReference(url);
+		r.setredirect(true);
+    	return r;
+        
+        
     }
     //Wrapper class for holding your custom field value in QuoteCharge and global data structure class zCharge
     public class WrapperForCustomField{

@@ -98,8 +98,11 @@ public with sharing class CustomZQQuoteEditController {
 		this.quote.zqu__SoldToContact__c = soldToContact;
 		this.quote.zqu__BillToContact__c = billToContact;
 		insert this.quote;
+		
+		MigrateLegacyProductsToQuoteAction migrate = new MigrateLegacyProductsToQuoteAction();
+		migrate.Execute(this.quote);
+		
 		System.debug('new quote id is ' + this.quote.Id);
-		//SelectedProductsWithCustomChargeCon?id=
 		PageReference pageRef = new PageReference('/apex/CustomProductSelector?id=' + this.quote.Id);		
 		return pageRef;
 	}

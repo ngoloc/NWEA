@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>AddLegacyProductController</members>
         <members>CustomProductSelectorController</members>
         <members>CustomSendToZBillingController</members>
         <members>CustomZQQuoteEditController</members>
+        <members>GetLegacyProductsForQuoteAction</members>
+        <members>MigrateLegacyProductToQuoteAction</members>
+        <members>MigrateLegacyProductsToQuoteAction</members>
+        <members>PageControllerBase</members>
         <members>Repository</members>
         <members>SampleChargeSectionController</members>
+        <members>UpdateOpportunityFromQuoteAction</members>
         <members>UpdateOpportunityPageExtensions</members>
         <members>ZuoraRepository</members>
         <name>ApexClass</name>
@@ -15,6 +21,7 @@
         <name>ApexComponent</name>
     </types>
     <types>
+        <members>AddLegacyProduct</members>
         <members>CustomProductSelector</members>
         <members>CustomQuoteEdit</members>
         <members>CustomSendToZBilling</members>
