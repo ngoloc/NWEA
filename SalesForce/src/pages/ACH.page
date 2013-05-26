@@ -1,0 +1,59 @@
+<apex:page extensions="ACHController" standardController="zqu__Quote__c"
+	sidebar="true" showHeader="true">
+	<apex:form id="achForm">
+		<apex:pageBlock id="block">
+
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Save" action="{!save}"
+					rendered="{!accountExists}" />
+				<apex:commandButton value="Cancel" action="{!cancel}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection >
+				<apex:panelGrid bgcolor="transparent" columns="1">
+					<br />
+					<br />
+					<apex:panelGrid width="758" cellpadding="0" cellspacing="0"
+						columns="1" styleClass="topPanelContainer">
+						<br />
+						<apex:outputPanel layout="block" styleClass="topPanel">
+							<apex:panelGrid width="758" cellpadding="0" cellspacing="0"
+								columns="2">
+								<apex:panelGroup >
+									<br />
+									<apex:outputText styleClass="title" value="ACH Information" style="margin:10px;font-size:1.5em;font-weight:bold;"/>
+									<br />
+									<apex:pageMessages id="error" />
+									<apex:panelGrid columns="2" style="margin-top:1em;" rendered="{!accountExists}">
+										<apex:outputLabel value="ABA/Routing Number" for="routing" />
+										<apex:inputText required="true" id="routing"
+											value="{!routing}" />
+											
+										<apex:outputLabel value="Bank Account Number" for="account" />
+										<apex:inputText required="true" id="account"
+											value="{!account}" />
+										
+										<apex:outputLabel value="Account Type" for="accountType" />
+										<apex:selectList value="{!accountType}" multiselect="false" size="1">
+											<apex:selectOptions value="{!items}" />
+										</apex:selectList>
+										
+										<apex:outputLabel value="Bank Name" for="bank" />
+										<apex:inputText required="true" id="bank" value="{!bank}" />
+										
+										<apex:outputLabel value="Account Holder Name" for="bank" />
+										<apex:inputText required="true" id="name" value="{!name}" />
+									</apex:panelGrid>
+									<br />
+								</apex:panelGroup>
+							</apex:panelGrid>
+						</apex:outputPanel>
+					</apex:panelGrid>
+				</apex:panelGrid>
+			</apex:pageBlockSection>
+
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>
+
+
+<!-- <apex:commandButton id="submit" value="{!$Label.site.submit}" action="{!forgotPassword}"/> -->

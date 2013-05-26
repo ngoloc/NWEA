@@ -1,0 +1,16 @@
+<apex:page standardController="zqu__Quote__c"
+	extensions="UpdateOpportunityPageExtensions" sidebar="false"
+	action="{!updateopp}">
+	<apex:form >
+		<apex:pageBlock id="pb">
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Exit" action="{!exit}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Error" columns="1">
+				<apex:outputPanel id="charge_group_edit_panel">
+					<div style="color: red;">{!error}</div>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

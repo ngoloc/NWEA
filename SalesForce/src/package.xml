@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>ACHController</members>
+        <members>ACHControllerTests</members>
         <members>AddLegacyProductController</members>
         <members>CustomProductSelectorController</members>
         <members>CustomSendToZBillingController</members>
@@ -10,10 +12,12 @@
         <members>MigrateLegacyProductsToQuoteAction</members>
         <members>PageControllerBase</members>
         <members>Repository</members>
+        <members>RepositoryTests</members>
         <members>SampleChargeSectionController</members>
         <members>UpdateOpportunityFromQuoteAction</members>
         <members>UpdateOpportunityPageExtensions</members>
         <members>ZuoraRepository</members>
+        <members>ZuoraRepositoryTests</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -21,10 +25,12 @@
         <name>ApexComponent</name>
     </types>
     <types>
+        <members>ACH</members>
         <members>AddLegacyProduct</members>
         <members>CustomProductSelector</members>
         <members>CustomQuoteEdit</members>
         <members>CustomSendToZBilling</members>
+        <members>UpdateOpportunity</members>
         <members>UpdateOpportunityPage</members>
         <name>ApexPage</name>
     </types>
