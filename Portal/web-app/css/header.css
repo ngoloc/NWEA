@@ -79,6 +79,17 @@
 
 }
 
+.LoginTitle{
+    -webkit-font-smoothing: antialiased;
+    background: url('../../../../images/marketing/signup/bg-shadow-short.png') center bottom no-repeat;
+    color: #569898;
+    margin-bottom: 11px;
+    padding-bottom: 72px;
+    font: 100 36px 'museo-slab','Museo Slab',Rockwell,serif;
+    letter-spacing: -1px;
+    text-align: center;
+    padding-top:23px;
+}
 .Banner .BannerAgency{
     padding:3px;
     font-size:1.2em;
