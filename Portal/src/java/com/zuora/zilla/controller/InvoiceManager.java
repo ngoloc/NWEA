@@ -32,8 +32,7 @@ public class InvoiceManager {
      * @param accountName Name of the target account
      * @return PDF Body of invoice
      */
-    public String getLastInvoicePdf(String accountName) throws Exception {
-        String accountId = zr.AccountR.GetIdByName(accountName);
+    public String getLastInvoicePdf(String accountId) throws Exception {
         Invoice[] invoicesresult = zr.InvoiceR.GetByAccountId(accountId);
         List<Invoice> listInvoices = new ArrayList<Invoice>();
 

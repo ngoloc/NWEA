@@ -35,6 +35,14 @@ public class AccountRepository extends RepositoryBase {
         return results[0].getId().getID();
     }
 
+    public String GetIdByAgencyCode(String agencyCode) throws Exception {
+        ZObject[] results = Query("SELECT Id FROM Account WHERE AccountNumber = '" + agencyCode + "' OR AgencyCode__c = '" + agencyCode + "'", true);
+        if (results.length == 0) {
+            return null;
+        }
+        return results[0].getId().getID();
+    }
+
     public String GetIdByNumber(String accountNumber) throws Exception {
         ZObject[] results = Query("SELECT Id FROM Account WHERE AccountNumber = '" + accountNumber + "'", true);
         if (results.length == 0) {
@@ -53,6 +61,16 @@ public class AccountRepository extends RepositoryBase {
 
     public Account GetByNumber(String accountNumber) throws Exception {
         ZObject[] results = Query(String.format(query, columns, "AccountNumber", accountNumber));
+        if(results.length == 0){
+            return null;
+        }
+        return (Account) results[0];
+    }
+
+    public Account GetByAgencyCode(String agencyCode) throws Exception {
+        String q = String.format(query, columns, "AccountNumber", agencyCode);
+        q += " OR AgencyCode__c = '" + agencyCode + "'";
+        ZObject[] results = Query(q);
         if(results.length == 0){
             return null;
         }

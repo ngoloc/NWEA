@@ -44,7 +44,7 @@ class LoginController {
 
         def cache = grailsCacheManager.getCache('zuora')
         def repo = new ZuoraRepository(cache)
-        def agencyAccount = repo.AccountR.GetByNumber(params.code)
+        def agencyAccount = repo.AccountR.GetByAgencyCode(params.code)
 
         if (agencyAccount == null) {
             flash.loginmessage = 'Invalid agency code.'

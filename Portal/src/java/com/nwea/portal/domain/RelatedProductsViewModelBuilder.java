@@ -22,9 +22,9 @@ public class RelatedProductsViewModelBuilder {
     private ZuoraRepository zr;
     private String accountId;
 
-    public RelatedProductsViewModelBuilder(Cache c, String accountName) throws Exception {
+    public RelatedProductsViewModelBuilder(Cache c, String zuoraAccountId) throws Exception {
         this.zr = new ZuoraRepository(c);
-        this.accountId = zr.AccountR.GetIdByName(accountName);
+        this.accountId = zuoraAccountId;
     }
 
     public RelatedProductViewModel[] Build() throws Exception {

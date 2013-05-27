@@ -80,8 +80,8 @@ public class Backend {
 
         } else if (type.equalsIgnoreCase("GetLastPdf")) {
             HttpSession session = request.getSession();
-            String email = (String) session.getAttribute("username");
-            String body = invoiceManager.getLastInvoicePdf(email);
+            String accountId = (String) session.getAttribute("accountid");
+            String body = invoiceManager.getLastInvoicePdf(accountId);
             ServletOutputStream pdfOutput = response.getOutputStream();
             if (body == null) {
                 response.setContentType("text/html");

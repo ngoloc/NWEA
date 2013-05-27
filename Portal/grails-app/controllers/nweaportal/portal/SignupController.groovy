@@ -14,7 +14,7 @@ class SignupController {
         def cache = grailsCacheManager.getCache('zuora')
         def repo = new ZuoraRepository(cache)
 
-        def agency = repo.AccountR.GetByNumber(params.code)
+        def agency = repo.AccountR.GetByAgencyCode(params.code)
         if (agency == null) {
             flash.signupmessage = 'Agency ' + params.code + ' not found'
             redirect(action: 'index', controller: 'login', model: params)
@@ -31,7 +31,7 @@ class SignupController {
             return;
         }
 
-        def accountid = repo.AccountR.GetIdByNumber(params.code)
+        def accountid = repo.AccountR.GetIdByAgencyCode(params.code)
 
         def newuser = new User()
         newuser.email = params.email

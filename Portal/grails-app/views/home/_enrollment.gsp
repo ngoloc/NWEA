@@ -30,12 +30,6 @@
                 To update, enter the new student enrollment on the right and click Continue. This will refresh the page and present you with renewal information reflecting the new enrollment number.
             </div>
 
-            <div class="OnlineRenewalNote">
-                Note: Online Renewal does not support lowering enrollment by more than 10%. If you need to update enrollment to lower than <span
-                    data-bind="text: EnrollmentFloor" class="EnrollmentFloorCount"></span> you must contact your Partner Relations Representative for a price quote.
-
-            </div>
-
             <span style="font-weight: bold">Enrollment:</span>
             <input class="UpdateEnrollmentCount" type="text" data-bind="value: CurrentEnrollmentCount"/>
 

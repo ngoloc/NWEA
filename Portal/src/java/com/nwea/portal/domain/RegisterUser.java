@@ -16,7 +16,7 @@ public class RegisterUser {
 
     public String Register(String email, String agencyCode, String name)
             throws Exception {
-        String accountId = zr.AccountR.GetIdByName(agencyCode);
+        String accountId = zr.AccountR.GetIdByAgencyCode(agencyCode);
         return accountId;
     }
 
