@@ -39,11 +39,14 @@ public class Account extends com.zuora.api.object.ZObject implements
     }
 
     public String getEnrollment() {
-        return localEnrollment;
+        System.out.println("get ENROLLMENT: " + this.localEnrollment);
+        return this.localEnrollment;
     }
 
-    public void setLocalEnrollment(String param) {
+    public void setEnrollment(String param) {
+        System.out.println("SET ENROLLMENT: " + param);
         this.localEnrollment = param;
+        this.localEnrollmentTracker = true;
     }
 
 
@@ -3258,6 +3261,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "Id")
@@ -3286,6 +3291,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3318,6 +3325,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3352,6 +3361,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/",
@@ -3383,6 +3394,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3416,6 +3429,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "AutoPay")
@@ -3447,6 +3462,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3480,6 +3497,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "Batch")
@@ -3511,6 +3530,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3544,6 +3565,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "BillCycleDay")
@@ -3576,6 +3599,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "BillToId")
@@ -3605,6 +3630,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3637,6 +3664,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "CreatedById")
@@ -3666,6 +3695,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3699,6 +3730,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "CreditBalance")
@@ -3730,6 +3763,9 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3763,6 +3799,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "Currency")
@@ -3794,6 +3832,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3828,6 +3868,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/",
@@ -3859,6 +3901,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/",
@@ -3887,8 +3931,44 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 }
 
+
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
+
+                if (reader.isStartElement()
+                        && new javax.xml.namespace.QName(
+                        "http://object.api.zuora.com/",
+                        "Enrollment__c").equals(reader.getName())) {
+
+                    nillableValue = reader.getAttributeValue(
+                            "http://www.w3.org/2001/XMLSchema-instance", "nil");
+                    if (!"true".equals(nillableValue)
+                            && !"1".equals(nillableValue)) {
+
+                        java.lang.String content = reader.getElementText();
+
+                        object.setEnrollment(content);
+
+                    } else {
+
+                        reader.getElementText(); // throw away text nodes if
+                        // any.
+                    }
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -3923,6 +4003,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/",
@@ -3956,6 +4038,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/",
@@ -3985,6 +4069,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4017,6 +4103,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4050,6 +4137,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "Notes")
@@ -4082,6 +4171,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "ParentId")
@@ -4111,6 +4202,8 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4144,6 +4237,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "PaymentTerm")
@@ -4176,6 +4271,8 @@ public class Account extends com.zuora.api.object.ZObject implements
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                System.out.println("is enrollment?: " + reader.getName());
+
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/",
@@ -4207,6 +4304,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4237,9 +4335,40 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 }
 
+
+
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: "+ reader.getName());
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://object.api.zuora.com/","Enrollment__c").equals(reader.getName())) {
 
+                    nillableValue = reader.getAttributeValue(
+                            "http://www.w3.org/2001/XMLSchema-instance", "nil");
+                    if (!"true".equals(nillableValue)
+                            && !"1".equals(nillableValue)) {
+
+                        java.lang.String content = reader.getElementText();
+
+                        object.setEnrollment(content);
+
+                    } else {
+
+                        reader.getElementText(); // throw away text nodes if
+                        // any.
+                    }
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "SoldToId")
@@ -4269,7 +4398,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
-
+                System.out.println("is enrollment?: " + reader.getName());
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
                         "http://object.api.zuora.com/", "Status")
@@ -4301,6 +4430,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4334,6 +4464,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4367,6 +4498,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4400,6 +4532,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4433,6 +4566,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4466,6 +4600,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4499,6 +4634,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4531,6 +4667,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4563,6 +4700,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4593,6 +4731,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement()
                         && new javax.xml.namespace.QName(
@@ -4625,6 +4764,7 @@ public class Account extends com.zuora.api.object.ZObject implements
 
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
+                System.out.println("is enrollment?: " + reader.getName());
 
                 if (reader.isStartElement())
                     // A start element we are not expecting indicates a trailing

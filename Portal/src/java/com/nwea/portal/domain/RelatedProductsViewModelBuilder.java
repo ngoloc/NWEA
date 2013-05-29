@@ -30,18 +30,8 @@ public class RelatedProductsViewModelBuilder {
     public RelatedProductViewModel[] Build() throws Exception {
         ArrayList<RelatedProductViewModel> relatedProducts = new ArrayList<RelatedProductViewModel>();
 
-        Subscription[] subs = zr.SubscriptionR.GetSubscriptions(this.accountId);
-        HashSet<String> relatedProductIds = new HashSet<String>();
-        for (Subscription sub : subs) {
 
-            // Get active rate plan
-            RatePlan[] ratePlans = zr.RatePlanR.GetRatePlans(sub.getId().getID());
-
-            for (RatePlan rp : ratePlans) {
-                ProductRatePlan prp = zr.ProductRatePlanR.GetById(rp.getProductRatePlanId().getID());
-                relatedProductIds.add(prp.getProductId().getID());
-            }
-        }
+        HashSet<String> relatedProductIds = GetAllProductIds();
 
         for (String productId : relatedProductIds) {
             Product p = zr.ProductR.GetById(productId);
@@ -50,6 +40,34 @@ public class RelatedProductsViewModelBuilder {
 
         return relatedProducts.toArray(new RelatedProductViewModel[relatedProducts.size()]);
     }
+
+    private HashSet<String> GetAllProductIds() throws Exception {
+        HashSet<String> relatedProductIds = new HashSet<String>();
+        Product[] products = this.zr.ProductR.GetProducts();
+
+        for(Product p: products){
+            relatedProductIds.add(p.getId().getID());
+        }
+        return relatedProductIds;
+    }
+
+    private HashSet<String> GetRelatedProductIds() throws Exception {
+        Subscription[] subs = this.zr.SubscriptionR.GetSubscriptions(this.accountId);
+        HashSet<String> relatedProductIds = new HashSet<String>();
+        for (Subscription sub : subs) {
+
+            // Get active rate plan
+            RatePlan[] ratePlans = this.zr.RatePlanR.GetRatePlans(sub.getId().getID());
+
+            for (RatePlan rp : ratePlans) {
+                ProductRatePlan prp = this.zr.ProductRatePlanR.GetById(rp.getProductRatePlanId().getID());
+                relatedProductIds.add(prp.getProductId().getID());
+            }
+        }
+        return relatedProductIds;
+    }
+
+
 
     private RelatedProductViewModel getModel(Product p) throws Exception {
         RelatedProductViewModel model = new RelatedProductViewModel();

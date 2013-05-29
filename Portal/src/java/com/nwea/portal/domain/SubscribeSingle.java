@@ -34,7 +34,9 @@ public class SubscribeSingle {
             String productId,
             String quantity,
             String type,
-            String ponum) throws Exception {
+            String ponum,
+            String subscribeType,
+            String subscriptionId) throws Exception {
         this.accountId = accountid;
         this.productId = productId;
         this.quantity = new BigDecimal(quantity);
@@ -50,7 +52,7 @@ public class SubscribeSingle {
     }
 
     private void getCashPaymentMethod() throws Exception {
-        PaymentMethod cashPM = zr.PaymentMethodR.GetCachePaymentMethod();
+        PaymentMethod cashPM = zr.PaymentMethodR.GetCashPaymentMethod();
         this.paymentMethodId = cashPM.getId().getID();
         this.isCash = true;
     }
@@ -143,7 +145,7 @@ public class SubscribeSingle {
 
         SubscribeOptions subscribeOptions = new SubscribeOptions();
         subscribeOptions.setGenerateInvoice(true);
-        subscribeOptions.setProcessPayments(true);
+        subscribeOptions.setProcessPayments(!this.isCash);
 
         PreviewOptions previewOptions = new PreviewOptions();
         previewOptions.setEnablePreviewMode(false);
@@ -170,6 +172,12 @@ public class SubscribeSingle {
         if (this.isCash) {
             acc.setAutoPay(false);
         }
+
+        Account pmUpdateAccount = new Account();
+        pmUpdateAccount.setId(acc.getId());
+        pmUpdateAccount.setDefaultPaymentMethodId(defpmid);
+        this.zr.AccountR.Update(pmUpdateAccount);
+
         PaymentMethod pm = zr.PaymentMethodR.GetById(this.paymentMethodId);
 
         subReq.setAccount(acc);
@@ -177,7 +185,7 @@ public class SubscribeSingle {
         subReq.setSubscribeOptions(subscribeOptions);
         subReq.setPreviewOptions(previewOptions);
         subReq.setSubscriptionData(subscriptionData);
-        subReq.setPaymentMethod(pm);
+        //subReq.setPaymentMethod(pm);
 
         SubscribeRequest[] subscribes = new SubscribeRequest[]{subReq};
         Subscribe subc = new Subscribe();

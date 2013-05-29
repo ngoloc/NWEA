@@ -9,9 +9,23 @@ import java.util.Arrays;
 
 public class PaymentMethodRepository extends RepositoryBase {
 
-    private static final String columns = "Id,CreditCardAddress1,CreditCardAddress2,"
-            + "CreditCardCity,CreditCardCountry,CreditCardHolderName,"
-            + "CreditCardPostalCode,CreditCardState,CreditCardType,CreditCardMaskNumber,CreditCardExpirationYear,CreditCardExpirationMonth, Phone, AccountId";
+    private static final String columns =
+            "Id," +
+            "Type," +
+            "Active," +
+            "CreditCardAddress1," +
+            "CreditCardAddress2," +
+            "CreditCardCity," +
+            "CreditCardCountry," +
+            "CreditCardHolderName," +
+            "CreditCardPostalCode," +
+            "CreditCardState," +
+            "CreditCardType," +
+            "CreditCardMaskNumber," +
+            "CreditCardExpirationYear," +
+            "CreditCardExpirationMonth, " +
+            "Phone," +
+            "AccountId";
 
     private static final String query = "SELECT %s FROM PaymentMethod WHERE %s = '%s'";
 
@@ -30,8 +44,8 @@ public class PaymentMethodRepository extends RepositoryBase {
         return (PaymentMethod[]) paymentMethods;
     }
 
-    public PaymentMethod GetCachePaymentMethod() throws Exception {
-        ZObject[] results = Query("SELECT Id FROM PaymentMethod WHERE Type = 'Cash'", true);
+    public PaymentMethod GetCashPaymentMethod() throws Exception {
+        ZObject[] results = Query("SELECT " + columns + " FROM PaymentMethod WHERE Type = 'Cash'", true);
         return (PaymentMethod) results[0];
     }
 }

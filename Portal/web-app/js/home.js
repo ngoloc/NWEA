@@ -38,14 +38,14 @@ function purchase(method) {
 	var productids = [];
 	var quantities = [];
 	var prices = [];
-    var types = [];
-    var subids = [];
+    var typeZ = [];
+    var subidZ = [];
 	$.each(requests, function(i, ele){
 		productids.push(ele.id);
 		quantities.push(ele.quantity);
 		prices.push(ele.price);
-        types.push(ele.type);
-        subids.push(ele.subid);
+        typeZ.push(ele.type);
+        subidZ.push(ele.subid);
 	});
 	
 	showSpinner();
@@ -54,7 +54,10 @@ function purchase(method) {
 		productids : productids.join(','),
 		quantities: quantities.join(','),
 		prices: prices.join(','),
-		ponumber : $('#ponumber').val()
+		ponumber : $('#ponumber').val(),
+        types: typeZ.join(','),
+        subids: subidZ.join(','),
+        enrollment: homevm.EnrollmentViewModel.CurrentEnrollmentCount()
 	}, function(data) {
 		hideSpinner();
 		if(data.error){
@@ -75,7 +78,7 @@ function getPurchaseRequests() {
             quantity : ele.studentcount(),
             price: ele.price.replace('$',''),
             type: ele.RenewUpdate(),
-            subid: ele.license.item.subscriptionId
+            subid: ele.license.item.subscriptionId || 'NULL'
         });
 	});
 
@@ -86,7 +89,7 @@ function getPurchaseRequests() {
              quantity: ele.newQuantity(),
              price: (ele.item.pricePerUnit || ele.price || '').replace('$',''),
              type: 'New',
-             subid: null
+             subid: 'NULL'
          });
         }
     });
@@ -111,6 +114,9 @@ function getHomeSummary() {
         homevm.SubscriptionsViewModel.IsLoading(false);
 
 		homevm.pmurl(data.pmurl);
+
+        homevm.EnrollmentViewModel.CurrentEnrollmentCount(data.enrollmentCount);
+
 		homevm.IsLoading(false);
 	});
 }

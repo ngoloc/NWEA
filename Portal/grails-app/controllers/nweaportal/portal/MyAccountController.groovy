@@ -23,7 +23,7 @@ class MyAccountController {
 
         def accountManager = new AccountManager(cache)
         def accountid = (String)session.getAttribute("accountid")
-        def summary = accountManager.getCompleteDetail(accountid);
+        def summary = accountManager.getCompleteDetail(accountid)
 
         render summary as JSON
     }
@@ -31,7 +31,8 @@ class MyAccountController {
     def GetLatestSubscription() {
         def cache = grailsCacheManager.getCache('zuora')
         def email = authenticationService.sessionUser.login
-        def subs = new SubscriptionManager(cache).getAllSubscription(email);
+        def accountId = (String)session.getAttribute("accountid")
+        def subs = new SubscriptionManager(cache).getAllSubscription(accountId)
 
         render subs as JSON
     }

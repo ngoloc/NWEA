@@ -8,6 +8,16 @@ public class SummaryViewModel {
 
     private String pmurl;
 
+    private String enrollmentCount;
+
+    public String getEnrollmentCount() {
+        return enrollmentCount;
+    }
+
+    public void setEnrollmentCount(String enrollmentCount) {
+        this.enrollmentCount = enrollmentCount;
+    }
+
     public String getPmurl() {
         return pmurl;
     }

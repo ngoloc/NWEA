@@ -3,7 +3,10 @@
 <div class="SectionInstructions">
     Your annual per-student price with NWEA is based in part on the percentage of your overall K-12 enrollment that is licensed. Only MAP and MAP for Primary Grades licenses are used to calculated this price. Would you like to update your K-12 enrollment?
 </div>
-
+<div class="loading" data-bind="visible:IsLoading">
+    <g:message code="spinner.alt" default="Loading&hellip;"/>
+</div>
+<span data-bind="visible: !IsLoading()">
 <div class="Enrollment" data-bind="with: EnrollmentViewModel">
     <div class="ChooseType">
         <div class="RenewOption">
@@ -36,3 +39,4 @@
         </div>
     </div>
 </div>
+</span>

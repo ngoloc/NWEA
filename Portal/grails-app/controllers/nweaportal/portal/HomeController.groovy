@@ -19,9 +19,7 @@ class HomeController {
 
         def email = authenticationService.sessionUser.login
 
-        def user = new User()
-        user.email = email
-        user = User.findAll("FROM User as u WHERE u.email = '" + email + "'").first()
+        def user = User.getByEmail(email)
         def cache = grailsCacheManager.getCache('zuora')
 
         def mng = new SummaryViewModelBuilder(cache)
@@ -51,6 +49,9 @@ class HomeController {
             return
         }
 
+        def updater = new EnrollmentUpdater(zr);
+        updater.Execute(user.zuoraAccountId, params.enrollment);
+
         def m = params.method
         def ponum = params.ponumber
         def productidsstr = params.productids
@@ -62,19 +63,22 @@ class HomeController {
         def productids = productidsstr.split(",")
         def quantities = quantitiesstr.split(",")
         def prices = pricestr.split(",");
-        def types = typestr.split(",")
-        def subids = typestr.split(",")
+        def types = typesstr.split(",")
+        def subids = subidsstr.split(",")
 
         session["lastorder"] = null
 
         if (productids.length > 0) {
             for (int i = 0; i < productids.length; i++) {
-                def pid = productids[i];
-                def q = quantities[i];
+                def pid = productids[i]
+                def q = quantities[i]
                 def ss = new SubscribeSingle(zr)
+                def t = types[i]
+                def subid = subids[i]
+
                 String accountid = session.getAttribute("accountid");
 
-                String error = ss.Subscribe(accountid, pid, q, m, ponum)
+                String error = ss.Subscribe(accountid, pid, q, m, ponum, t, subid)
                 if (error != null && error.length() > 0) {
                     render([error: error] as JSON);
                     return
@@ -103,7 +107,7 @@ class HomeController {
     def addcontact() {
         def email = authenticationService.sessionUser.login
 
-        def findResult = User.findAll("FROM User AS u WHERE u.zuoraAccountName = '" + email + "'")
+        def findResult = User.findAll("FROM User AS u WHERE u.email = '" + email + "'")
         def user = findResult.first()
 
         def adder = new AddContactAndActivate()

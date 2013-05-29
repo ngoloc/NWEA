@@ -5,10 +5,7 @@ import com.nwea.portal.viewmodels.LicenseViewModel;
 import com.nwea.portal.viewmodels.RelatedProductViewModel;
 import com.nwea.portal.viewmodels.SummaryViewModel;
 import com.zuora.api.QueryResult;
-import com.zuora.api.object.Product;
-import com.zuora.api.object.ProductRatePlan;
-import com.zuora.api.object.ProductRatePlanCharge;
-import com.zuora.api.object.ProductRatePlanChargeTier;
+import com.zuora.api.object.*;
 import com.zuora.zilla.controller.SubscriptionManager;
 import com.zuora.zilla.model.AmenderCharge;
 import com.zuora.zilla.model.AmenderPlan;
@@ -26,8 +23,12 @@ import java.util.List;
 public class SummaryViewModelBuilder {
 
     private SubscriptionManager subManager;
+
     private ZuoraRepository zrepo;
+
     private SummaryViewModel model;
+
+    private Account account;
 
     public SummaryViewModelBuilder(Cache cache) throws Exception {
         this.subManager = new SubscriptionManager(cache);
@@ -35,9 +36,16 @@ public class SummaryViewModelBuilder {
         model = new SummaryViewModel();
     }
 
-    public SummaryViewModel GetModel(String accountName) throws Exception {
-        this.getLicenseModels(accountName);
+    public SummaryViewModel GetModel(String accountId) throws Exception {
+        this.account = this.zrepo.AccountR.GetById(accountId);
+        this.getLicenseModels(accountId);
         this.getProducts();
+        if(this.account.getEnrollment() == null){
+            this.model.setEnrollmentCount("0");
+        }
+        else{
+            this.model.setEnrollmentCount(this.account.getEnrollment());
+        }
         return model;
     }
 
@@ -71,9 +79,9 @@ public class SummaryViewModelBuilder {
         model.setRelated(rvml.toArray(new RelatedProductViewModel[rvml.size()]));
     }
 
-    private void getLicenseModels(String accountName) throws Exception {
+    private void getLicenseModels(String accountId) throws Exception {
         List<AmenderSubscription> subs = this.subManager
-                .getAllSubscription(accountName);
+                .getAllSubscription(accountId);
 
         ArrayList<AmenderPlan> plans = new ArrayList<AmenderPlan>();
 

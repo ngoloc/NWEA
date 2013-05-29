@@ -2,40 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/EnrollmentUpdater.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/Backend.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/Backend.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RegisterUser.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RegisterUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/api/RelatedProductsController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/api/RelatedProductsController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/HomeController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/HomeController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/PaymentMethodRepository.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/PaymentMethodRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RelatedProductsViewModelBuilder.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RelatedProductsViewModelBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/RepositoryBase.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/repository/RepositoryBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SubscribeSingle.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SubscribeSingle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/viewmodels/SummaryViewModel.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/viewmodels/SummaryViewModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SummaryViewModelBuilder.java" afterPath="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SummaryViewModelBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/nweaportal/portal/User.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/nweaportal/portal/User.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/zuora/api/object/ZObject.java" afterPath="$PROJECT_DIR$/src/java/com/zuora/api/object/ZObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/home/_enrollment.gsp" afterPath="$PROJECT_DIR$/grails-app/views/home/_enrollment.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/js/home.js" afterPath="$PROJECT_DIR$/web-app/js/home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NWEAPortal.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
-    <file path="/Dummy.txt" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369688367777" ignored="false" />
+    <file path="/Dummy.txt" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369794465789" ignored="false" />
     <file path="/AccountDisabler.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804544791" ignored="false" />
     <file path="/RepositoryBase.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367390017557" ignored="false" />
     <file path="/AccountRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369689263379" ignored="false" />
     <file path="/ContactRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367169341486" ignored="false" />
-    <file path="/PaymentMethodRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367183883395" ignored="false" />
+    <file path="/PaymentMethodRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369802655158" ignored="false" />
     <file path="/ProductRatePlanRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367165109704" ignored="false" />
     <file path="/ProductRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367387686124" ignored="false" />
     <file path="/RatePlanRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367183066762" ignored="false" />
-    <file path="/Account.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804690125" ignored="false" />
+    <file path="/Account.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369728283543" ignored="false" />
     <file path="/SubscriptionManager.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368777985302" ignored="false" />
-    <file path="/fragment.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368722332362" ignored="false" />
+    <file path="/fragment.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369804728583" ignored="false" />
     <file path="/SubscriptionRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367182977389" ignored="false" />
-    <file path="/HomeController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368805035966" ignored="false" />
-    <file path="/a.dummy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369690468175" ignored="false" />
+    <file path="/HomeController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369805401789" ignored="false" />
+    <file path="/a.dummy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369702020798" ignored="false" />
     <file path="/LoginController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369689036405" ignored="false" />
     <file path="/ProductRatePlanChargeRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367135995683" ignored="false" />
     <file path="/ProductRatePlanChargeTierRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367136145368" ignored="false" />
     <file path="/RatePlanChargeRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367183182055" ignored="false" />
     <file path="/RatePlanChargeTierRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367183232397" ignored="false" />
-    <file path="/MyAccountController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804395325" ignored="false" />
+    <file path="/MyAccountController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369803319315" ignored="false" />
     <file path="/PaymentRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367166487164" ignored="false" />
     <file path="/InvoiceRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367167206402" ignored="false" />
     <file path="/ZuoraRepository.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367166805728" ignored="false" />
@@ -50,7 +57,7 @@
     <file path="/AccountActivator.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367182730820" ignored="false" />
     <file path="/IsAccountActive.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367182703552" ignored="false" />
     <file path="/OrderSummary.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367183443026" ignored="false" />
-    <file path="/SubscribeSingle.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368805050366" ignored="false" />
+    <file path="/SubscribeSingle.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369804258569" ignored="false" />
     <file path="/main.css" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368851795272" ignored="false" />
     <file path="/ZuoraCallbackController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367186210946" ignored="false" />
     <file path="/myaccount.css" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367187648725" ignored="false" />
@@ -66,10 +73,10 @@
     <file path="/_dashboard.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368425533888" ignored="false" />
     <file path="/home.css" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368426815410" ignored="false" />
     <file path="/login.css" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368854923796" ignored="false" />
-    <file path="/_enrollment.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367776737150" ignored="false" />
+    <file path="/_enrollment.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369691710806" ignored="false" />
     <file path="/_current.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368425062053" ignored="false" />
     <file path="/EnrollmentViewModel.js" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367220113628" ignored="false" />
-    <file path="/home.js" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367811893974" ignored="false" />
+    <file path="/home.js" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369801260553" ignored="false" />
     <file path="/_resources.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368425163911" ignored="false" />
     <file path="/SubscriptionsViewModel.js" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368425103438" ignored="false" />
     <file path="/admin.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367383488104" ignored="false" />
@@ -78,8 +85,8 @@
     <file path="/_adminnav.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367383665386" ignored="false" />
     <file path="/UrlMappings.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367388625772" ignored="false" />
     <file path="/Product.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367385287200" ignored="false" />
-    <file path="/SummaryViewModelBuilder.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367806724992" ignored="false" />
-    <file path="/RelatedProductsViewModelBuilder.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369690254401" ignored="false" />
+    <file path="/SummaryViewModelBuilder.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369727801555" ignored="false" />
+    <file path="/RelatedProductsViewModelBuilder.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369800369307" ignored="false" />
     <file path="/RelatedProductsController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369690236502" ignored="false" />
     <file path="/homeViewModel.js" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367782343314" ignored="false" />
     <file path="/licenseViewModel.js" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367782301353" ignored="false" />
@@ -91,12 +98,16 @@
     <file path="/LicenseViewModel.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367806524759" ignored="false" />
     <file path="/AmenderPlan.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1367801548319" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/Grails/lib/grails_integration.jar!/org/jetbrains/plugins/grails/lang/gsp/resolve/taglib/tld/grails.tld" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368720219902" ignored="false" />
-    <file path="/User.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368777297287" ignored="false" />
+    <file path="/User.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369691258833" ignored="false" />
     <file path="/BootStrap.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368803688970" ignored="false" />
     <file path="/LoginstatusController.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368804263865" ignored="false" />
     <file path="/_login.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368854585331" ignored="false" />
     <file path="/_forgot.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368854058946" ignored="false" />
     <file path="/_signup.gsp" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1368854779959" ignored="false" />
+    <file path="/SummaryViewModel.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369691307819" ignored="false" />
+    <file path="/EnrollmentUpdater.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369800574396" ignored="false" />
+    <file path="/ZObject.java" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369728576567" ignored="false" />
+    <file path="/Dummy.groovy" changelist="d1c54dbf-bd9f-4508-a2a0-d2043af44d7e" time="1369804940598" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,37 +132,8 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="3412" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="3138" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/ZuoraCallbackController.groovy" line="5" class="nweaportal.portal.ZuoraCallbackController" package="nweaportal.portal">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -167,8 +149,142 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="3435" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="4064" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="1721" class="com.zuora.api.object.Account" package="com.zuora.api.object">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="3991" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="3997" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="4001" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="3148" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" line="3921" class="com.zuora.api.object.Account.Factory" package="com.zuora.api.object">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/java/com/nwea/portal/domain/SubscribeSingle.java" line="194" class="com.nwea.portal.domain.SubscribeSingle" package="com.nwea.portal.domain">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -213,89 +329,7 @@
     <favorites_list name="NWEAPortal" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="AccountRepository.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="25" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InvoiceManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="49" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/adminlogin/index.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="16" selection-start="199" selection-end="199" vertical-scroll-proportion="-1.7346939">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_header.gsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/common/_header.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="78" selection-start="240" selection-end="247" vertical-scroll-proportion="0.16068053">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/HomeController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="32" selection-start="673" selection-end="673" vertical-scroll-proportion="-11.391304">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Backend.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/Backend.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="53" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterUser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/domain/RegisterUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="57" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RelatedProductsViewModelBuilder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/domain/RelatedProductsViewModelBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="39" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RelatedProductsController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/api/RelatedProductsController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="33" selection-start="543" selection-end="543" vertical-scroll-proportion="-14.043478">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -313,22 +347,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/grails-app/views/login/_forgot.gsp" />
-        <option value="$PROJECT_DIR$/web-app/js/login.js" />
-        <option value="$PROJECT_DIR$/grails-app/views/login/_login.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/login/_signup.gsp" />
-        <option value="$PROJECT_DIR$/web-app/css/login.css" />
-        <option value="$PROJECT_DIR$/web-app/css/main.css" />
-        <option value="$PROJECT_DIR$/web-app/css/header.css" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy" />
-        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java" />
-        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RegisterUser.java" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/api/RelatedProductsController.groovy" />
-        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RelatedProductsViewModelBuilder.java" />
-        <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java" />
         <option value="$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/Backend.java" />
+        <option value="$PROJECT_DIR$/grails-app/domain/nweaportal/portal/User.groovy" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/viewmodels/SummaryViewModel.java" />
         <option value="$PROJECT_DIR$/grails-app/views/home/_enrollment.gsp" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/repository/RepositoryBase.java" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SummaryViewModelBuilder.java" />
+        <option value="$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java" />
+        <option value="$PROJECT_DIR$/src/java/com/zuora/api/object/ZObject.java" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/RelatedProductsViewModelBuilder.java" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/EnrollmentUpdater.java" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/repository/PaymentMethodRepository.java" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy" />
+        <option value="$PROJECT_DIR$/src/java/com/nwea/portal/domain/SubscribeSingle.java" />
+        <option value="$PROJECT_DIR$/web-app/js/home.js" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/HomeController.groovy" />
       </list>
     </option>
   </component>
@@ -424,74 +458,6 @@
               <option name="myItemId" value="com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zuora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zuora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NWEAPortal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zuora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fault" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -516,10 +482,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viewmodels" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -578,6 +540,10 @@
               <option name="myItemId" value="portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -640,6 +606,36 @@
               <option name="myItemId" value="nweaportal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NWEAPortal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nweaportal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -651,6 +647,7 @@
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="GoToClass.includeJavaFiles" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -846,32 +843,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18249734" sideWeight="0.18596882" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32739422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32516703" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6707589" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4142539" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36859688" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43357933" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18249734" sideWeight="0.18596882" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6740614" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18249734" sideWeight="0.18596882" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6707589" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22091782" sideWeight="0.6726058" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18249734" sideWeight="0.4454343" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55915177" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -945,114 +942,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/api/object/ZObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="36" selection-start="3102" selection-end="3114" vertical-scroll-proportion="0.0">
+        <state line="110" column="61" selection-start="2759" selection-end="2759" vertical-scroll-proportion="0.19344263">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/util/ZuoraUtility.java">
+    <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/domain/EnrollmentUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0">
+        <state line="21" column="16" selection-start="505" selection-end="505" vertical-scroll-proportion="0.5600739">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/api/object/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="714" column="16" selection-start="17072" selection-end="17072" vertical-scroll-proportion="0.3326923">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java">
+    <entry file="jar://J:/bin/grails/lib/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.4.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/PaymentManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/domain/RegisterUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="57" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/SignupController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="68" selection-start="705" selection-end="705" vertical-scroll-proportion="0.013108614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/domain/RelatedProductsViewModelBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="39" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/api/RelatedProductsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="33" selection-start="543" selection-end="543" vertical-scroll-proportion="-14.043478">
+        <state line="110" column="28" selection-start="6643" selection-end="6643" vertical-scroll-proportion="-9.08">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/repository/AccountRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="25" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
+        <state line="89" column="0" selection-start="3038" selection-end="3038" vertical-scroll-proportion="0.5600739">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/LoginController.groovy">
+    <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/repository/RepositoryBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="91" selection-start="1778" selection-end="1778" vertical-scroll-proportion="0.14044943">
+        <state line="55" column="0" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.33271718">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/dispatcher/Backend.java">
+    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/api/SubscribeRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="53" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.0">
+        <state line="89" column="16" selection-start="2215" selection-end="2215" vertical-scroll-proportion="0.3326923">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/InvoiceManager.java">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/MyAccountController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="49" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
+        <state line="34" column="79" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.35135135">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/adminlogin/index.gsp">
+    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/controller/SubscriptionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="16" selection-start="199" selection-end="199" vertical-scroll-proportion="-1.7346939">
+        <state line="549" column="25" selection-start="22302" selection-end="22302" vertical-scroll-proportion="0.35120147">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/zilla/util/ZApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="114" selection-start="2092" selection-end="2092" vertical-scroll-proportion="0.36414048">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/zuora/api/ZuoraServiceStub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1998" column="0" selection-start="99643" selection-end="99643" vertical-scroll-proportion="0.31977817">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/repository/PaymentMethodRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="1751" selection-end="1751" vertical-scroll-proportion="0.7171904">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="51" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.5027726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/nwea/portal/domain/SubscribeSingle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="16" selection-start="587" selection-end="587" vertical-scroll-proportion="0.04990758">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://J:/bin/grails/lib/org.springframework/spring-webmvc/jars/spring-webmvc-3.1.4.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="19" selection-start="7018" selection-end="7018" vertical-scroll-proportion="0.33200794">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/nweaportal/portal/HomeController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="32" selection-start="673" selection-end="673" vertical-scroll-proportion="-11.391304">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/home/_enrollment.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="1592" selection-end="1592" vertical-scroll-proportion="0.58787876">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/common/_header.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="78" selection-start="240" selection-end="247" vertical-scroll-proportion="0.16068053">
+        <state line="109" column="67" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.5405405">
           <folding />
         </state>
       </provider>

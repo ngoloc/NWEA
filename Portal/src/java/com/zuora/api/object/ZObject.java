@@ -7,6 +7,8 @@
 
 package com.zuora.api.object;
 
+import com.zuora.api.ID;
+
 /**
  * ZObject bean class
  */
@@ -109,6 +111,12 @@ public class ZObject implements org.apache.axis2.databinding.ADBBean {
      */
     public com.zuora.api.ID getId() {
         return localId;
+    }
+
+    public void setIdString(String id){
+         ID idd = new ID();
+        idd.setID(id);
+        this.setId(idd);
     }
 
     /**

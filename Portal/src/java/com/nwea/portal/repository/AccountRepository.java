@@ -13,6 +13,7 @@ public class AccountRepository extends RepositoryBase {
             "AccountNumber, " +
             "AgencyCode__c, " +
             "DisableWebManagement__c, " +
+            "Enrollment__c, " +
             "Status, " +
             "BillToId," +
             "SoldToId," +
