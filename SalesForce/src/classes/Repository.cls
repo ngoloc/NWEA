@@ -27,12 +27,30 @@ public with sharing class Repository {
 	}
 	
 	public List<ZuoraBridge__c> getBridgesByProduct(string productId){
-		List<ZuoraBridge__c> zbs = [SELECT Product__c, Quote_Opp__c, Product_Rate_Plan_Charge__c FROM ZuoraBridge__c WHERE Product__c =: productId];
+		List<ZuoraBridge__c> zbs = [
+			SELECT 
+				Product__c, 
+				Quote_Opp__c, 
+				Product_Rate_Plan_Charge__c 
+			FROM 
+				ZuoraBridge__c 
+			WHERE 
+				Product__c =: productId];
 		return zbs;
 	}
 	
 	public OpportunityLineItem getOpportunityLineItem(string opportunityLineItemId){
-	  	List<OpportunityLineItem> lineItems = [SELECT Id, OpportunityId, PricebookEntryId, Quantity, TotalPrice FROM OpportunityLineItem WHERE Id =:opportunityLineItemId];
+	  	List<OpportunityLineItem> lineItems = [
+	  		SELECT 
+	  			Id, 
+	  			OpportunityId, 
+	  			PricebookEntryId, 
+	  			Quantity, 
+	  			TotalPrice 
+  			FROM 
+  				OpportunityLineItem 
+  			WHERE 
+  				Id =:opportunityLineItemId];
 		if(lineItems.size() == 0){
 			return null;
 		}
@@ -40,12 +58,47 @@ public with sharing class Repository {
 	}
 
 	public Account getAccount(string accountId){
-		List<Account> accounts = [SELECT Id, Name, Agency_Code__c FROM Account WHERE Id = :accountId];
+		List<Account> accounts = [SELECT 
+			Id, 
+			Name, 
+			Agency_Code__c 
+		FROM 
+			Account 
+		WHERE 
+			Id = :accountId];
+			if(accounts.size() == 0){
+				return null;
+			}
 		return accounts[0];
 	}
 	
+	public Contact getContact(string contactId){
+		List<Contact> contacts = [SELECT Id, Name, FirstName, LastName, AccountId FROM Contact WHERE Id =: contactId];
+		if(contacts.size() == 0){
+			return null;
+		}
+		return contacts[0];
+	}
+	
+	public Contact getContactByName(Id accountId, string firstName, string lastName){
+		List<Contact> contacts = [SELECT Id, Name, FirstName, LastName, AccountId FROM Contact WHERE AccountId =: accountId AND FirstName = :firstName AND LastName =: lastName];
+		if(contacts.size() == 0){
+			return null;
+		}
+		return contacts[0];
+	}
+	
 	public Opportunity getOpportunity(Id opportunityId){
-		List<Opportunity> opps = [SELECT Id, Account.Id, Name, Pricebook2Id FROM Opportunity WHERE Id = :opportunityId];
+		List<Opportunity> opps = [SELECT 
+			Id, 
+			Account.Id, 
+			Name, 
+			Pricebook2Id,
+			License_Start_Date__c
+		FROM 
+			Opportunity 
+		WHERE 
+			Id = :opportunityId];
 		System.debug('found ' + opps.size() + ' opportunites');
 		if(opps.size() == 0){
 			return null;
@@ -112,6 +165,9 @@ public with sharing class Repository {
 				zqu__Quote__c 
 			WHERE 
 				Id = :id];
+		if(quotes.size() == 0){
+			return null;
+		}
 		return quotes[0];
 	}
 }

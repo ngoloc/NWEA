@@ -10,18 +10,6 @@ public with sharing class CustomZQQuoteEditController {
 
 	public string accountName {get;set;}
 
-	public string billToContact {get;set;}
-
-	public string billToContactName {get;set;}
-	
-	public string soldToContact {get;set;}
-
-	public string soldToContactName {get;set;}
-
-	public boolean isBillToNull {get;set;}
-	
-	public boolean isSoldtoNull {get;set;}
-
 	public string valueRequiredMessage {get;set;}
 
 	public boolean requireServiceActivation {get;set;}
@@ -32,40 +20,35 @@ public with sharing class CustomZQQuoteEditController {
 
 	private zqu__Quote__c quote;
 
-	public List<SelectOption> contacts {get;set;}
-
 	private Repository repo;
+
+	private string oppId;
 
 	public CustomZQQuoteEditController(ApexPages.Standardcontroller controller){
 		this.repo = new Repository();
 		string id = controller.getId();
 		this.quote = (zqu__Quote__c)controller.getRecord();
-		System.debug('id is ' + quote.Id);
-		System.debug('controller');
 		String eid = ApexPages.currentPage().getParameters().get('eid');
-		System.debug('eid: ' + eid);
-		
+		this.oppId = eid;
+		System.debug('opp id: ' + eid);
+
 		this.quote.zqu__Opportunity__c = eid;
 		this.subTitle = '';
 		this.renderTerms = true;
 		this.pageErrorMessages = new List<string>();		
 		this.accountURL = '';
 		this.accountName = '';
-		this.billToContact = null;
-		this.billToContactName = null;
-		this.isBillToNull = true;
-		this.soldToContact = null;
-		this.soldToContactName = null;
-		this.isSoldtoNull = true;
+
+		Opportunity opp = this.repo.getOpportunity(eid);
+		System.debug('opp: ' + opp);
+		if(opp != null){
+			System.debug('start date: ' + opp.License_Start_Date__c);
+			this.quote.zqu__StartDate__c = opp.License_Start_Date__c;
+		}
+		
 		quote.zqu__InitialTerm__c = 12;
 		quote.zqu__RenewalTerm__c = 12;
 		getOpportunity(eid);
-		List<Contact> cts = [SELECT Id, Name FROM Contact LIMIT 500];
-		this.contacts = new List<SelectOption>();
-		for(Contact c : cts){
-			SelectOption opt = new SelectOption(c.Id, c.Name);
-			this.contacts.Add(opt);
-		}
 	}
 
 	private void getOpportunity(string oppId)
@@ -73,6 +56,13 @@ public with sharing class CustomZQQuoteEditController {
 		Opportunity opp = this.repo.getOpportunity(oppId);
 		Account acc = this.repo.getAccount(opp.AccountId);
 		this.accountName = acc.Name;
+		
+		//set soldto and billto accounts to accounts' Account Payable
+		Contact accountsPayableContact = this.repo.getContactByName((string)acc.Id, 'Accounts', 'Payable');
+		if(accountsPayableContact != null){
+			this.quote.zqu__SoldToContact__c = accountsPayableContact.Id;
+			this.quote.zqu__BillToContact__c = accountsPayableContact.Id;
+		}
 	}
 
 	public pageReference termTypeChanged(){
@@ -95,8 +85,6 @@ public with sharing class CustomZQQuoteEditController {
 
 	public PageReference save(){
 		System.debug('save');
-		this.quote.zqu__SoldToContact__c = soldToContact;
-		this.quote.zqu__BillToContact__c = billToContact;
 		insert this.quote;
 		
 		MigrateLegacyProductsToQuoteAction migrate = new MigrateLegacyProductsToQuoteAction();
@@ -109,8 +97,8 @@ public with sharing class CustomZQQuoteEditController {
 	
 	public PageReference cancel(){
 		System.debug('cancel');
-		Opportunity opportunity;
-        PageReference oppPage = new ApexPages.StandardController(opportunity).view();
+		Opportunity opp = this.repo.getOpportunity(this.oppId);
+        PageReference oppPage = new ApexPages.StandardController(opp).view();
         oppPage.setRedirect(true);
         return oppPage;
 	}

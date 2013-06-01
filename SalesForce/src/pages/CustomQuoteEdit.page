@@ -67,23 +67,8 @@
 								<apex:outputLabel value="Bill To Contact" for="billTo" />
 							</apex:outputPanel>
 							<apex:outputPanel id="billtofield">
-								<apex:actionRegion >
-									<div class="requiredInput">
-										<div class="requiredBlock"></div>
-
-										<apex:selectList value="{!billToContact}" multiselect="false"
-											size="1" required="true">
-											<apex:selectOptions value="{!contacts}" />
-										</apex:selectList>
-										<apex:actionFunction name="changeBillToContact"
-											action="{!changeBillTo}" rerender="billtofield" oncomplete="" />
-										<div>
-											<apex:outputLabel rendered="{!isBillToNull}" escape="false"
-												value="{!valueRequiredMessage}" style="color:#D74C3B;">
-											</apex:outputLabel>
-										</div>
-									</div>
-								</apex:actionRegion>
+								<apex:inputField value="{!zqu__Quote__c.zqu__BillToContact__c}"
+									id="billto" required="true" />
 							</apex:outputPanel>
 						</apex:pageBlockSectionitem>
 
@@ -92,64 +77,36 @@
 								<apex:outputLabel value="Sold To Contact" for="soldTo" />
 							</apex:outputPanel>
 							<apex:outputPanel id="soldtofield">
-								<apex:actionRegion >
-									<div class="requiredInput">
-										<div class="requiredBlock"></div>
-										<apex:selectList value="{!soldToContact}" multiselect="false"
-											size="1" required="true">
-											<apex:selectOptions value="{!contacts}" />
-										</apex:selectList>
-
-
-										<div>
-											<apex:outputLabel rendered="{!isSoldToNull}" escape="false"
-												value="{!valueRequiredMessage}" style="color:#D74C3B;">
-											</apex:outputLabel>
-										</div>
-									</div>
-								</apex:actionRegion>
+								<apex:inputField value="{!zqu__Quote__c.zqu__SoldToContact__c}"
+									id="soldto" required="true" />
 							</apex:outputPanel>
 						</apex:pageBlockSectionItem>
-
-
 					</apex:pageBlockSection>
-
-
-
-
 					<apex:pageBlockSection title="Subscription Terms" columns="2"
 						collapsible="false">
-
 						<apex:inputField value="{!zqu__Quote__c.zqu__StartDate__c}"
 							id="startDate" required="true" />
 						<apex:inputField value="{!zqu__Quote__c.zqu__BillingMethod__c}"
 							id="billingMethod" />
-
 						<apex:inputField value="{!zqu__Quote__c.zqu__Service_Activation_Date__c}"
 							id="servActDate" rendered="{!requireServiceActivation}"
 							required="false" />
 						<apex:inputField value="{!zqu__Quote__c.zqu__Customer_Acceptance_Date__c}"
 							id="custActDate" rendered="{!requireCustomerAcceptance}"
 							required="false" />
-
 						<apex:inputField value="{!zqu__Quote__c.zqu__Subscription_Term_Type__c}"
 							id="subtermtype">
 							<apex:actionSupport event="onchange" action="{!termTypeChanged}" />
 						</apex:inputField>
-
 						<apex:pageBlockSectionItem rendered="{!renderTerms}">
 							<apex:outputLabel value="Initial Term (Months)"
 								rendered="{!renderTerms}" for="initialTerm" />
-
 							<apex:inputField value="{!zqu__Quote__c.zqu__InitialTerm__c}"
 								id="initialTerm" required="true" rendered="{!renderTerms}"
 								onchange="javascript:return makeAbs(this);" />
-
 						</apex:pageBlockSectionItem>
-
 						<apex:inputField value="{!zqu__Quote__c.zqu__PaymentMethod__c}"
 							id="paymentMethod" required="true" />
-
 						<apex:pageBlockSectionItem rendered="{!renderTerms}">
 							<apex:outputLabel rendered="{!renderTerms}"
 								value="Renewal Term (Months)" for="renewalTerm" />
@@ -157,11 +114,6 @@
 								id="renewalTerm" required="true" rendered="{!renderTerms}"
 								onchange="javascript:return makeAbs(this);" />
 						</apex:pageBlockSectionItem>
-
-						<apex:inputField value="{!zqu__Quote__c.zqu__PaymentTerm__c}"
-							id="paymentTerm" required="true" />
-						<apex:inputField value="{!zqu__Quote__c.zqu__AutoRenew__c}"
-							id="autoRenew" />
 
 						<apex:pageBlockSectionItem >
 							<apex:outputPanel >
@@ -190,16 +142,7 @@
                 </script>
 							</apex:outputPanel>
 						</apex:pageBlockSectionItem>
-
-
-
-
 					</apex:pageBlockSection>
-
-
-
-
-
 					<apex:pageBlockSection title="Additional Terms" columns="1"
 						collapsible="false">
 						<apex:pageBlockSectionItem >
@@ -208,12 +151,8 @@
 								id="terms" style="width:500px" />
 						</apex:pageBlockSectionItem>
 					</apex:pageBlockSection>
-
 				</apex:actionRegion>
-
 			</apex:outputPanel>
-
 		</apex:pageBlock>
 	</apex:form>
-
 </apex:page>

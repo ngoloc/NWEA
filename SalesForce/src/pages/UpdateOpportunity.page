@@ -2,15 +2,12 @@
 	extensions="UpdateOpportunityPageExtensions" sidebar="false"
 	action="{!updateopp}">
 	<apex:form >
-		<apex:pageBlock id="pb">
-			<apex:pageBlockButtons location="bottom">
-				<apex:commandButton value="Exit" action="{!exit}" />
-			</apex:pageBlockButtons>
-			<apex:pageBlockSection title="Error" columns="1">
-				<apex:outputPanel id="charge_group_edit_panel">
-					<div style="color: red;">{!error}</div>
-				</apex:outputPanel>
-			</apex:pageBlockSection>
-		</apex:pageBlock>
+		<apex:outputPanel id="ep" rendered="{!iserror}">
+			<div style="color: red;font-size:2em;font-weight:bold;">{!error}</div>
+		</apex:outputPanel>
+		<apex:outputPanel id="sp" rendered="{!issuccess}">
+			<div style="color: green;font-size:2em;font-weight:bold;">Opportunity Updated</div>
+		</apex:outputPanel>
+		<apex:commandButton value="    Exit    " action="{!exit}" />
 	</apex:form>
 </apex:page>
