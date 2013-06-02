@@ -66,16 +66,17 @@ private zqu__Quote__c quote;
             if(zbs.size() == 0){
                 return 'No bridge item found for product rate plan charge ' + prpc.Name;
             }
-            
+            boolean productAdded = false;
             for(ZuoraBridge__c zb : zbs){
                 if(zb.Quote_Opp__c){
                     System.debug('adding product ' + zb);
                     products.Add(zb.Product__c);
                     quoteChargeMap2.put(zb.Product__c, quoteChargeMap.get(prpc.Id));
+                	productAdded = true;
                 }
-                else{
-                    return 'Quote to Opportunity is disabled for bridge ' + zb.Name;
-                }
+            }
+            if(!productAdded && zbs.size() > 0){
+            	return 'All bridges have Quote to Opportunity disabled';
             }
         }
         
