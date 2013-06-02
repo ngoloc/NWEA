@@ -14,19 +14,19 @@ public with sharing virtual class CustomProductSelectorController{
     public Boolean selectNewProductViewMode                 {get; private set;}
     public Boolean initFailed                               {get; private set;}
 
-    public final static Integer PRODUCT_TABLE_PAGE_SIZE = 2;
+    public final static Integer PRODUCT_TABLE_PAGE_SIZE = 10;
     
-    public final static Integer RATEPLAN_TABLE_PAGE_SIZE = 2;
+    public final static Integer RATEPLAN_TABLE_PAGE_SIZE = 8;
    
    public string exitLocation = 'legacyproducts';
    
    private Repository repo;
    
-   	public CustomProductSelectorController theController{
-   		get{
-   			return this;
-   		}
-   	}
+    public CustomProductSelectorController theController{
+        get{
+            return this;
+        }
+    }
    
     public CustomProductSelectorController(ApexPages.StandardController controller) {
         initFailed = true;
@@ -195,10 +195,10 @@ public with sharing virtual class CustomProductSelectorController{
         this.selectedRatePlanShare = new zqu.zComponentDataShare();
     }
     public String[] getProductDisplayFields() {
-        return new String[] {'Id', 'Name', 'zqu__SKU__c', 'zqu__Description__c', 'zqu__ZuoraId__c'};
+        return new String[] {'Name', 'zqu__Description__c'};
     }
     public String[] getRatePlanDisplayFields() {
-        return new String[] {'Id', 'Name', 'zqu__Description__c', 'zqu__ZuoraId__c', 'zqu__EffectiveStartDate__c', 'zqu__EffectiveEndDate__c', 'zqu__ZProduct__c'};
+        return new String[] {'Name', 'zqu__Description__c', 'zqu__EffectiveStartDate__c', 'zqu__EffectiveEndDate__c'};
     }
     public Boolean getIsRenderRatePlan(){
         return this.selectedProductShare.dataObject != null;
