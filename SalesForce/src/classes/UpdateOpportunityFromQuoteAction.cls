@@ -58,10 +58,15 @@ private zqu__Quote__c quote;
         List<Id> products = new List<Id>();
         Map<Id, string> quoteChargeMap2 = new Map<Id, string>();
         for(zqu__ProductRatePlanCharge__c prpc : prpcs){
+ 
+ 			System.debug('getting producs for prpc: ' + prpc.Name);
+        	
             List<ZuoraBridge__c> zbs = [SELECT Product__c, Quote_Opp__c, Name FROM ZuoraBridge__c WHERE Product_Rate_Plan_Charge__c = :prpc.Id];
+            
             if(zbs.size() == 0){
-                return 'No bridge item found for product rate plan charge ' + prpc.Name;
+                System.debug('No bridge item found for product rate plan charge ' + prpc.Name + ' (' + prpc.Id +')');
             }
+            
             boolean productAdded = false;
             for(ZuoraBridge__c zb : zbs){
                 if(zb.Quote_Opp__c){
@@ -97,7 +102,7 @@ private zqu__Quote__c quote;
         update this.opp;
         
         boolean productsadded = false;
-        System.debug('adding products' + products.size());
+        System.debug('adding products ' + products.size());
         
         
         
@@ -117,8 +122,9 @@ private zqu__Quote__c quote;
             System.debug('setting Pricebook2');
             System.debug('current pb: ' + this.opp.Pricebook2Id);
             for(PricebookEntry pbe : pbes){
-                if(this.opp.Pricebook2Id == null){
-                	System.debug('setting pricebook2id');
+            	Pricebook2 pricebooktemp = this.repo.getPricebook(pbe.Pricebook2Id);
+                if(this.opp.Pricebook2Id == null && pricebooktemp.IsActive){
+                	System.debug('setting pricebook2id to ' + pricebooktemp.Name);
                 	this.opp.Pricebook2Id = pbe.Pricebook2Id;
                     update this.opp;
                 }

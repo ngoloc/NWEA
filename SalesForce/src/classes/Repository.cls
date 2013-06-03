@@ -15,10 +15,18 @@ public with sharing class Repository {
 	
 	public PricebookEntry getPricebookEntry(String pricebookEntryId){
 		List<PricebookEntry> pricebookEntry = [SELECT Product2Id, Pricebook2Id, IsActive, UnitPrice FROM PricebookEntry WHERE Id =: pricebookEntryId];
-		if(pricebookEntry.size() == 0){
+		if(pricebookEntry.size() != 1){
 			return null;
 		}
 		return pricebookEntry[0];
+	}
+	
+	public Pricebook2 getPricebook(string pricebook2Id){
+		List<Pricebook2> pricebooks = [SELECT Id, Name, IsActive FROM Pricebook2 WHERE Id = :pricebook2Id];
+		if(pricebooks.size() != 1){
+			return null;
+		}
+		return pricebooks[0]; 
 	}
 	
 	public List<ZuoraBridge__c> getBridgesByPRPC(string productRatePlanChargeId){
