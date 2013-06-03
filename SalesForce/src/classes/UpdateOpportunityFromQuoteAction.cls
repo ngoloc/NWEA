@@ -15,11 +15,7 @@ private zqu__Quote__c quote;
         this.quote = repo.getQuote(quoteId);
         this.opp = repo.getOpportunity(this.quote.zqu__Opportunity__c);
         
-        if(this.opp.Pricebook2Id == null){
-            return 'Select a pricebook first';
-        }
-        
-    System.debug('updating opportunity from quote charges');
+	    System.debug('updating opportunity from quote charges');
         
         List<zqu__Quote__c> quotes = [SELECT Id FROM zqu__Quote__c WHERE zqu__Opportunity__c = :this.opp.Id];
         
@@ -74,6 +70,9 @@ private zqu__Quote__c quote;
                     quoteChargeMap2.put(zb.Product__c, quoteChargeMap.get(prpc.Id));
                 	productAdded = true;
                 }
+                else{
+                	System.debug('skipping ' + zb);
+                }
             }
             if(!productAdded && zbs.size() > 0){
             	return 'All bridges have Quote to Opportunity disabled';
@@ -107,6 +106,8 @@ private zqu__Quote__c quote;
             else{
                 System.debug('found pbes: ' + pbes.size());
             }
+            
+            System.debug('setting Prceibook2Id');
             
             for(PricebookEntry pbe : pbes){
                 if(this.opp.Pricebook2Id == null || this.opp.Pricebook2Id != pbe.Pricebook2Id){
