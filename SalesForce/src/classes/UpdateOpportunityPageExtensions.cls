@@ -38,7 +38,8 @@ public with sharing class UpdateOpportunityPageExtensions {
 	}
 	
 	public PageReference exit(){
-		PageReference pr = new PageReference('/' + this.quoteId);
+		zqu__Quote__c quote = this.repo.getQuote(this.quoteId);
+		PageReference pr = new PageReference('/' + quote.zqu__Opportunity__c);
 		pr.setRedirect(true);
 		return pr;
 	}

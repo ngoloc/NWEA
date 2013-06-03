@@ -92,8 +92,15 @@ private zqu__Quote__c quote;
             System.debug('removing line item ' + oli.Id);
             delete oli;
         }
+        
+        this.opp.Pricebook2Id = null;
+        update this.opp;
+        
         boolean productsadded = false;
         System.debug('adding products' + products.size());
+        
+        
+        
         for(Id p : products){
             System.debug('product: ' + p);
             Product2 product = this.repo.getProduct(p);
@@ -107,11 +114,12 @@ private zqu__Quote__c quote;
                 System.debug('found pbes: ' + pbes.size());
             }
             
-            System.debug('setting Prceibook2Id');
-            
+            System.debug('setting Pricebook2');
+            System.debug('current pb: ' + this.opp.Pricebook2Id);
             for(PricebookEntry pbe : pbes){
-                if(this.opp.Pricebook2Id == null || this.opp.Pricebook2Id != pbe.Pricebook2Id){
-                    this.opp.Pricebook2Id = pbe.Pricebook2Id;
+                if(this.opp.Pricebook2Id == null){
+                	System.debug('setting pricebook2id');
+                	this.opp.Pricebook2Id = pbe.Pricebook2Id;
                     update this.opp;
                 }
             }
@@ -129,8 +137,13 @@ private zqu__Quote__c quote;
                     oli.PricebookEntryId = pbe.Id;
                     oli.OpportunityId = this.opp.Id;
                     oli.Quantity = cqc.zqu__Quantity__c;
-                    oli.UnitPrice = (cqc.zqu__EffectivePrice__c / cqc.zqu__Quantity__c) * (this.quote.zqu__InitialTerm__c / 12);
-                    System.debug('unit price: ' + oli.UnitPrice);
+                    System.debug('quantity: ' + cqc.zqu__Quantity__c);
+                    System.debug('effective price: ' + cqc.zqu__EffectivePrice__c);
+                    System.debug('term: ' + this.quote.zqu__InitialTerm__c);
+                    System.debug('denom: ' + 12);
+                    //oli.TotalPrice = (cqc.zqu__EffectivePrice__c / cqc.zqu__Quantity__c) * (this.quote.zqu__InitialTerm__c / 12);
+                    oli.UnitPrice = cqc.zqu__EffectivePrice__c;
+                    System.debug('total price: ' + oli.TotalPrice);
                     insert oli;
                     System.debug('oli id: ' + oli.Id);
                     productsadded = true;
