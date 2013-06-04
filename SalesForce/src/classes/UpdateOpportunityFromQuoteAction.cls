@@ -42,7 +42,7 @@ private zqu__Quote__c quote;
         List<zqu__ProductRatePlanCharge__c> prpcs = new List<zqu__ProductRatePlanCharge__c>();
         Map<Id, string> quoteChargeMap = new Map<Id, string>();
         for(zqu__QuoteCharge__c quoteCharge: quoteCharges){
-            zqu__ProductRatePlanCharge__c prpc = [SELECT Id, Name FROM zqu__ProductRatePlanCharge__c WHERE Id =:quoteCharge.zqu__ProductRatePlanCharge__c];
+            zqu__ProductRatePlanCharge__c prpc = [SELECT Id, Name,zqu__ProductRatePlan__c FROM zqu__ProductRatePlanCharge__c WHERE Id =:quoteCharge.zqu__ProductRatePlanCharge__c];
             System.debug('using product rate plan charge ' + prpc.Id);
             prpcs.Add(prpc);
             System.debug('product rate plan charge has price of ' + quoteCharge.zqu__EffectivePrice__c);
@@ -59,7 +59,7 @@ private zqu__Quote__c quote;
         Map<Id, string> quoteChargeMap2 = new Map<Id, string>();
         for(zqu__ProductRatePlanCharge__c prpc : prpcs){
  
- 			System.debug('getting producs for prpc: ' + prpc.Name);
+ 			System.debug('getting bridges for prpc: ' + prpc.Name + ' (' + prpc.Id + ')');
         	
             List<ZuoraBridge__c> zbs = [SELECT Product__c, Quote_Opp__c, Name FROM ZuoraBridge__c WHERE Product_Rate_Plan_Charge__c = :prpc.Id];
             
@@ -87,7 +87,8 @@ private zqu__Quote__c quote;
         if(products.size() == 0){
             String names = '';
             for(zqu__ProductRatePlanCharge__c prpc : prpcs){
-                names = names + ' ' + prpc.Name;
+                zqu__ProductRatePlan__c prp = this.repo.getProductRatePlan(prpc.zqu__ProductRatePlan__c);
+                names = names + ' ' + prpc.Name + '(' + prp.Name + ')';
             }
             return 'No products found in bridge that match product rate plan charge ' + names;
         }

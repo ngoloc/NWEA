@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity"
+	extensions="NewQuoteBootstrapController" 
+	sidebar="true"
+	showHeader="true" 
+	action="{!onload}">
+	<h1>Redirecting...</h1>
+</apex:page>
