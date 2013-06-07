@@ -12,6 +12,38 @@ public with sharing class ZuoraRepository {
 		isLoggedIn = false;
 		this.api = api;
 	}
+
+	public List<Zuora.zObject> getSubscriptionsForAccount(string accountId)
+	{
+		checkLogin();
+		string zoql = 'SELECT Id, Name, Status, ContractEffectiveDate FROM Subscription WHERE AccountId = \'' + accountId + '\'';
+		return this.api.zquery(zoql);
+	}
+
+	public Zuora.zObject getSubscription(string subscriptionId)
+	{
+		checkLogin();
+		string zoql = 'SELECT Id, Name FROM Subscription WHERE Id = \'' + subscriptionId + '\'';
+		List<Zuora.zObject> objs = this.api.zquery(zoql);
+		return checkReturnSingle(objs);
+	}
+	
+	public Zuora.zObject getAccount(string accountId)
+	{
+		checkLogin();
+		string zoql = 'SELECT Id, Name, AccountNumber, BillToId, SoldToId FROM Account WHERE Id = \'' + accountId + '\'';
+		List<Zuora.zObject> objs = this.api.zquery(zoql);
+		return checkReturnSingle(objs);
+	}
+	
+	public Zuora.zObject getContact(string contactId)
+	{
+		checkLogin();
+		string zoql = 'SELECT Id, FirstName, LastName FROM Contact WHERE Id = \'' + contactId + '\'';
+		List<Zuora.zObject> objs = this.api.zquery(zoql);
+		return checkReturnSingle(objs);
+	}
+	
 	public Zuora.zObject getAccountByNumber(string accountNumber)
 	{
 		checkLogin();

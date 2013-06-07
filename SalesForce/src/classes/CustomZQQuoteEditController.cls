@@ -49,6 +49,11 @@ public with sharing class CustomZQQuoteEditController {
 		quote.zqu__InitialTerm__c = 12;
 		quote.zqu__RenewalTerm__c = 12;
 		getOpportunity(eid);
+		
+		string accid = ApexPages.currentPage().getParameters().get('accid');
+		if(accid != null){
+			this.quote.zqu__ZuoraAccountId__c = accid;
+		}
 	}
 
 	private void getOpportunity(string oppId)

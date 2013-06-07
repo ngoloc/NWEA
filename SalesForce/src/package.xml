@@ -18,6 +18,8 @@
         <members>CustomZQQuoteEditController</members>
         <members>GetLegacyProductsForQuoteAction</members>
         <members>GetLegacyProductsForQuoteActionTests</members>
+        <members>GetSubscriptionForSFAccount</members>
+        <members>GetZAccountsForSFAccountAction</members>
         <members>IZAPI</members>
         <members>MigrateLegacyProductToQuoteAction</members>
         <members>MigrateLegacyProductToQuoteActionTests</members>
@@ -25,7 +27,6 @@
         <members>MigrateLegacyProductsToQuoteActionTests</members>
         <members>MockZAPI</members>
         <members>NewQuoteBootstrapController</members>
-        <members>NewQuoteBootstrapControllerTests</members>
         <members>PageControllerBase</members>
         <members>PageControllerBaseTests</members>
         <members>Repository</members>

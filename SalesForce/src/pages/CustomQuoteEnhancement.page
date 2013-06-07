@@ -12,28 +12,32 @@
 		<apex:pageBlock >
 			<apex:pageBlockSection columns="1" id="accountsection">
 				<apex:outputPanel id="pageerrors">
-					<apex:dataList var="error" value="{!pageErrorMessages}"
+					<apex:dataList var="error" 
+						value="{!pageErrorMessages}"
 						rendered="{!pageErrorMessages.size > 0}">
 						<apex:outputText value="{!error}"
 							style="color:red;font-weight :bold" />
 					</apex:dataList>
 				</apex:outputPanel>
 				<apex:outputLabel value="There is one or more Z-Billing Account corresponding to this Salesforce Account."></apex:outputLabel>
-				<apex:outputLabel value="Please select the account to use:"
-					style="font-weight:bold"></apex:outputLabel>
+				<apex:outputLabel value="Please select the account to use:" style="font-weight:bold"></apex:outputLabel>
 				<apex:actionRegion >
 					<apex:selectRadio layout="pageDirection" id="accTypeRadio"
 						value="{!selectedAccountType}">
-						<apex:actionSupport event="onchange" status="onLoadingStatus"
+						<apex:actionSupport event="onchange" 
+							status="onLoadingStatus"
 							action="{!onSelectAccountType}"
 							reRender="accListRadio,subscriptionSection" />
 						<apex:selectOption itemEscaped="false"
-							itemlabel="{!newAccItemLabel}" itemValue="new"
+							itemlabel="{!newAccItemLabel}" 
+							itemValue="new"
 							id="new_billingaccount" />
 						<apex:selectOption itemEscaped="false"
-							itemLabel="{!existingAccItemLabel}" itemValue="existing"
+							itemLabel="{!existingAccItemLabel}" 
+							itemValue="existing"
 							itemDisabled="{!billingAccountOptions.size == 0}"
-							id="existing_billingaccount"></apex:selectOption>
+							id="existing_billingaccount">
+							</apex:selectOption>
 					</apex:selectRadio>
 				</apex:actionRegion>
 				<apex:outputPanel id="accListRadio">
@@ -50,11 +54,11 @@
 					</apex:actionRegion>
 				</apex:outputPanel>
 			</apex:pageBlockSection>
-
 			<apex:pageBlockSection columns="1" id="subscriptionSection">
 				<apex:outputLabel value="Create quote for:" style="font-weight:bold"></apex:outputLabel>
 				<apex:actionRegion >
-					<apex:selectRadio layout="pageDirection" id="subTypeRadio"
+					<apex:selectRadio layout="pageDirection" 
+						id="subTypeRadio"
 						value="{!selectedSubscriptionType}">
 						<apex:actionSupport event="onchange" 
 							status="onLoadingStatus"
