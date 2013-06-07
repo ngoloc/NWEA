@@ -6,7 +6,7 @@ public with sharing class Repository {
 	}
 	
 	public Product2 getProduct(String productId){
-		List<Product2> products = [SELECT Id, Name FROM PRODUCT2 WHERE Id =: productId];
+		List<Product2> products = [SELECT Id, Name, Component_1__c, Component_2__c FROM PRODUCT2 WHERE Id =: productId];
 		if(products.size() == 0){
 			return null;
 		}
@@ -30,7 +30,7 @@ public with sharing class Repository {
 	}
 	
 	public List<ZuoraBridge__c> getBridgesByPRPC(string productRatePlanChargeId){
-		List<ZuoraBridge__c> zbs = [SELECT Product__c, Quote_Opp__c, Product_Rate_Plan_Charge__c FROM ZuoraBridge__c WHERE Product_Rate_Plan_Charge__c = :productRatePlanChargeId];
+		List<ZuoraBridge__c> zbs = [SELECT Id, Name, Product__c, Quote_Opp__c, Product_Rate_Plan_Charge__c FROM ZuoraBridge__c WHERE Product_Rate_Plan_Charge__c = :productRatePlanChargeId];
 		return zbs;
 	}
 	
@@ -102,13 +102,16 @@ public with sharing class Repository {
 			Account.Id, 
 			Name, 
 			Pricebook2Id,
-			License_Start_Date__c
+			License_Start_Date__c,
+			Amount
 		FROM 
 			Opportunity 
 		WHERE 
 			Id = :opportunityId];
+		
 		System.debug('found ' + opps.size() + ' opportunites');
-		if(opps.size() == 0){
+		
+		if(opps.size() != 1){
 			return null;
 		}
 		return opps[0];
@@ -116,7 +119,18 @@ public with sharing class Repository {
 	
 	public zqu__QuoteCharge__c getQuoteCharge(Id id)
 	{
-		List<zqu__QuoteCharge__c> quoteCharges = [SELECT Id, Perpetual__c, zqu__Quantity__c, zqu__EffectivePrice__c, zqu__ProductRatePlanCharge__c  FROM zqu__QuoteCharge__c WHERE Id = :id];
+		List<zqu__QuoteCharge__c> quoteCharges = [
+			SELECT 
+				Id, 
+				Perpetual__c, 
+				zqu__Quantity__c, 
+				zqu__EffectivePrice__c, 
+				zqu__ProductRatePlanCharge__c,
+				zqu__Total__c  
+			FROM 
+				zqu__QuoteCharge__c 
+			WHERE 
+				Id = :id];
 		System.debug('found ' + quoteCharges.size() + ' quote charges.');
 		if(quoteCharges.size() == 0){
 			return null;
@@ -124,9 +138,36 @@ public with sharing class Repository {
 		return quoteCharges[0];
 	}
 	
+	public List<zqu__QuoteCharge__c> getQuoteChargesByQuote(string quoteId)
+	{
+		List<zqu__QuoteCharge__c> quoteCharges = [
+			SELECT 
+				Id, 
+				Perpetual__c, 
+				zqu__Quantity__c, 
+				zqu__EffectivePrice__c, 
+				zqu__ProductRatePlanCharge__c,
+				zqu__Total__c  
+			FROM 
+				zqu__QuoteCharge__c 
+			WHERE 
+				zqu__Quote__c = :quoteId];
+		System.debug('found ' + quoteCharges.size() + ' quote charges.');
+		return quoteCharges;
+	}
+	
 	public zqu__ProductRatePlanCharge__c getProductRatePlanCharge(String productRatePlanChargeId){
-		List<zqu__ProductRatePlanCharge__c> prpcs = [SELECT Id, Name, zqu__ProductRatePlan__c FROM zqu__ProductRatePlanCharge__c WHERE Id =: productRatePlanChargeId];
+		List<zqu__ProductRatePlanCharge__c> prpcs = [
+			SELECT Id, Name, zqu__ProductRatePlan__c FROM zqu__ProductRatePlanCharge__c WHERE Id =: productRatePlanChargeId];
 		if(prpcs.size() == 0){
+			return null;
+		}
+		return prpcs[0];
+	}
+	
+	public zqu__ProductRatePlanCharge__c getProductRatePlanChargeByZuoraId(String productRatePlanChargeZuoraId){
+		List<zqu__ProductRatePlanCharge__c> prpcs = [SELECT Id, Name, zqu__ProductRatePlan__c FROM zqu__ProductRatePlanCharge__c WHERE zqu__ZuoraId__c =: productRatePlanChargeZuoraId];
+		if(prpcs.size() != 1){
 			return null;
 		}
 		return prpcs[0];
@@ -173,9 +214,17 @@ public with sharing class Repository {
 				zqu__Quote__c 
 			WHERE 
 				Id = :id];
-		if(quotes.size() == 0){
+		if(quotes.size() != 1){
 			return null;
 		}
 		return quotes[0];
+	}
+	
+	public Zuora__SubscriptionProductCharge__c getSubscriptionProductCharge(Id subscriptionProductChargeId){
+		List<Zuora__SubscriptionProductCharge__c> spcs = [SELECT Id, Name,Zuora__Zuora_Id__c FROM Zuora__SubscriptionProductCharge__c WHERE Id =: subscriptionProductChargeId];
+		if(spcs.size() != 1){
+			return null;
+		}
+		return spcs[0];
 	}
 }

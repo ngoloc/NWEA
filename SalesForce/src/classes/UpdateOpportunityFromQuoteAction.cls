@@ -8,7 +8,6 @@ private zqu__Quote__c quote;
 
     public UpdateOpportunityFromQuoteAction(){
         this.repo =  new Repository();
-
     }
     
     public string Execute(string quoteId){
@@ -24,13 +23,17 @@ private zqu__Quote__c quote;
         }
         
         List<zqu__QuoteCharge__c> quoteCharges = new List<zqu__QuoteCharge__c>();
-        for(zqu__Quote__c quote: quotes){
-            System.debug('getting quote charges for quote ' + quote.Id);
-            List<zqu__QuoteCharge__c> qcs = [SELECT Id, zqu__ProductRatePlanCharge__c, zqu__Quantity__c, zqu__EffectivePrice__c FROM zqu__QuoteCharge__c WHERE zqu__Quote__c=:quote.Id];
-            for(zqu__QuoteCharge__c qcs1 : qcs){
-                System.debug('using quote charge ' + qcs1.Id);
-                quoteCharges.Add(qcs1);
-            }
+        System.debug('getting quote charges for quote ' + this.quote.Id);
+        List<zqu__QuoteCharge__c> qcs = [SELECT Id, zqu__ProductRatePlanCharge__c, zqu__Quantity__c, zqu__EffectivePrice__c FROM zqu__QuoteCharge__c WHERE zqu__Quote__c=:this.quote.Id];
+        for(zqu__QuoteCharge__c qcs1 : qcs){
+        	zqu__ProductRatePlanCharge__c prpc = this.repo.getProductRatePlanCharge(qcs1.zqu__ProductRatePlanCharge__c);
+        	if(prpc.Name != 'Customer Care'){
+	        	System.debug('using quote charge ' + qcs1.Id);
+	            quoteCharges.Add(qcs1);
+        	}
+        	else{
+        		System.debug('skipping ' + prpc.Name);
+        	}
         }
         
         if(quoteCharges.size() == 0){
@@ -70,7 +73,8 @@ private zqu__Quote__c quote;
             boolean productAdded = false;
             for(ZuoraBridge__c zb : zbs){
                 if(zb.Quote_Opp__c){
-                    System.debug('adding product ' + zb);
+                    Product2 productAdding = this.repo.getProduct(zb.Product__c);
+                    System.debug('adding product ' + productAdding.Name);
                     products.Add(zb.Product__c);
                     quoteChargeMap2.put(zb.Product__c, quoteChargeMap.get(prpc.Id));
                 	productAdded = true;
@@ -161,8 +165,11 @@ private zqu__Quote__c quote;
             PricebookEntry pbe = new PricebookEntry();  
         }
         if(!productsadded){
-                return 'Product rate plan charges did not match any products in the selected price book.';
-            }
+            return 'Product rate plan charges did not match any products in the selected price book.';
+        }
+        
+        SetOpportunityNetAmountAction setnet = new SetOpportunityNetAmountAction(quoteId);
+        setnet.Execute();
         
         return null;
     }

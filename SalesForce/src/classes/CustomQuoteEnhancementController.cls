@@ -26,7 +26,7 @@ public with sharing class CustomQuoteEnhancementController {
 
 	public string renewSubItemLabel {get;set;}
 	
-	public string selectedSusbcriptionOption {get;set;}
+	public SubscriptionOption selectedSusbcriptionOption {get;set;}
 
 	public string selectedAmendmentType {get;set;}
 

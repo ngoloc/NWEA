@@ -4,25 +4,47 @@
         <members>ACHController</members>
         <members>ACHControllerTests</members>
         <members>AddLegacyProductController</members>
+        <members>AddLegacyProductsControllerTests</members>
         <members>CustomNewQuoteBootstrapController</members>
+        <members>CustomNewQuoteBootstrapControllerTests</members>
         <members>CustomProductSelectorController</members>
+        <members>CustomProductSelectorControllerTests</members>
         <members>CustomQuoteEditController</members>
         <members>CustomQuoteEditControllerTests</members>
         <members>CustomQuoteEnhancementController</members>
         <members>CustomQuoteEnhancementControllerTests</members>
         <members>CustomSendToZBillingController</members>
+        <members>CustomSendToZBillingControllerTests</members>
         <members>CustomZQQuoteEditController</members>
         <members>GetLegacyProductsForQuoteAction</members>
+        <members>GetLegacyProductsForQuoteActionTests</members>
+        <members>IZAPI</members>
         <members>MigrateLegacyProductToQuoteAction</members>
+        <members>MigrateLegacyProductToQuoteActionTests</members>
         <members>MigrateLegacyProductsToQuoteAction</members>
+        <members>MigrateLegacyProductsToQuoteActionTests</members>
+        <members>MockZAPI</members>
         <members>NewQuoteBootstrapController</members>
         <members>NewQuoteBootstrapControllerTests</members>
         <members>PageControllerBase</members>
+        <members>PageControllerBaseTests</members>
         <members>Repository</members>
         <members>RepositoryTests</members>
         <members>SampleChargeSectionController</members>
+        <members>SampleChargeSectionControllerTests</members>
+        <members>SetComponentsAction</members>
+        <members>SetComponentsActionTests</members>
+        <members>SetOpportunityNetAmountAction</members>
+        <members>SetOpportunityNetAmountActionTests</members>
+        <members>SubscriptionOption</members>
+        <members>SubscriptionOptionTests</members>
+        <members>SubscriptionProductChargeInsertTgrTests</members>
+        <members>SubscriptionProductChargeTriggerMutex</members>
         <members>UpdateOpportunityFromQuoteAction</members>
+        <members>UpdateOpportunityFromQuoteActionTests</members>
         <members>UpdateOpportunityPageExtensions</members>
+        <members>UpdateOpportunityPageExtensionsTests</members>
+        <members>ZAPIAdapter</members>
         <members>ZuoraRepository</members>
         <members>ZuoraRepositoryTests</members>
         <name>ApexClass</name>
@@ -42,6 +64,10 @@
         <members>UpdateOpportunity</members>
         <members>UpdateOpportunityPage</members>
         <name>ApexPage</name>
+    </types>
+    <types>
+        <members>SubscriptionProductChargeInsertTrigger</members>
+        <name>ApexTrigger</name>
     </types>
     <version>27.0</version>
 </Package>

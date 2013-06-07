@@ -601,6 +601,7 @@ public with sharing class CustomSendToZBillingController {
                 Zuora.zObject acc = new Zuora.zObject('Account');
                 if(this.quote.zqu__ZuoraAccountID__c == null)
                 {
+                    System.debug('creating new account with agency code: ' + AgencyCode);
                     acc.setValue('Name', accountName);
                     acc.setValue('Currency',curr);
                     acc.setValue('BillCycleDay', billCycleDay);
@@ -613,6 +614,7 @@ public with sharing class CustomSendToZBillingController {
                 }
                 else
                 {
+					System.debug('using existing account: ' + existingAccountId);
                     acc.setValue('Id', existingAccountId);
                 }
                 System.debug('setting billto');

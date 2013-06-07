@@ -1,14 +1,17 @@
 public with sharing class ZuoraRepository {
 
- 	private Zuora.zApi api;
+ 	private IZAPI api;
     
 	private boolean isLoggedIn;
 
 	public ZuoraRepository(){
-		isLoggedIn = false;
-		api = new Zuora.zApi();
+		this(new ZAPIAdapter());
 	}
-	
+
+	public ZuoraRepository(IZAPI api){
+		isLoggedIn = false;
+		this.api = api;
+	}
 	public Zuora.zObject getAccountByNumber(string accountNumber)
 	{
 		checkLogin();
@@ -17,6 +20,12 @@ public with sharing class ZuoraRepository {
 		return checkReturnSingle(objs);
 	}
 	
+	public Zuora.zObject getRatePlanCharge(string ratePlanChargeId){
+		checkLogin();
+		string zoql = 'SELECT Id, Name,ProductRatePlanChargeId FROM RatePlanCharge WHERE Id = \'' + ratePlanChargeId + '\'';
+		List<Zuora.zObject> objs = this.api.zquery(zoql);
+		return checkReturnSingle(objs);		
+	}
 	
 	public List<Zuora.zObject> getPaymentMethodsByAccountId(string accountId)
 	{

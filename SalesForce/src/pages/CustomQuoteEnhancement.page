@@ -1,5 +1,4 @@
-<apex:page 
-	showHeader="true" 
+<apex:page showHeader="true" 
 	sidebar="true"
 	standardController="Opportunity"
 	extensions="CustomQuoteEnhancementController" 
@@ -57,18 +56,15 @@
 				<apex:actionRegion >
 					<apex:selectRadio layout="pageDirection" id="subTypeRadio"
 						value="{!selectedSubscriptionType}">
-						<apex:actionSupport 
-							event="onchange" 
+						<apex:actionSupport event="onchange" 
 							status="onLoadingStatus"
 							action="{!onSelectSubscriptionType}"
 							reRender="existingSubscriptionOptions" />
-						<apex:selectOption 
-							itemEscaped="false"
+						<apex:selectOption itemEscaped="false"
 							itemLabel="{!newSubItemLabel}" 
 							itemValue="new">
 						</apex:selectOption>
-						<apex:selectOption 
-							itemEscaped="false"
+						<apex:selectOption itemEscaped="false"
 							itemLabel="{!existingSubItemLabel}" 
 							itemValue="existing"
 							itemDisabled="{!subscriptionOptions.size == 0}"
@@ -77,8 +73,7 @@
 				</apex:actionRegion>
 				<apex:outputPanel id="existingSubscriptionOptions">
 					<apex:actionRegion >
-						<apex:selectList 
-							value="{!selectedSubscriptionId}"
+						<apex:selectList value="{!selectedSubscriptionId}"
 							style="position:relative;left:3%;background:#fbfbd7" 
 							size="1"
 							rendered="{!selectedSubscriptionType == 'existing' && subscriptionOptions.size > 0}">
