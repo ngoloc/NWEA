@@ -126,7 +126,9 @@ public with sharing class Repository {
 				zqu__Quantity__c, 
 				zqu__EffectivePrice__c, 
 				zqu__ProductRatePlanCharge__c,
-				zqu__Total__c  
+				zqu__Total__c,
+				zqu__ProductName__c,
+				zqu__Model__c
 			FROM 
 				zqu__QuoteCharge__c 
 			WHERE 

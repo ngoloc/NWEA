@@ -147,7 +147,9 @@ private zqu__Quote__c quote;
                     OpportunityLineItem oli = new OpportunityLineItem();
                     oli.PricebookEntryId = pbe.Id;
                     oli.OpportunityId = this.opp.Id;
-                    oli.Quantity = cqc.zqu__Quantity__c;
+                    oli.Quantity = 1;
+                    //NWEA-144
+                    oli.Description = cqc.zqu__ProductName__c + ' ' + ' quantity: ' + cqc.zqu__Quantity__c + ' model: ' + cqc.zqu__Model__c; 
                     System.debug('quantity: ' + cqc.zqu__Quantity__c);
                     System.debug('effective price: ' + cqc.zqu__EffectivePrice__c);
                     System.debug('term: ' + this.quote.zqu__InitialTerm__c);
