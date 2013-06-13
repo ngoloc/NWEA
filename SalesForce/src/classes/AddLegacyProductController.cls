@@ -31,13 +31,20 @@ public with sharing class AddLegacyProductController {
     
     public PageReference checkleavenow()
     {
-    	if(this.leavenow)
+    	//disable legacy product
+    	if(this.leavenow || true)
     	{
     		PageReference r = new PageReference('/' + this.quote.Id);
     		r.setredirect(true);
     		return r;
     	}
     	return null;
+    }
+    
+    public PageReference cancel(){
+		PageReference r = new PageReference('/' + this.quote.Id);
+		r.setredirect(true);
+		return r;
     }
     
     public AddLegacyProductController(ApexPages.StandardController controller) {

@@ -27,13 +27,8 @@ private zqu__Quote__c quote;
         List<zqu__QuoteCharge__c> qcs = [SELECT Id, zqu__ProductRatePlanCharge__c, zqu__Quantity__c, zqu__EffectivePrice__c FROM zqu__QuoteCharge__c WHERE zqu__Quote__c=:this.quote.Id];
         for(zqu__QuoteCharge__c qcs1 : qcs){
         	zqu__ProductRatePlanCharge__c prpc = this.repo.getProductRatePlanCharge(qcs1.zqu__ProductRatePlanCharge__c);
-        	if(prpc.Name != 'Customer Care'){
-	        	System.debug('using quote charge ' + qcs1.Id);
-	            quoteCharges.Add(qcs1);
-        	}
-        	else{
-        		System.debug('skipping ' + prpc.Name);
-        	}
+        	System.debug('using quote charge ' + qcs1.Id);
+            quoteCharges.Add(qcs1);
         }
         
         if(quoteCharges.size() == 0){
@@ -147,15 +142,15 @@ private zqu__Quote__c quote;
                     OpportunityLineItem oli = new OpportunityLineItem();
                     oli.PricebookEntryId = pbe.Id;
                     oli.OpportunityId = this.opp.Id;
-                    oli.Quantity = 1;
+                    
                     //NWEA-144
                     oli.Description = cqc.zqu__ProductName__c + ' ' + ' quantity: ' + cqc.zqu__Quantity__c + ' model: ' + cqc.zqu__Model__c; 
                     System.debug('quantity: ' + cqc.zqu__Quantity__c);
                     System.debug('effective price: ' + cqc.zqu__EffectivePrice__c);
                     System.debug('term: ' + this.quote.zqu__InitialTerm__c);
                     System.debug('denom: ' + 12);
-                    //oli.TotalPrice = (cqc.zqu__EffectivePrice__c / cqc.zqu__Quantity__c) * (this.quote.zqu__InitialTerm__c / 12);
-                    oli.UnitPrice = cqc.zqu__EffectivePrice__c;
+                    oli.Quantity = cqc.zqu__Quantity__c;
+                    oli.TotalPrice = cqc.zqu__Total__c;
                     System.debug('total price: ' + oli.TotalPrice);
                     insert oli;
                     System.debug('oli id: ' + oli.Id);
@@ -172,6 +167,9 @@ private zqu__Quote__c quote;
         
         SetOpportunityNetAmountAction setnet = new SetOpportunityNetAmountAction(quoteId);
         setnet.Execute();
+        
+        UpdateOpportunityAmountAction setamount = new UpdateOpportunityAmountAction();
+        setamount.Execute(this.opp.Id);
         
         return null;
     }

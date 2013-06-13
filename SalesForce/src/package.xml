@@ -41,6 +41,8 @@
         <members>SubscriptionOptionTests</members>
         <members>SubscriptionProductChargeInsertTgrTests</members>
         <members>SubscriptionProductChargeTriggerMutex</members>
+        <members>UpdateOpportunityAmountAction</members>
+        <members>UpdateOpportunityAmountActionTests</members>
         <members>UpdateOpportunityFromQuoteAction</members>
         <members>UpdateOpportunityFromQuoteActionTests</members>
         <members>UpdateOpportunityPageExtensions</members>

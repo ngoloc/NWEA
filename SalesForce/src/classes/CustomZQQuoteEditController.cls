@@ -54,6 +54,9 @@ public with sharing class CustomZQQuoteEditController {
 		if(accid != null){
 			this.quote.zqu__ZuoraAccountId__c = accid;
 		}
+		this.quote.zqu__Currency__c = 'USD';
+		this.quote.zqu__PaymentMethod__c = 'Check';
+		this.quote.zqu__BillingMethod__c = 'Both';
 	}
 
 	private void getOpportunity(string oppId)

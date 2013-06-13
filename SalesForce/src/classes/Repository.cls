@@ -1,20 +1,20 @@
 public with sharing class Repository {
 
 	public List<OpportunityLineItem> getLineItemsForOpportunity(string opportunityId){
-	  	List<OpportunityLineItem> lineItems = [SELECT Id,PricebookEntryId FROM OpportunityLineItem WHERE OpportunityId =:opportunityId];
+	  	List<OpportunityLineItem> lineItems = [SELECT Id,PricebookEntryId, TotalPrice FROM OpportunityLineItem WHERE OpportunityId =:opportunityId];
 		return lineItems;
 	}
 	
 	public Product2 getProduct(String productId){
-		List<Product2> products = [SELECT Id, Name, Component_1__c, Component_2__c FROM PRODUCT2 WHERE Id =: productId];
-		if(products.size() == 0){
+		List<Product2> products = [SELECT Id, Name, ProductCode, Component_1__c, Component_2__c FROM PRODUCT2 WHERE Id =: productId];
+		if(products.size() != 1){
 			return null;
 		}
 		return products[0];
 	}
 	
 	public PricebookEntry getPricebookEntry(String pricebookEntryId){
-		List<PricebookEntry> pricebookEntry = [SELECT Product2Id, Pricebook2Id, IsActive, UnitPrice FROM PricebookEntry WHERE Id =: pricebookEntryId];
+		List<PricebookEntry> pricebookEntry = [SELECT Product2Id, Pricebook2Id, IsActive, UnitPrice, Name FROM PricebookEntry WHERE Id =: pricebookEntryId];
 		if(pricebookEntry.size() != 1){
 			return null;
 		}
@@ -128,7 +128,8 @@ public with sharing class Repository {
 				zqu__ProductRatePlanCharge__c,
 				zqu__Total__c,
 				zqu__ProductName__c,
-				zqu__Model__c
+				zqu__Model__c,
+				zqu__ListPrice__c
 			FROM 
 				zqu__QuoteCharge__c 
 			WHERE 

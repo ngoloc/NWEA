@@ -1,8 +1,20 @@
-<apex:page standardController="zqu__Quote__c" extensions="AddLegacyProductController"  sidebar="true" showHeader="true" action="{!checkleavenow}">
-	<apex:outputPanel layout="block" style="font-weight:bold;padding: 10px;text-align:center;color:white;background-color:gray;">
-        Add Legacy Product: {!productName}
-    </apex:outputPanel>
+<apex:page standardController="zqu__Quote__c"
+	extensions="AddLegacyProductController" sidebar="true"
+	showHeader="true" action="{!checkleavenow}">
+	<apex:outputPanel layout="block"
+		style="font-weight:bold;padding: 10px;text-align:center;color:white;background-color:gray;">
+		<p>An existing legacy product was found on the opportunity.</p>
+		<p>To add the legacy product select the corresponding product,
+			rate plan, and charge below. Otherwise click cancel.</p>
+		<p>
+			Legacy Product: <b>{!productName}</b>
+		</p>
+	</apex:outputPanel>
 	<apex:form id="quoting_form">
+		<div style="padding: 10px; text-align:center;">
+				<apex:commandButton value="Cancel" action="{!cancel}" style="display:inline-block"/>
+	
+		</div>
 		<apex:pageMessages id="pageErrors" />
 		<apex:pageBlock rendered="{!!initFailed}" id="quoting_page_block">
 			<apex:pageBlockSection title="Selected Products"

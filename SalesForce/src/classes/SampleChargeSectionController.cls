@@ -62,6 +62,7 @@ public with sharing class SampleChargeSectionController{
        	WrapperForCustomField wc = new WrapperForCustomField();
        	wc.wCharge = zc;
        	wc.quoteCharge = new zqu__QuoteCharge__c();
+       	wc.quoteCharge.Perpetual__c = 'Yes';
        	return wc;
        }
        
