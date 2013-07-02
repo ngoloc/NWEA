@@ -10,7 +10,6 @@ public with sharing class UpdateOpportunityAmountAction {
 		Opportunity opp = this.repo.getOpportunity(oppId);
 		
 		decimal amount = 0;
-		System.debug('amount is ' + amount);
 		List<OpportunityLineItem> lineItems = this.repo.getLineItemsForOpportunity(oppId);
 		
 		for(OpportunityLineItem li : lineItems){
