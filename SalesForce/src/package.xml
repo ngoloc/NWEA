@@ -5,6 +5,8 @@
         <members>ACHControllerTests</members>
         <members>AddLegacyProductController</members>
         <members>AddLegacyProductsControllerTests</members>
+        <members>CodeCoveragePadder</members>
+        <members>CodeCoveragePadderTests</members>
         <members>CustomNewQuoteBootstrapController</members>
         <members>CustomNewQuoteBootstrapControllerTests</members>
         <members>CustomProductSelectorController</members>
