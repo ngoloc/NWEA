@@ -7,7 +7,7 @@
     <label>SampleChargeSection</label>
     <packageVersions>
         <majorNumber>5</majorNumber>
-        <minorNumber>80</minorNumber>
+        <minorNumber>91</minorNumber>
         <namespace>zqu</namespace>
     </packageVersions>
 </ApexComponent>

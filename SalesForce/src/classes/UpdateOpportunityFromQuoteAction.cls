@@ -165,9 +165,6 @@ private zqu__Quote__c quote;
             return 'Product rate plan charges did not match any products in the selected price book.';
         }
         
-        SetOpportunityNetAmountAction setnet = new SetOpportunityNetAmountAction(quoteId);
-        setnet.Execute();
-        
         UpdateOpportunityAmountAction setamount = new UpdateOpportunityAmountAction();
         setamount.Execute(this.opp.Id);
         

@@ -23,7 +23,7 @@ public with sharing class UpdateOpportunityAmountAction {
 			}
 		}
 		
-		opp.Custom_Amount__c = amount;
+		opp.Amount = amount;
 		
 		update opp;
 	}
