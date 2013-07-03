@@ -48,6 +48,7 @@ public with sharing class CustomZQQuoteEditController {
 		
 		quote.zqu__InitialTerm__c = 12;
 		quote.zqu__RenewalTerm__c = 12;
+		quote.zqu__ValidUntil__c = Date.today().addDays(90);
 		getOpportunity(eid);
 		
 		string accid = ApexPages.currentPage().getParameters().get('accid');

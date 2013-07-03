@@ -1,23 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>ACHController</members>
+        <members>ACHControllerTests</members>
+        <members>AddLegacyProductController</members>
+        <members>AddLegacyProductsControllerTests</members>
+        <members>CodeCoveragePadder</members>
+        <members>CodeCoveragePadderTests</members>
+        <members>CustomNewQuoteBootstrapController</members>
+        <members>CustomNewQuoteBootstrapControllerTests</members>
+        <members>CustomProductSelectorController</members>
+        <members>CustomProductSelectorControllerTests</members>
+        <members>CustomQuoteEnhancementController</members>
+        <members>CustomQuoteEnhancementControllerTests</members>
+        <members>CustomSendToZBillingController</members>
+        <members>CustomSendToZBillingControllerTests</members>
+        <members>CustomZQQuoteEditController</members>
+        <members>ErrorCodeMapping</members>
+        <members>GetLegacyProductsForQuoteAction</members>
+        <members>GetLegacyProductsForQuoteActionTests</members>
+        <members>GetSubscriptionForSFAccount</members>
+        <members>GetZAccountsForSFAccountAction</members>
+        <members>HPMCallbackController</members>
+        <members>HPMCallbackControllerTest</members>
+        <members>HPMConfigException</members>
+        <members>HPMSampleController</members>
+        <members>HPMSampleControllerTest</members>
+        <members>IZAPI</members>
+        <members>MigrateLegacyProductToQuoteAction</members>
+        <members>MigrateLegacyProductToQuoteActionTests</members>
+        <members>MigrateLegacyProductsToQuoteAction</members>
+        <members>MigrateLegacyProductsToQuoteActionTests</members>
+        <members>MockZAPI</members>
+        <members>NewQuoteBootstrapController</members>
+        <members>PageControllerBase</members>
+        <members>PageControllerBaseTests</members>
+        <members>PrepareCustomQuoteController</members>
+        <members>Repository</members>
+        <members>SampleChargeSectionController</members>
+        <members>SampleChargeSectionControllerTests</members>
+        <members>SetComponentsAction</members>
+        <members>SetComponentsActionTests</members>
+        <members>SubscriptionOption</members>
+        <members>SubscriptionOptionTests</members>
+        <members>SubscriptionProductChargeInsertTgrTests</members>
+        <members>SubscriptionProductChargeTriggerMutex</members>
+        <members>SubsrptnProductChargeInsertTriggerTests</members>
+        <members>UpdateOpportunityAmountAction</members>
+        <members>UpdateOpportunityAmountActionTests</members>
+        <members>UpdateOpportunityFromQuoteAction</members>
+        <members>UpdateOpportunityFromQuoteActionTests</members>
+        <members>UpdateOpportunityPageExtensions</members>
+        <members>UpdateOpportunityPageExtensionsTests</members>
+        <members>ZAPIAdapter</members>
+        <members>ZuoraRepository</members>
+        <members>ZuoraRepositoryTests</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SampleChargeSection</members>
         <name>ApexComponent</name>
     </types>
     <types>
-        <members>*</members>
+        <members>ACH</members>
+        <members>AddLegacyProduct</members>
+        <members>CustomProductSelector</members>
+        <members>CustomQuoteEdit</members>
+        <members>CustomQuoteEnhancement</members>
+        <members>CustomSendToZBilling</members>
+        <members>HPMCallBack</members>
+        <members>HPMConfirm</members>
+        <members>HPMSample</members>
+        <members>NewCustomQuote</members>
+        <members>NewQuoteBootstrap</members>
+        <members>UpdateOpportunity</members>
+        <members>UpdateOpportunityPage</members>
         <name>ApexPage</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SubscriptionProductChargeInsertTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
+        <members>HPMSampleCSS</members>
+        <members>HPMSubmitButton</members>
+        <members>postmessage_js</members>
         <name>StaticResource</name>
     </types>
     <version>27.0</version>
