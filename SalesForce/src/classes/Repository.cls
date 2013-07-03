@@ -13,6 +13,14 @@ public with sharing class Repository {
 		return products[0];
 	}
 	
+		public Product2 getProductByName(String name){
+		List<Product2> products = [SELECT Id, Name, ProductCode, Component_1__c, Component_2__c FROM PRODUCT2 WHERE Name =: name];
+		if(products.size() != 1){
+			return null;
+		}
+		return products[0];
+	}
+	
 	public PricebookEntry getPricebookEntry(String pricebookEntryId){
 		List<PricebookEntry> pricebookEntry = [SELECT Product2Id, Pricebook2Id, IsActive, UnitPrice, Name FROM PricebookEntry WHERE Id =: pricebookEntryId];
 		if(pricebookEntry.size() != 1){

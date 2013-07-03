@@ -1,20 +1,8 @@
-#Tue Jul 02 10:13:33 PDT 2013
-ExecuteAnonymousApex_code=Debug
-ExecuteAnonymousApex_profiling=Info
-ExecuteAnonymousCallout=Info
-ExecuteAnonymousDb=Info
-ExecuteAnonymousValidation=Info
-ExecuteAnonymousWorkflow=Info
-RunTestApex_code=Debug
-RunTestApex_profiling=Info
-RunTestCallout=Info
-RunTestDb=Info
-RunTestValidation=Info
-RunTestWorkflow=Info
+#Tue Jul 02 17:34:58 PDT 2013
 eclipse.preferences.version=1
 endpointApiVersion=27.0
-endpointEnvironment=Production/Developer Edition
-endpointServer=www.salesforce.com
+endpointEnvironment=Other (Specify)
+endpointServer=test.salesforce.com
 httpsProtocol=true
 ideVersion=27.0
 keependpoint=false
@@ -22,4 +10,4 @@ metadataFormatVersion=27.0
 namespacePrefix=
 packageName=unpackaged
 readTimeout=400
-username=saasei.user@nwea.org
+username=saasei.user@nwea.org.test
