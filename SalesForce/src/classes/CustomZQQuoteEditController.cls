@@ -1,4 +1,4 @@
-public with sharing class CustomQuoteEditController {
+public with sharing class CustomZQQuoteEditController {
 
 	public String subTitle {get;set;}
 	
@@ -24,7 +24,9 @@ public with sharing class CustomQuoteEditController {
 
 	private string oppId;
 	
-	public CustomQuoteEditController(ApexPages.Standardcontroller controller){
+	public Account InvoiceOwnerAccount {get;set;}
+
+	public CustomZQQuoteEditController(ApexPages.Standardcontroller controller){
 		this.repo = new Repository();
 		string id = controller.getId();
 		this.quote = (zqu__Quote__c)controller.getRecord();
@@ -55,21 +57,9 @@ public with sharing class CustomQuoteEditController {
 		if(accid != null){
 			this.quote.zqu__ZuoraAccountId__c = accid;
 		}
-		setDefaults();
-	}
-
-	private void setDefaults(){
-		if(this.quote.zqu__Currency__c == null){
-			this.quote.zqu__Currency__c = 'USD';
-		}
-		
-		if(this.quote.zqu__PaymentMethod__c == null){
-			this.quote.zqu__PaymentMethod__c = 'Check';
-		}
-		
-		if(this.quote.zqu__BillingMethod__c == null){
-			this.quote.zqu__BillingMethod__c = 'Both';
-		}
+		this.quote.zqu__Currency__c = 'USD';
+		this.quote.zqu__PaymentMethod__c = 'Check';
+		this.quote.zqu__BillingMethod__c = 'Both';
 	}
 
 	private void getOpportunity(string oppId)
@@ -104,17 +94,8 @@ public with sharing class CustomQuoteEditController {
 		System.debug('currency change');
 	}
 
-	private void SyncInvoiceOwnerAccount(){
-		if(this.quote.Invoice_Owner_Account__c != null){
-			SyncAccountAction sync = new SyncAccountAction();
-			string zaccountId = sync.Execute(this.quote.InvoiceOwner__c, this.quote);
-			this.quote.zqu__InvoiceOwnerId__c = zaccountId;
-		}
-	}
-
 	public PageReference save(){
 		System.debug('save');
-		SyncInvoiceOwnerAccount();
 		insert this.quote;
 		
 		MigrateLegacyProductsToQuoteAction migrate = new MigrateLegacyProductsToQuoteAction();

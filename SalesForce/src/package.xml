@@ -16,7 +16,6 @@
         <members>CustomQuoteEnhancementControllerTests</members>
         <members>CustomSendToZBillingController</members>
         <members>CustomSendToZBillingControllerTests</members>
-        <members>CustomSendZBillingController</members>
         <members>CustomZQQuoteEditController</members>
         <members>ErrorCodeMapping</members>
         <members>GetLegacyProductsForQuoteAction</members>

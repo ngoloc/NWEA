@@ -66,7 +66,7 @@ public with sharing class CustomSendToZBillingController {
     public String subscribeMessage {get;set;}
     public String subscribeRequest {get;set;}
     public String subscribeResponse {get;set;}
-    
+    public String invoiceSeparately {get;set;}
     
     public List<RatePlanData> ratePlans {get;set;}
     public class RatePlanData {
@@ -660,6 +660,7 @@ public with sharing class CustomSendToZBillingController {
                 sub.setValue('ServiceActivationDate', Zuora.zUtil.getZuoraDate(serviceActivationDate));
                 sub.setValue('ContractAcceptanceDate', Zuora.zUtil.getZuoraDate(customerAcceptanceDate));
                 sub.setValue('TermType', subType.toUpperCase());
+                sub.setValue('IsInvoiceSeparate', this.quote.Invoice_Separately__c);
                 
                 if(subType != 'EVERGREEN')
                 {

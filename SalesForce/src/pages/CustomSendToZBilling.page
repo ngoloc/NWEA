@@ -27,6 +27,8 @@
 			<apex:outputText label="Effective Date" value="{!effectiveDate}"/>
 			<apex:outputText label="Initial Term" value="{!initialTerm}" rendered="{!showTermLengths}"/>
 			<apex:outputText label="Renewal Term" value="{!renewalTerm}" rendered="{!showTermLengths}"/>
+			<apex:outputField value="{!quote.Invoice_Separately__c}"/>
+			
 			<!-- <apex:outputText label="Auto Renew" value="{!autoRenew"/> -->
 		</apex:pageBlockSection>
 		            <apex:pageBlockSection title="Charge Groups" columns="1">
