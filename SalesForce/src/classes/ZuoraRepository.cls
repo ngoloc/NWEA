@@ -68,13 +68,21 @@ public with sharing class ZuoraRepository {
 		return checkReturnMultiple(objs);
 	}
 	
-	public List<Zuora.zApi.SaveResult> create(Zuora.zObject toCreate){
+	public List<Zuora.zApi.SaveResult> zCreateMultiple(List<Zuora.zObject> tocreate){
 		checkLogin();
-		List<Zuora.zApi.SaveResult> results = this.api.zcreate(new List<Zuora.zObject>{ toCreate});
+		List<Zuora.zApi.SaveResult> results = this.api.zcreate(tocreate);
 		return results;
 	}
 	
-	public List<Zuora.zApi.SaveResult> zupdate(Zuora.zObject toUpdate){
+	public Zuora.zApi.SaveResult zCreate(Zuora.zObject toCreate){
+		checkLogin();
+		List<Zuora.zObject> objs = new List<Zuora.zObject>();
+		objs.add(toCreate);
+		List<Zuora.zApi.SaveResult> results = this.api.zcreate(objs);
+		return results[0];
+	}
+	
+	public List<Zuora.zApi.SaveResult> zUpdateMultiple(Zuora.zObject toUpdate){
 		checkLogin();
 		List<Zuora.zApi.SaveResult> results = this.api.zupdate(new List<Zuora.zObject>{ toUpdate});
 		return results;
@@ -110,6 +118,14 @@ public with sharing class ZuoraRepository {
 			this.api.zlogin();
 			this.isLoggedIn = true;
 		}
+	}
+	
+	public Zuora.zApi.SaveResult zUpdate(Zuora.zObject obj){
+		List<Zuora.zObject> toupdate = new List<Zuora.zObject>();
+		toupdate.add(obj);
+		checkLogin();
+		List<Zuora.zApi.SaveResult> results = this.api.zupdate(toupdate);
+		return results[0];
 	}
 
 }

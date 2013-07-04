@@ -11,10 +11,12 @@
         <members>CustomNewQuoteBootstrapControllerTests</members>
         <members>CustomProductSelectorController</members>
         <members>CustomProductSelectorControllerTests</members>
+        <members>CustomQuoteEditController</members>
         <members>CustomQuoteEnhancementController</members>
         <members>CustomQuoteEnhancementControllerTests</members>
         <members>CustomSendToZBillingController</members>
         <members>CustomSendToZBillingControllerTests</members>
+        <members>CustomSendZBillingController</members>
         <members>CustomZQQuoteEditController</members>
         <members>ErrorCodeMapping</members>
         <members>GetLegacyProductsForQuoteAction</members>
@@ -46,6 +48,7 @@
         <members>SubscriptionProductChargeInsertTgrTests</members>
         <members>SubscriptionProductChargeTriggerMutex</members>
         <members>SubsrptnProductChargeInsertTriggerTests</members>
+        <members>SyncAccountAction</members>
         <members>UpdateOpportunityAmountAction</members>
         <members>UpdateOpportunityAmountActionTests</members>
         <members>UpdateOpportunityFromQuoteAction</members>

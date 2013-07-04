@@ -1,4 +1,4 @@
-public with sharing class CustomZQQuoteEditController {
+public with sharing class CustomQuoteEditController {
 
 	public String subTitle {get;set;}
 	
@@ -23,8 +23,8 @@ public with sharing class CustomZQQuoteEditController {
 	private Repository repo;
 
 	private string oppId;
-
-	public CustomZQQuoteEditController(ApexPages.Standardcontroller controller){
+	
+	public CustomQuoteEditController(ApexPages.Standardcontroller controller){
 		this.repo = new Repository();
 		string id = controller.getId();
 		this.quote = (zqu__Quote__c)controller.getRecord();
@@ -92,8 +92,17 @@ public with sharing class CustomZQQuoteEditController {
 		System.debug('currency change');
 	}
 
+	private void SyncInvoiceOwnerAccount(){
+		if(this.quote.Invoice_Owner_Account__c != null){
+			SyncAccountAction sync = new SyncAccountAction();
+			string zaccountId = sync.Execute(this.quote.InvoiceOwner__c, this.quote);
+			this.quote.zqu__InvoiceOwnerId__c = zaccountId;
+		}
+	}
+
 	public PageReference save(){
 		System.debug('save');
+		SyncInvoiceOwnerAccount();
 		insert this.quote;
 		
 		MigrateLegacyProductsToQuoteAction migrate = new MigrateLegacyProductsToQuoteAction();

@@ -23,8 +23,7 @@ public with sharing class UpdateOpportunityAmountAction {
 			}
 		}
 		
-		opp.Amount = amount;
-		
+		opp.Net_Amount__c = amount;
 		update opp;
 	}
 }

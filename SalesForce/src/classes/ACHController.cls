@@ -58,7 +58,7 @@ public with sharing class ACHController extends PageControllerBase{
 	}
 	
 	public PageReference save(){
-		List<Zuora.zApi.SaveResult> results;
+		Zuora.zApi.SaveResult result;
 		Zuora.zObject pm = new Zuora.zObject('PaymentMethod');
 		pm.setValue('AccountId', this.quote.zqu__ZuoraAccountId__c);
 		pm.setValue('AchAbaCode', this.routing);
@@ -70,14 +70,14 @@ public with sharing class ACHController extends PageControllerBase{
 			pm.setValue('AchAccountNumber', this.account);
 			pm.setValue('Type', 'ACH');
 			System.debug('creating payment method');
-			results = this.zuoraRepo.create(pm);
+			result = this.zuoraRepo.zcreate(pm);
 		}
 		else{
 			pm.setValue('Id', this.paymentMethodId);
 			System.debug('updating payment method ' + this.paymentMethodId);
-			results = this.zuoraRepo.zupdate(pm);
+			result = this.zuoraRepo.zupdate(pm);
 		}
-		List<string> errors = this.zuoraRepo.GetErrors(results);
+		List<string> errors = this.zuoraRepo.GetErrors(new List<Zuora.zApi.SaveResult>{result});
 		for(string e : errors){
 			super.appendErrorMessage(e);
 		}
