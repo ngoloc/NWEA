@@ -7,22 +7,29 @@ public with sharing class UpdateOpportunityAmountAction {
 	}
 	
 	public void Execute(string oppId){
-		Opportunity opp = this.repo.getOpportunity(oppId);
-		
 		decimal amount = 0;
-		List<OpportunityLineItem> lineItems = this.repo.getLineItemsForOpportunity(oppId);
+		List<OpportunityLineItem> lineItems = 
+			[SELECT 
+				Id, 
+				TotalPrice, 
+				PricebookEntryId, 
+				PricebookEntry.Product2Id, 
+				PricebookEntry.Product2.ProductCode 
+			FROM 
+				OpportunityLineItem 
+			WHERE 
+				Opportunity.Id=:oppId];
 		
 		for(OpportunityLineItem li : lineItems){
-			PricebookEntry pbe   = this.repo.getPricebookEntry(li.PricebookEntryId);
-			Product2 product = this.repo.getProduct(pbe.Product2Id);
-			System.debug('product ' + product.ProductCode);
-			boolean isCustomerCare = product.ProductCode.indexOf('CUST-CARE') >= 0;
+			System.debug('product ' + li.PricebookEntry.Product2.ProductCode);
+			boolean isCustomerCare = li.PricebookEntry.Product2.ProductCode.indexOf('CUST-CARE') >= 0;
 			System.debug('is customer care: ' + isCustomerCare);
 			if(!isCustomerCare){
 				amount += li.TotalPrice;
 			}
 		}
-		
+		Opportunity opp = new Opportunity();
+		opp.Id = oppId;		
 		opp.Net_Amount__c = amount;
 		update opp;
 	}
