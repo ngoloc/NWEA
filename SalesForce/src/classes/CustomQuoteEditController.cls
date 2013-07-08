@@ -105,7 +105,7 @@ public with sharing class CustomQuoteEditController {
 	}
 
 	private void SyncInvoiceOwnerAccount(){
-		if(this.quote.Invoice_Owner_Account__c != null){
+		if(this.quote.InvoiceOwner__c != null){
 			SyncAccountAction sync = new SyncAccountAction();
 			string zaccountId = sync.Execute(this.quote.InvoiceOwner__c, this.quote);
 			this.quote.zqu__InvoiceOwnerId__c = zaccountId;
