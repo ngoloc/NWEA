@@ -472,7 +472,7 @@ public with sharing class CustomSendToZBillingController {
                 rpc.chargeName = charge.NAME;
                 
                 //Set the price of the charge item
-                rpc.price = charge.LIST_PRICE;
+                rpc.price = charge.EFFECTIVE_PRICE;
                 
                 //Set the number of charges
                 rpc.quantity = charge.QUANTITY;

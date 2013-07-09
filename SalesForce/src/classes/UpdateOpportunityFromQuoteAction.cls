@@ -139,20 +139,7 @@ private zqu__Quote__c quote;
                     string cqcid = quoteChargeMap2.get(p);
                     zqu__QuoteCharge__c cqc = this.repo.getQuoteCharge(cqcid); 
                     System.debug('pbe: ' + pbe.Id);
-                    OpportunityLineItem oli = new OpportunityLineItem();
-                    oli.PricebookEntryId = pbe.Id;
-                    oli.OpportunityId = this.opp.Id;
-                    
-                    //NWEA-144
-                    oli.Description = cqc.zqu__ProductName__c + ' ' + ' quantity: ' + cqc.zqu__Quantity__c + ' model: ' + cqc.zqu__Model__c; 
-                    System.debug('quantity: ' + cqc.zqu__Quantity__c);
-                    System.debug('effective price: ' + cqc.zqu__EffectivePrice__c);
-                    System.debug('term: ' + this.quote.zqu__InitialTerm__c);
-                    System.debug('denom: ' + 12);
-                    oli.Quantity = cqc.zqu__Quantity__c;
-                    decimal proRatedPrice = cqc.zqu__Total__c * (this.quote.zqu__InitialTerm__c / 12);
-                    oli.TotalPrice = proRatedPrice;
-                    System.debug('total price: ' + proRatedPrice);
+                   OpportunityLineItem oli = GetLineItem(pbe, cqc);
                     insert oli;
                     System.debug('oli id: ' + oli.Id);
                     productsadded = true;
@@ -171,4 +158,58 @@ private zqu__Quote__c quote;
         
         return null;
     }
+    
+    private OpportunityLineItem GetLineItem(PricebookEntry pbe, zqu__QuoteCharge__c cqc){
+    	 OpportunityLineItem oli = new OpportunityLineItem();
+        oli.PricebookEntryId = pbe.Id;
+        oli.OpportunityId = this.opp.Id;
+        
+        //NWEA-144
+        oli.Description = cqc.zqu__ProductName__c + ' ' + ' quantity: ' + cqc.zqu__Quantity__c + ' model: ' + cqc.zqu__Model__c; 
+        System.debug('quantity: ' + cqc.zqu__Quantity__c);
+        System.debug('effective price: ' + cqc.zqu__EffectivePrice__c);
+        System.debug('term: ' + this.quote.zqu__InitialTerm__c);
+        System.debug('denom: ' + 12);
+        oli.Quantity = cqc.zqu__Quantity__c;
+        oli.TotalPrice = getPrice(pbe, cqc.zqu__Total__c, getIsProrated(cqc.zqu__ProductName__c));
+        System.debug('total price: ' + oli.TotalPrice);
+        return oli;
+    }
+    
+    private decimal getPrice(PricebookEntry pbe, decimal total, boolean isProrated){
+    	 decimal price;
+    	 
+    	 if(isProrated){
+    	   price = total * (this.quote.zqu__InitialTerm__c / 12);
+    	 }
+    	 else{
+    	 	price = total;
+    	 }
+    	 
+    	 return price;
+       
+    }
+    
+    private boolean getIsProrated(string zuoraProductName){
+    	System.debug('checking product for proration: ' + zuoraProductName);
+    	boolean isProrated = false;
+    	if(product.Description.indexOf('A - MAP (Web-based)') > -1){
+    		isProrated = true;
+    	}
+    	if(product.Description.indexOf('B - MAP (Client Server)') > -1){
+    		isProrated = true;
+    	}
+    	if(product.Description.indexOf('C - CPAA') > -1){
+    		isProrated = true;
+    	}
+    	if(product.Description.indexOf('D - Skills Pointer') > -1){
+    		isProrated = true;
+    	}
+    	if(product.Description.indexOf('F - Bundle') > -1){
+    		isProrated = true;
+    	}
+    	System.debug('is prorated: ' + isProrated);
+    	return isProrated;
+    }
+    
 }

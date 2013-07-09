@@ -6,7 +6,17 @@ public with sharing class Repository {
 	}
 	
 	public Product2 getProduct(String productId){
-		List<Product2> products = [SELECT Id, Name, ProductCode, Component_1__c, Component_2__c FROM PRODUCT2 WHERE Id =: productId];
+		List<Product2> products = [SELECT 
+			Id, 
+			Name, 
+			Description,
+			ProductCode, 
+			Component_1__c, 
+			Component_2__c 
+		FROM 
+			PRODUCT2 
+		WHERE 
+			Id =: productId];
 		if(products.size() != 1){
 			return null;
 		}
