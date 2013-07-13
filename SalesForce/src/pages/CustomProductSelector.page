@@ -18,8 +18,6 @@
 							<apex:facet name="stop">
 								<apex:commandButton value="Save" action="{!saveChargeGroup}"
 									reRender="quoting_page_block, pageErrors" status="saveStatus" />
-									<apex:commandButton value="Save & New" action="{!saveAndNewChargeGroup}"
-									reRender="quoting_page_block, pageErrors" status="saveStatus" />
 							</apex:facet>
 						</apex:actionStatus>
 						<apex:actionStatus id="cancelStatus">

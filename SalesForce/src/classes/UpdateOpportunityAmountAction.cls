@@ -24,11 +24,7 @@ public with sharing class UpdateOpportunityAmountAction {
 			System.debug('product ' + li.PricebookEntry.Product2.ProductCode);
 			boolean isCustomerCare = li.PricebookEntry.Product2.ProductCode.indexOf('CUST-CARE') >= 0;
 			System.debug('is customer care: ' + isCustomerCare);
-			if(isCustomerCare){
-				System.debug('skipping customer care');
-			}
-			else{
-				System.debug('adding to amount ' + li.TotalPrice);
+			if(!isCustomerCare){
 				amount += li.TotalPrice;
 			}
 		}
