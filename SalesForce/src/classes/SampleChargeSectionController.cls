@@ -66,6 +66,13 @@ public with sharing class SampleChargeSectionController{
        	return wc;
        }
        
+       public PageReference saveAndNewCharges(){
+       	saveCharges();
+       	PageReference pr = new PageReference('/apex/CustomProductSelector?id=' + this.myquoteid);
+       	pr.setRedirect(true);
+       	return pr;
+       }
+       
     public PageReference saveCharges(){
         //Use global method to add zCharges with the Quote.
         final zqu.ZChargeGroup chargeGroup;

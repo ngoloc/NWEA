@@ -1,7 +1,6 @@
 <apex:page standardController="zqu__Quote__c"
 	extensions="CustomProductSelectorController" sidebar="true"
 	showHeader="true">
-
 	<apex:form id="quoting_form">
 		<apex:pageMessages id="pageErrors" />
 		<apex:pageBlock rendered="{!!initFailed}" id="quoting_page_block">

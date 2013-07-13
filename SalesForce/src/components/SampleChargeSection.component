@@ -35,7 +35,8 @@
 			<apex:actionStatus id="changeStatus"
 				onstart="javascriptActionProxy('disableInput4QuoteCharge', '{!$Component.chargeGrouppanel}'); javascriptActionProxy('disableOpr4QuoteCharges', '{!$Component.chargeGrouppanel}', 'Calculating');">
 			</apex:actionStatus>
-				<apex:commandButton value="Save" action="{!saveCharges}" />
+			<apex:commandButton value="Save" action="{!saveCharges}" />
+			<apex:commandButton value="Save and New" action="{!saveAndNewCharges}" />
 		</apex:pageBlockButtons>
 		<apex:outputPanel id="chargeGrouppanel">
 			<apex:pageBlockTable value="{!listWrappedCharges}" var="wc">

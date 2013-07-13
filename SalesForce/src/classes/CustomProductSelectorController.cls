@@ -87,12 +87,6 @@ public with sharing virtual class CustomProductSelectorController{
         return new PageReference('/' + this.quote.Id);
     }
     
-	public PageReference saveAndNewChargeGroup(){
-    	saveChargeGroup();
-    	
-    	return new PageReference('/apex/CustomProuctSelector?id=' + this.quote.Id);
-    }
-    
     public void cancelEditing(){
         this.editMode = false;
         this.selectNewProductViewMode = false;
