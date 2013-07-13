@@ -79,7 +79,7 @@
 						rendered="{!!wc.wCharge['isQuantityEditable']}" />
 				</apex:column>
 				<apex:column >
-					<apex:facet name="header">DISCOUNT</apex:facet>
+					<apex:facet name="header">DISCOUNT %</apex:facet>
 					<apex:inputText value="{!wc.wCharge['DISCOUNT']}"
 						rendered="{!wc.wCharge['isDiscountEditable']}">
 						<apex:actionSupport event="onchange" action="{!discountChange}"

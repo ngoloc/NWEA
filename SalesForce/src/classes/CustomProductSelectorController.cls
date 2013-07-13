@@ -64,6 +64,13 @@ public with sharing virtual class CustomProductSelectorController{
         this.selectedProductShare = new zqu.zComponentDataShare();
         this.selectedRatePlanShare = new zqu.zComponentDataShare();
         this.initFailed = false;
+        
+        string isnew = ApexPages.currentPage().getParameters().get('new');
+        
+        if(isnew != null && isnew == 'true'){
+        	toSelectNewProductsView();
+    	}
+        
     }
     public PageReference saveChargeGroup(){
         System.debug('save charge group');
@@ -188,12 +195,14 @@ public with sharing virtual class CustomProductSelectorController{
         this.selectNewProductViewMode = false;
         return null;
     }
+    
     public void toSelectNewProductsView() {
         this.selectNewProductViewMode = true;
         this.rateplanDataShare = new zqu.zComponentDataShare();
         this.selectedProductShare = new zqu.zComponentDataShare();
         this.selectedRatePlanShare = new zqu.zComponentDataShare();
     }
+    
     public String[] getProductDisplayFields() {
         return new String[] {'Name', 'zqu__Description__c'};
     }

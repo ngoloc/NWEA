@@ -66,9 +66,9 @@ public with sharing class SampleChargeSectionController{
        	return wc;
        }
        
-       public PageReference saveAndNewCharges(){
+   public PageReference saveAndNewCharges(){
        	saveCharges();
-       	PageReference pr = new PageReference('/apex/CustomProductSelector?id=' + this.myquoteid);
+       	PageReference pr = new PageReference('/apex/CustomProductSelector?new=true&id=' + this.myquoteid);
        	pr.setRedirect(true);
        	return pr;
        }

@@ -20,6 +20,8 @@ public with sharing class CustomQuoteEditController {
 
 	private zqu__Quote__c quote;
 
+	private Opportunity opp;
+
 	private Repository repo;
 
 	private string oppId;
@@ -39,11 +41,12 @@ public with sharing class CustomQuoteEditController {
 		this.accountURL = '';
 		this.accountName = '';
 
-		Opportunity opp = this.repo.getOpportunity(eid);
+		this.opp = this.repo.getOpportunity(eid);
 		System.debug('opp: ' + opp);
 		if(opp != null){
 			System.debug('start date: ' + opp.License_Start_Date__c);
 			this.quote.zqu__StartDate__c = opp.License_Start_Date__c;
+			this.quote.zqu__Service_Activation_Date__c = opp.License_Start_Date__c;
 		}
 		
 		quote.zqu__InitialTerm__c = 12;
