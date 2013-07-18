@@ -106,6 +106,7 @@ public with sharing class CustomSendToZBillingController {
     public Decimal initialTerm {get;set;}
     public Decimal renewalTerm {get;set;}
     public boolean autoRenew {get;set;}
+    public string InvoiceOwnerId {get;set;}
     
     public boolean previewMode {get;set;}
     public Decimal previewAmount {get;set;}
@@ -150,7 +151,7 @@ public with sharing class CustomSendToZBillingController {
         zqu__PaymentTerm__c, zqu__Currency__c, zqu__Opportunity__c, zqu__Subscription_Term_Type__c,
         zqu__InitialTerm__c, zqu__RenewalTerm__c, zqu__AutoRenew__c, zqu__Service_Activation_Date__c,
         zqu__Customer_Acceptance_Date__c, zqu__Status__c, zqu__PaymentMethod__c, zqu__ZuoraAccountID__c,
-        zqu__BillingCycleDay__c, zqu__BillingMethod__c FROM zqu__Quote__c WHERE Id=:this.quoteId LIMIT 1];
+        zqu__BillingCycleDay__c, zqu__BillingMethod__c, InvoiceOwner__c FROM zqu__Quote__c WHERE Id=:this.quoteId LIMIT 1];
         
         if (this.validate()) {
             try {
@@ -338,12 +339,6 @@ public with sharing class CustomSendToZBillingController {
         phone = contact.Phone;
         mobilePhone = contact.MobilePhone;
         otherPhone = contact.OtherPhone;
-        
-        /*System.debug('EN:Contact firstName' + firstName);
-        System.debug('EN:Contact lastName' + lastName);
-        System.debug('EN:Contact workEmail' + workEmail);
-        System.debug('EN:Contact country' + country);
-        System.debug('EN:Contact state' + state);*/
     }
     
     public void getSoldContactInformation()
@@ -413,18 +408,18 @@ public with sharing class CustomSendToZBillingController {
             customerAcceptanceDate = effectiveDate;
         }
         
-        //customerAcceptanceDate = this.quote.zqu__Customer_Acceptance_Date__c;
-        
-        //customerAcceptanceDate = System.today();
         initialTerm = this.quote.zqu__InitialTerm__c;
         renewalTerm = this.quote.zqu__RenewalTerm__c;
         autoRenew = this.quote.zqu__AutoRenew__c;
         
-        /*System.debug('EN:Subscription subType' + subType);
-        System.debug('EN:Subscription effectiveDate' + effectiveDate);
-        System.debug('EN:Subscription initialTerm' + initialTerm);
-        System.debug('EN:Subscription renewalTerm' + renewalTerm);
-        System.debug('EN:Subscription autoRenew' + autoRenew);*/
+        if(this.quote.InvoiceOwner__c != null){
+			Account InvoiceOwnerAccount = [SELECT Agency_Code__c FROM Account WHERE Id=:this.quote.InvoiceOwner__c];
+			System.debug('invoice owner account ' +  InvoiceOwnerAccount);
+			System.debug('agenc code ' +  InvoiceOwnerAccount.Agency_Code__c);
+			ZuoraRepository zr = new ZuoraRepository();
+			Zuora.zObject account = zr.getAccountByNumber(InvoiceOwnerAccount.Agency_Code__c);
+			InvoiceOwnerId = (string)account.getValue('Id');
+        }
     }
     
     public void getRatePlanInformation()
@@ -435,13 +430,8 @@ public with sharing class CustomSendToZBillingController {
         
         List<zqu__QuoteCharge__c> quoteCharges = [SELECT Id, zqu__ProductRatePlanCharge__c FROM zqu__QuoteCharge__c WHERE  zqu__Quote__r.Id=:quoteId];
         
-        //   List<QuoteCharge__c> allTiers = [SELECT Id, Tier_From__c, Tier_To__c, List_Price__c, curr__c, IsOverageBool__c,
-        //       Price_Format__c, Tier_Number__c, OveragePrice__c, QuoteChargeId__c FROM QuoteCharge__c];
-        
         List<zqu__ProductRatePlan__c> prps = [ SELECT zqu__ZuoraId__c FROM zqu__ProductRatePlan__c];
         
-        
-        //Iterates through all the rate plans
         for(zqu.zChargeGroup ratePlan : chargeGroupList)
         {
             //Initializes a rate plan object
@@ -674,6 +664,10 @@ public with sharing class CustomSendToZBillingController {
                     sub.setValue('InitialTerm', initialTerm);
                     sub.setValue('RenewalTerm', renewalTerm);
                     sub.setValue('AutoRenew', autoRenew);
+                }
+                
+                if(InvoiceOwnerId != null){
+                	sub.setValue('InvoiceOwnerId', InvoiceOwnerId);                
                 }
                 
                 //subscription options

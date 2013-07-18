@@ -48,6 +48,7 @@
         <members>SubscriptionProductChargeTriggerMutex</members>
         <members>SubsrptnProductChargeInsertTriggerTests</members>
         <members>SyncAccountAction</members>
+        <members>UpdateInvoiceOwnerAction</members>
         <members>UpdateOpportunityAmountAction</members>
         <members>UpdateOpportunityAmountActionTests</members>
         <members>UpdateOpportunityFromQuoteAction</members>
@@ -80,6 +81,7 @@
         <name>ApexPage</name>
     </types>
     <types>
+        <members>QuoteUpdateTrigger</members>
         <members>SubscriptionProductChargeInsertTrigger</members>
         <name>ApexTrigger</name>
     </types>
