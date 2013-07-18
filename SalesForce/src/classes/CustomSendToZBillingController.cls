@@ -473,12 +473,19 @@ public with sharing class CustomSendToZBillingController {
                 
                 //Set the price of the charge item
                 rpc.price = charge.EFFECTIVE_PRICE;
+                System.debug('charge price is ' + rpc.price);
+                if(rpc.price == 'Flat Fee'){
+                	//need to send discounted amount to zuora somehow
+                	rpc.price = charge.TOTAL;
+                	System.debug('set price to ' + rpc.price);
+                }
                 
                 //Set the number of charges
                 rpc.quantity = charge.QUANTITY;
                 
                 rpc.model = charge.MODEL;
-                
+                System.debug('MODEL ' + charge.MODEL);
+                System.debug('EFFECTIVE PRICE ' + charge.EFFECTIVE_PRICE);
                 if(charge.MODEL == 'Discount-Fixed Amount' && charge.EFFECTIVE_PRICE != '-')
                 {
                     rpc.discountAmount = Decimal.valueOf(charge.EFFECTIVE_PRICE);
@@ -703,13 +710,18 @@ public with sharing class CustomSendToZBillingController {
                         rpc.setValue('Description', arpc.chargeName);
                         rpc.setValue('ProductRatePlanChargeId', arpc.zId);
                         System.debug('pricing');
-                        if(arpc.model == 'Flat Fee Pricing' || arpc.model == 'Per Unit Pricing')
-                        {
+                        System.debug('price is ' + arpc.price);
+                        System.debug('overrage price is ' + arpc.overagePrice);
+                        System.debug('discount amount ' + arpc.discountAmount);
+                        System.debug('discount percentage ' + arpc.discountPercentage);
+                        //if(arpc.model == 'Flat Fee Pricing' || arpc.model == 'Per Unit Pricing')
+                        //{
                             if((arpc.price != '-') && (arpc.price != 'Varies') && (arpc.price != 'Flat Fee'))
                             {
+                            	System.debug('setting price to ' + arpc.price);
                                 rpc.setValue('Price', arpc.price);
                             }
-                        }
+                        //}
                         
                         if(arpc.model == 'Discount-Fixed Amount')
                         {
@@ -741,6 +753,7 @@ public with sharing class CustomSendToZBillingController {
                         System.debug('tiers');
                         //Add Charge Tiers
                         List<Zuora.zObject> rpcdts = new List<Zuora.zObject>();
+                        System.debug('rate plan charge tiers: ' + arpc.ratePlanChargeTiers);
                         if(arpc.ratePlanChargeTiers != null)
                         {
                             System.debug('rate plan charge tiers: ' + arpc.ratePlanChargeTiers.size());
@@ -750,7 +763,20 @@ public with sharing class CustomSendToZBillingController {
                                 
                                 rpct.setValue('StartingUnit', arpct.startingUnit);
                                 rpct.setValue('EndingUnit', arpct.endingUnit);
+                                System.debug('discount percentage ' + arpc.discountPercentage);
+                                if(arpc.discountPercentage != null){
+                                	decimal discount = arpc.discountPercentage / 100;
+                                	decimal discountedAmount = arpct.price - discount * arpct.price;
+                                	System.debug('using discounted price ' + discountedAmount);
+                                	rpct.setValue('Price', discountedAmount);
+                                }
+                                else{
+                                	System.debug('using price ' + arpct.price);
                                 rpct.setValue('Price', arpct.price);
+                                }
+                                
+                                System.debug('price ' + arpct.price);
+                               
                                 rpct.setValue('Tier', arpct.tier);
                                 
                                 if(arpct.priceFormat == 'Flat Fee')

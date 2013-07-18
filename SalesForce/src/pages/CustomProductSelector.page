@@ -2,8 +2,15 @@
 	extensions="CustomProductSelectorController" sidebar="true"
 	showHeader="true">
 	<apex:form id="quoting_form">
+	
+
+	
+	
 		<apex:pageMessages id="pageErrors" />
 		<apex:pageBlock rendered="{!!initFailed}" id="quoting_page_block">
+			
+		
+			
 			<apex:pageBlockSection title="Selected Products"
 				rendered="{!!selectNewProductViewMode}" columns="1">
 				<apex:outputPanel id="charge_group_edit_panel"
@@ -95,14 +102,39 @@
 					</apex:facet>
 				</apex:actionStatus>
 			</apex:pageBlockSection>
-			<apex:outputText value="No matching product found."
-				rendered="{!noMatchProduct}" />
+			
+		
 			<apex:pageBlockSection title="Select New Products"
 				rendered="{!selectNewProductViewMode&&!noMatchProduct}" columns="1">
 				<apex:outputPanel id="productselector_pageblock"
 					rendered="{!!editMode}">
 
+						<apex:outputPanel style="text-align:right">
+					<apex:actionRegion >
+						<apex:inputText id="searchField" value="{!searchString}" />
+					</apex:actionRegion>
+					<apex:actionStatus id="stsProductSearch">
+						<apex:facet name="start">
+							<apex:commandButton value="Searching..." disabled="true" />
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:commandButton id="btnSearchProducts"
+								action="{!refreshProducts}" value="Search"
+								rerender="product_panel"
+								status="stsProductSearch"></apex:commandButton>
+						</apex:facet>
+					</apex:actionStatus>
+					<apex:commandButton value="Cancel" action="{!cancelEditing}"
+						status="stsProductSearch" />
+				</apex:outputPanel>
+			
+			
+		
+
+
 					<apex:outputPanel id="product_panel">
+						<apex:outputText value="No matching product found."
+				rendered="{!noMatchProduct}" />
 						<zqu:zSelectTable id="product_zselect_table"
 							title="Product Summary" fieldNames="{!ProductDisplayFields}"
 							selectRowShare="{!selectedProductShare}"

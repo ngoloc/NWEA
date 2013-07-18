@@ -5,7 +5,7 @@ public with sharing virtual class CustomProductSelectorController{
     public String    currentChargeGroupId                   {get; set;}
     public zqu.zChargeGroup currentChargeGroup              {get; set;}
     private final zqu__Quote__c quote                       {get; set;}
-    private final List<ID> productIDs;
+    private List<ID> productIDs;
    
     // Table data share
     public zqu.zComponentDataShare productDataShare         {get; set;}
@@ -22,11 +22,71 @@ public with sharing virtual class CustomProductSelectorController{
    
    private Repository repo;
    
+     public String searchString {
+    get;
+    set;
+  }
+   
     public CustomProductSelectorController theController{
         get{
             return this;
         }
     }
+   
+    private String productFilterFragment = ' ';
+  private String rateplanFilterFragment = ' ';
+   
+   
+     private List < Id > getFilteredZProductIds(String zCurrency, Date zStartDate) {
+    List < zqu__ZProduct__c > products;
+    AggregateResult[] groupedResults = [SELECT zqu__ProductRatePlanCharge__r.zqu__ProductRatePlan__r.zqu__zProduct__r.Id
+    FROM zqu__ProductRatePlanChargeTier__c
+    WHERE zqu__Currency__c = : zCurrency
+    AND zqu__Deleted__c = false
+    GROUP BY zqu__ProductRatePlanCharge__r.zqu__ProductRatePlan__r.zqu__zProduct__r.Id];
+
+    List < Id > productIds = new List < Id > ();
+    for (AggregateResult result: groupedResults) {
+      productIds.add(result.Id);
+    }
+
+    String baseSoql = 'SELECT Id FROM zqu__ZProduct__c WHERE Id IN :productIds AND zqu__Deleted__c = false AND zqu__EffectiveStartDate__c <= :zStartDate AND zqu__EffectiveEndDate__c >= :zStartDate ';
+    baseSoql += productFilterFragment;
+    baseSoql += ' ORDER BY Name ASC LIMIT 10000 ';
+
+    products = Database.query(baseSoql);
+    productIds = new List < Id > ();
+    for (zqu__zProduct__c product: products) {
+      productIds.add(product.Id);
+    }
+
+    return productIds;
+  }
+   
+     public void refreshProducts() {
+    this.productDataShare = new zqu.ZComponentDataShare();
+    this.productIDs = this.getFilteredZProductIds(quote.zqu__Currency__c, quote.zqu__StartDate__c);
+    if (this.searchString != null && this.searchString != '') {
+      this.productIds = searchProducts(this.productIDs, quote.zqu__StartDate__c);
+    }
+    this.productDataShare.dataObject = zqu.zQuoteUtil.getProductSetController(this.productIDs, this.getProductDisplayFields(), PRODUCT_TABLE_PAGE_SIZE);
+  }
+   
+     public List < Id > searchProducts(List < Id > prodids, Date zqStartDate) {
+    List < Id > productIds = new List < Id > ();
+    try {
+      String searchQuery = '*' + searchString + '*';
+      searchQuery = 'FIND \'' + searchQuery + '\' IN ALL FIELDS RETURNING zqu__zProduct__c(Id, Name, zqu__SKU__c, zqu__Description__c, zqu__ZuoraId__c WHERE id in :prodids AND zqu__Deleted__c = false AND zqu__EffectiveStartDate__c <= :zQStartDate AND zqu__EffectiveEndDate__c >= :zQStartDate ORDER BY Name ASC)';
+      List < SObject > results = search.query(searchQuery)[0];
+      for (SObject sobj: results) {
+        productIds.add(sobj.Id);
+      }
+    } catch (Exception e) {
+      ApexPages.Message msg = new ApexPages.Message(ApexPages.Severity.ERROR, e.getMessage());
+      ApexPages.addMessage(msg);
+    }
+    return productIds;
+  }
    
     public CustomProductSelectorController(ApexPages.StandardController controller) {
         initFailed = true;
@@ -207,7 +267,7 @@ public with sharing virtual class CustomProductSelectorController{
         return new String[] {'Name', 'zqu__Description__c'};
     }
     public String[] getRatePlanDisplayFields() {
-        return new String[] {'Name', 'zqu__Description__c', 'zqu__EffectiveStartDate__c', 'zqu__EffectiveEndDate__c'};
+        return new String[] {'Name', 'zqu__Description__c'};
     }
     public Boolean getIsRenderRatePlan(){
         return this.selectedProductShare.dataObject != null;
