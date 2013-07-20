@@ -413,12 +413,16 @@ public with sharing class CustomSendToZBillingController {
         autoRenew = this.quote.zqu__AutoRenew__c;
         
         if(this.quote.InvoiceOwner__c != null){
-			Account InvoiceOwnerAccount = [SELECT Agency_Code__c FROM Account WHERE Id=:this.quote.InvoiceOwner__c];
+        	System.debug('syncing invoice owner ' + this.quote.InvoiceOwner__c);
+			Account InvoiceOwnerAccount = this.repo.getAccount(this.quote.InvoiceOwner__c);
 			System.debug('invoice owner account ' +  InvoiceOwnerAccount);
-			System.debug('agenc code ' +  InvoiceOwnerAccount.Agency_Code__c);
-			ZuoraRepository zr = new ZuoraRepository();
-			Zuora.zObject account = zr.getAccountByNumber(InvoiceOwnerAccount.Agency_Code__c);
-			InvoiceOwnerId = (string)account.getValue('Id');
+			System.debug('agency code ' +  InvoiceOwnerAccount.Agency_Code__c);
+			
+			SyncAccountAction syncaccount = new SyncAccountAction();
+			InvoiceOwnerId = syncaccount.Execute(InvoiceOwnerAccount, this.quote);
+        }
+        else{
+        	System.debug('Invoice owner was null.');
         }
     }
     
@@ -668,6 +672,9 @@ public with sharing class CustomSendToZBillingController {
                 
                 if(InvoiceOwnerId != null){
                 	sub.setValue('InvoiceOwnerId', InvoiceOwnerId);                
+                }
+                else{
+                	System.debug('didnt set invoice owner because InvoiceOwnerId was Null');
                 }
                 
                 //subscription options

@@ -52,6 +52,7 @@ public with sharing class CustomQuoteEditController {
 		quote.zqu__InitialTerm__c = 12;
 		quote.zqu__RenewalTerm__c = 12;
 		quote.zqu__ValidUntil__c = Date.today().addDays(90);
+		quote.zqu__PaymentTerm__c = 'Net 30';
 		getOpportunity(eid);
 		
 		string accid = ApexPages.currentPage().getParameters().get('accid');

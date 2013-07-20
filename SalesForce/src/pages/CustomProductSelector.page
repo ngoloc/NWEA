@@ -2,15 +2,8 @@
 	extensions="CustomProductSelectorController" sidebar="true"
 	showHeader="true">
 	<apex:form id="quoting_form">
-	
-
-	
-	
 		<apex:pageMessages id="pageErrors" />
 		<apex:pageBlock rendered="{!!initFailed}" id="quoting_page_block">
-			
-		
-			
 			<apex:pageBlockSection title="Selected Products"
 				rendered="{!!selectNewProductViewMode}" columns="1">
 				<apex:outputPanel id="charge_group_edit_panel"
@@ -106,9 +99,10 @@
 		
 			<apex:pageBlockSection title="Select New Products"
 				rendered="{!selectNewProductViewMode&&!noMatchProduct}" columns="1">
+				
+				
 				<apex:outputPanel id="productselector_pageblock"
 					rendered="{!!editMode}">
-
 						<apex:outputPanel style="text-align:right">
 					<apex:actionRegion >
 						<apex:inputText id="searchField" value="{!searchString}" />
@@ -133,14 +127,36 @@
 
 
 					<apex:outputPanel id="product_panel">
-						<apex:outputText value="No matching product found."
-				rendered="{!noMatchProduct}" />
+						<apex:outputText value="No matching product found." rendered="{!noMatchProduct}" />
 						<zqu:zSelectTable id="product_zselect_table"
 							title="Product Summary" fieldNames="{!ProductDisplayFields}"
 							selectRowShare="{!selectedProductShare}"
 							setControllerShare="{!productDataShare}"
 							rerenderIDs="{!$Component.rateplan_panel}, {!$Component.charges_panel}, {!$Component.pageErrors}" />
 					</apex:outputPanel>
+
+
+	<apex:outputPanel id="rateplansearch_pageblock" rendered="{!!editMode&&IsRenderRatePlan}">
+						<apex:outputPanel style="text-align:right">
+					<apex:actionRegion >
+						<apex:inputText id="ratePlanSearchField" value="{!searchStringRatePlan}" />
+					</apex:actionRegion>
+					<apex:actionStatus id="stsRatePlanSearch">
+						<apex:facet name="start">
+							<apex:commandButton value="Searching..." disabled="true" />
+						</apex:facet>
+						<apex:facet name="stop">
+							<apex:commandButton id="btnSearchRatePlans"
+								action="{!refreshRatePlans}" value="Search"
+								rerender="rateplan_panel"
+								status="stsRatePlanSearch"></apex:commandButton>
+						</apex:facet>
+					</apex:actionStatus>
+					<apex:commandButton value="Cancel" action="{!cancelEditing}"
+						status="stsRatePlanSearch" />
+				</apex:outputPanel>
+				</apex:outputPanel>
+
 
 					<apex:outputPanel id="rateplan_panel">
 						<zqu:zSelectTable id="rateplan_zselect_table"
