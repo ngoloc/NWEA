@@ -108,6 +108,7 @@ public with sharing virtual class CustomProductSelectorController{
     this.rateplanDataShare = new zqu.ZComponentDataShare();
     final String productId = (String) selectedProductShare.dataObject;
     this.ratePlanIDs = this.getFilteredRatePlanIds(productId, quote.zqu__Currency__c, quote.zqu__StartDate__c);
+   System.debug('search string is ' + this.searchStringRatePlan);
     if (this.searchStringRatePlan != null && this.searchStringRatePlan != '') {
       this.ratePlanIDs = searchRatePlans(this.ratePlanIDs, quote.zqu__StartDate__c);
     }
@@ -132,20 +133,35 @@ public with sharing virtual class CustomProductSelectorController{
   }
   
      public List < Id > searchRatePlans(List < Id > ratePlanids, Date zqStartDate) {
+     	
     List < Id > rpIds = new List < Id > ();
-    try {
-      String searchQuery = '*' + searchStringRatePlan + '*';
-      searchQuery = 'FIND \'' + searchQuery + '\' IN ALL FIELDS RETURNING zqu__zRatePlan__c(Id, Name, zqu__SKU__c, zqu__Description__c, zqu__ZuoraId__c WHERE id in :ratePlanids AND zqu__Deleted__c = false AND zqu__EffectiveStartDate__c <= :zQStartDate AND zqu__EffectiveEndDate__c >= :zQStartDate ORDER BY Name ASC)';
-      List < SObject > results = search.query(searchQuery)[0];
-      for (SObject sobj: results) {
-        rpIds.add(sobj.Id);
-      }
-    } catch (Exception e) {
-      ApexPages.Message msg = new ApexPages.Message(ApexPages.Severity.ERROR, e.getMessage());
-      ApexPages.addMessage(msg);
-    }
+    //try {
+   //   String searchQuery = '*' + searchStringRatePlan + '*';
+  //    searchQuery = 'FIND \'' + searchQuery + '\' IN ALL FIELDS RETURNING zqu__ProductRatePlan__c(Id, Name, zqu__Description__c, zqu__ZuoraId__c WHERE id in :ratePlanids AND zqu__Deleted__c = false AND zqu__EffectiveStartDate__c <= :zQStartDate AND zqu__EffectiveEndDate__c >= :zQStartDate ORDER BY Name ASC)';
+  //    List < SObject > results = search.query(searchQuery)[0];
+  //    for (SObject sobj: results) {
+   //     rpIds.add(sobj.Id);
+   //   }
+  //  } catch (Exception e) {
+  //    ApexPages.Message msg = new ApexPages.Message(ApexPages.Severity.ERROR, e.getMessage());
+  //    ApexPages.addMessage(msg);
+ //   }
+ 
+ List<zqu__ProductRatePlan__c> ratePlans = [SELECT Id, Name FROM zqu__ProductRatePlan__c WHERE Id in :ratePlanIds];
+ System.debug('filtering rate plans ' + ratePlans.size());
+ for(zqu__ProductRatePlan__c rp : ratePlans){
+ 	if(rp.Name.indexOf(searchStringRatePlan) != -1){
+ 		rpIds.add(rp.Id);
+ 	}
+ }
+ 
     return rpIds;
   }
+   
+   public void cancelRatePlanSearch(){
+   searchStringRatePlan = '';
+   refreshRatePlans();
+   }
    
     public CustomProductSelectorController(ApexPages.StandardController controller) {
         initFailed = true;
@@ -217,6 +233,7 @@ public with sharing virtual class CustomProductSelectorController{
         this.editMode = false;
         this.selectNewProductViewMode = false;
     }
+    
     public void editChargeGroup(){
         if(this.currentChargeGroupId != null && this.quote.Id != null){
             for(Integer i =0 ; i < this.chargeGroupList.size() ; i++){
