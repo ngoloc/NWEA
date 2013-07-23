@@ -150,9 +150,20 @@ private zqu__Quote__c quote;
                     System.debug('term: ' + this.quote.zqu__InitialTerm__c);
                     System.debug('denom: ' + 12);
                     oli.Quantity = cqc.zqu__Quantity__c;
-                    decimal proRatedPrice = cqc.zqu__Total__c * (this.quote.zqu__InitialTerm__c / 12);
-                    oli.TotalPrice = proRatedPrice;
-                    System.debug('total price: ' + proRatedPrice);
+                    
+                    // this should probably not be static
+                    decimal finalPrice;
+                    System.debug('chare type: ' + cqc.zqu__Type__c);
+                    if(cqc.zqu__Type__c == 'One-Time'){
+                    	finalPrice = cqc.zqu__Total__c;
+                    }
+                    else{
+                    	finalPrice = cqc.zqu__Total__c * (this.quote.zqu__InitialTerm__c / 12);
+                    }
+                    
+                    System.debug('total price: ' + finalPrice);
+                    oli.TotalPrice = finalPrice;
+                    
                     insert oli;
                     System.debug('oli id: ' + oli.Id);
                     productsadded = true;

@@ -137,6 +137,7 @@ public with sharing class Repository {
 				zqu__Total__c,
 				zqu__ProductName__c,
 				zqu__Model__c,
+				zqu__Type__c,
 				zqu__ListPrice__c
 			FROM 
 				zqu__QuoteCharge__c 
