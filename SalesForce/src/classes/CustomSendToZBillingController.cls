@@ -151,7 +151,7 @@ public with sharing class CustomSendToZBillingController {
         zqu__PaymentTerm__c, zqu__Currency__c, zqu__Opportunity__c, zqu__Subscription_Term_Type__c,
         zqu__InitialTerm__c, zqu__RenewalTerm__c, zqu__AutoRenew__c, zqu__Service_Activation_Date__c,
         zqu__Customer_Acceptance_Date__c, zqu__Status__c, zqu__PaymentMethod__c, zqu__ZuoraAccountID__c,
-        zqu__BillingCycleDay__c, zqu__BillingMethod__c, InvoiceOwner__c FROM zqu__Quote__c WHERE Id=:this.quoteId LIMIT 1];
+        zqu__BillingCycleDay__c, zqu__BillingMethod__c, InvoiceOwner__c, Invoice_Separately__c FROM zqu__Quote__c WHERE Id=:this.quoteId LIMIT 1];
         
         if (this.validate()) {
             try {
@@ -466,7 +466,17 @@ public with sharing class CustomSendToZBillingController {
                 rpc.chargeName = charge.NAME;
                 
                 //Set the price of the charge item
-                rpc.price = charge.EFFECTIVE_PRICE;
+                System.debug('charge effective price is ' + charge.EFFECTIVE_PRICE);
+                //System.debug('effective price scale is ' + charge.EFFECTIVE_PRICE.scale());
+                System.debug('charge total is ' + charge.TOTAL);
+                //System.debug('charge total scale is ' + charge.TOTAL.scale());
+                //we cant just set rpc.price = charge.EFFECTIVE_PRICE because effective price appears to only have 2 places of precision.
+                decimal price = decimal.valueOf(charge.TOTAL);
+                price.setScale(7);
+                price = price / integer.valueOf(charge.QUANTITY);
+                System.debug('price before toplainstring is ' + price);
+                rpc.price = price.toPlainString();
+                
                 System.debug('charge price is ' + rpc.price);
                 if(rpc.price == 'Flat Fee'){
                 	//need to send discounted amount to zuora somehow
@@ -767,13 +777,19 @@ public with sharing class CustomSendToZBillingController {
                                 System.debug('discount percentage ' + arpc.discountPercentage);
                                 if(arpc.discountPercentage != null){
                                 	decimal discount = arpc.discountPercentage / 100;
+                                	discount.setScale(7);
+                                	System.debug('discount is ' + discount);
+                                	System.debug('discount scale is ' + discount.scale());
+                                	System.debug('price scale is ' + arpct.price.scale());
                                 	decimal discountedAmount = arpct.price - discount * arpct.price;
+                                	discountedAmount.setScale(7);
                                 	System.debug('using discounted price ' + discountedAmount);
+                                	System.debug('discounted scale is ' + discountedAmount.scale());
                                 	rpct.setValue('Price', discountedAmount);
                                 }
                                 else{
                                 	System.debug('using price ' + arpct.price);
-                                rpct.setValue('Price', arpct.price);
+                                	rpct.setValue('Price', arpct.price);
                                 }
                                 
                                 System.debug('price ' + arpct.price);
