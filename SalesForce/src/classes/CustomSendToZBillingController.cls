@@ -280,7 +280,13 @@ public with sharing class CustomSendToZBillingController {
         Map<String, Object> ZConfig = zqu.zQuoteUtil.getZuoraConfigInformation();
         
         Object BCD = ZConfig.get('billingaccount_billcycleday__c');
+        try{
         billCycleDay = Integer.valueOf(BCD);
+        }
+        catch(Exception e){
+        	billCycleDay = 1;
+        }
+        
         
         Object BatchNum = ZConfig.get('billingaccount_batch__c');
         batch = String.valueOf(BatchNum);
@@ -473,7 +479,14 @@ public with sharing class CustomSendToZBillingController {
                 //we cant just set rpc.price = charge.EFFECTIVE_PRICE because effective price appears to only have 2 places of precision.
                 decimal price = decimal.valueOf(charge.TOTAL);
                 price.setScale(7);
-                price = price / integer.valueOf(charge.QUANTITY);
+                integer quantity;
+                try{
+                quantity = integer.valueOf(charge.QUANTITY);
+                }
+                catch(Exception e){
+                quantity = 1;
+                }
+                price = price / quantity; 
                 System.debug('price before toplainstring is ' + price);
                 rpc.price = price.toPlainString();
                 

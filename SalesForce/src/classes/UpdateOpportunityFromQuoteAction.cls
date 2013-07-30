@@ -12,6 +12,7 @@ private zqu__Quote__c quote;
     
     public string Execute(string quoteId){
         this.quote = repo.getQuote(quoteId);
+        System.debug('quote: ' + this.quote);
         this.opp = repo.getOpportunity(this.quote.zqu__Opportunity__c);
         
 	    System.debug('updating opportunity from quote charges');
@@ -22,29 +23,68 @@ private zqu__Quote__c quote;
             return 'No quotes for opportunity found';
         }
         
-        List<zqu__QuoteCharge__c> quoteCharges = new List<zqu__QuoteCharge__c>();
+        List<zqu__Quote__c> quotesfind = [SELECT Id FROM zqu__Quote__c WHERE Id=:quoteId];
+        
+        if(quotesfind.size() != 1){
+        	return 'Quote not found';
+        }       
+        
+        List<MyChargeAdapter> quoteCharges = new List<MyChargeAdapter>();
         System.debug('getting quote charges for quote ' + this.quote.Id);
-        List<zqu__QuoteCharge__c> qcs = [SELECT Id, zqu__ProductRatePlanCharge__c, zqu__Quantity__c, zqu__EffectivePrice__c FROM zqu__QuoteCharge__c WHERE zqu__Quote__c=:this.quote.Id];
+        List<zqu__QuoteCharge__c> qcs = [SELECT Id, zqu__ProductRatePlanCharge__c, zqu__Quantity__c, zqu__EffectivePrice__c,zqu__Model__c FROM zqu__QuoteCharge__c WHERE zqu__Quote__c=:this.quote.Id];
         for(zqu__QuoteCharge__c qcs1 : qcs){
         	zqu__ProductRatePlanCharge__c prpc = this.repo.getProductRatePlanCharge(qcs1.zqu__ProductRatePlanCharge__c);
         	System.debug('using quote charge ' + qcs1.Id);
-            quoteCharges.Add(qcs1);
+        	MyChargeAdapter adapter = new MyChargeAdapter();
+        	adapter.ProductRatePlanChargeId = qcs1.zqu__ProductRatePlanCharge__c;
+        	adapter.Model=qcs1.zqu__Model__c;
+        	adapter.Quantity=qcs1.zqu__Quantity__c;
+        	adapter.Total = qcs1.zqu__Total__c;
+        	adapter.ChargeType = qcs1.zqu__ChargeType__c;
+            quoteCharges.Add(adapter);
         }
         
         if(quoteCharges.size() == 0){
-            return 'No quote charges found';
+        	System.debug('quote charges was empty,looking at zcharges');
+        	List<zqu.zChargeGroup> cgs = zqu.zQuoteUtil.getChargeGroups(quoteId);
+        	for(zqu.zChargeGroup cg : cgs){
+        		for(zqu.zCharge c : cg.zCharges){
+        			MyChargeAdapter adapter = new MyChargeAdapter();
+        			adapter.ProductRatePlanChargeId = c.PRODUCT_RATE_PLAN_CHARGE_SFDC_ID;
+        			adapter.Model  =c.MODEL;
+        			try{
+        			adapter.Quantity = decimal.valueOf(c.QUANTITY);
+        			}
+        			catch(Exception e){
+        				adapter.Quantity = 1;
+        			}
+        			try{
+        			adapter.Total = decimal.valueOf(c.TOTAL);
+        			}
+        			catch(Exception e){
+        				adapter.Total = 0;
+        			}
+        			
+        			adapter.ChargeType = c.CHARGE_TYPE;
+        			System.debug('adding adapter: ' + adapter);
+        			quoteCharges.add(adapter);
+        		}
+        	}
+        }
+        
+        if(quoteCharges.size() == 0){
+        	return 'No quote charges found';
         }
         
         System.debug('getting product rate plan charges...');
         
         List<zqu__ProductRatePlanCharge__c> prpcs = new List<zqu__ProductRatePlanCharge__c>();
-        Map<Id, string> quoteChargeMap = new Map<Id, string>();
-        for(zqu__QuoteCharge__c quoteCharge: quoteCharges){
-            zqu__ProductRatePlanCharge__c prpc = [SELECT Id, Name,zqu__ProductRatePlan__c FROM zqu__ProductRatePlanCharge__c WHERE Id =:quoteCharge.zqu__ProductRatePlanCharge__c];
+        Map<Id, MyChargeAdapter> quoteChargeMap = new Map<Id, MyChargeAdapter>();
+        for(MyChargeAdapter quoteCharge: quoteCharges){
+            zqu__ProductRatePlanCharge__c prpc = [SELECT Id, Name,zqu__ProductRatePlan__c FROM zqu__ProductRatePlanCharge__c WHERE Id =:quoteCharge.ProductRatePlanChargeId];
             System.debug('using product rate plan charge ' + prpc.Id);
             prpcs.Add(prpc);
-            System.debug('product rate plan charge has price of ' + quoteCharge.zqu__EffectivePrice__c);
-            quoteChargeMap.put(prpc.Id, (string)quoteCharge.Id);
+            quoteChargeMap.put(prpc.Id, quoteCharge);
         }
         
         if(prpcs.size() == 0){
@@ -54,7 +94,7 @@ private zqu__Quote__c quote;
         System.debug('getting products...');
         
         List<Id> products = new List<Id>();
-        Map<Id, string> quoteChargeMap2 = new Map<Id, string>();
+        Map<Id, MyChargeAdapter> quoteChargeMap2 = new Map<Id, MyChargeAdapter>();
         for(zqu__ProductRatePlanCharge__c prpc : prpcs){
  
  			System.debug('getting bridges for prpc: ' + prpc.Name + ' (' + prpc.Id + ')');
@@ -71,7 +111,9 @@ private zqu__Quote__c quote;
                     Product2 productAdding = this.repo.getProduct(zb.Product__c);
                     System.debug('adding product ' + productAdding.Name);
                     products.Add(zb.Product__c);
-                    quoteChargeMap2.put(zb.Product__c, quoteChargeMap.get(prpc.Id));
+                    MyChargeAdapter adapter = quoteChargeMap.get(prpc.Id);
+                    System.debug('mapping product ' + zb.Product__c + ' to ' + adapter);
+                    quoteChargeMap2.put(zb.Product__c, adapter);
                 	productAdded = true;
                 }
                 else{
@@ -136,29 +178,38 @@ private zqu__Quote__c quote;
             
             for(PricebookEntry pbe : pbes){
                 if(pbe.Pricebook2Id == this.opp.Pricebook2Id){
-                    string cqcid = quoteChargeMap2.get(p);
-                    zqu__QuoteCharge__c cqc = this.repo.getQuoteCharge(cqcid); 
+                	System.debug('getting charge for ' + p);
+                    MyChargeAdapter cqc = quoteChargeMap2.get(p);
+                    System.debug('found charge adapter: ' + cqc);
                     System.debug('pbe: ' + pbe.Id);
                     OpportunityLineItem oli = new OpportunityLineItem();
                     oli.PricebookEntryId = pbe.Id;
                     oli.OpportunityId = this.opp.Id;
                     
                     //NWEA-144
-                    oli.Description = cqc.zqu__ProductName__c + ' ' + ' quantity: ' + cqc.zqu__Quantity__c + ' model: ' + cqc.zqu__Model__c; 
-                    System.debug('quantity: ' + cqc.zqu__Quantity__c);
-                    System.debug('effective price: ' + cqc.zqu__EffectivePrice__c);
-                    System.debug('term: ' + this.quote.zqu__InitialTerm__c);
-                    System.debug('denom: ' + 12);
-                    oli.Quantity = cqc.zqu__Quantity__c;
+                    //oli.Description = cqc.zqu__ProductName__c + ' ' + ' quantity: ' + cqc.zqu__Quantity__c + ' model: ' + cqc.zqu__Model__c; 
+                    //System.debug('quantity: ' + cqc.zqu__Quantity__c);
+                    //System.debug('effective price: ' + cqc.zqu__EffectivePrice__c);
+                    //System.debug('term: ' + this.quote.zqu__InitialTerm__c);
+                    //System.debug('denom: ' + 12);
+                    oli.Quantity = cqc.Quantity;
                     
                     // this should probably not be static
                     decimal finalPrice;
-                    System.debug('chare type: ' + cqc.zqu__Type__c);
-                    if(cqc.zqu__Type__c == 'One-Time'){
-                    	finalPrice = cqc.zqu__Total__c;
+                    System.debug('charge type: ' + cqc.ChargeType);
+                    if(cqc.ChargeType == 'One-Time'){
+                    	System.debug('setting final price to ' + cqc.Total);
+                    	finalPrice = cqc.Total;
                     }
                     else{
-                    	finalPrice = cqc.zqu__Total__c * (this.quote.zqu__InitialTerm__c / 12);
+                    	System.debug('this quote ' + this.quote);
+                    	if(this.quote.zqu__InitialTerm__c!= null){
+                    	finalPrice = cqc.Total * (this.quote.zqu__InitialTerm__c / 12);
+                    	}
+                    	else{
+                    	finalPrice = cqc.Total;
+                    	}
+                    	
                     }
                     
                     System.debug('total price: ' + finalPrice);
@@ -181,5 +232,20 @@ private zqu__Quote__c quote;
         setamount.Execute(this.opp.Id);
         
         return null;
+    }
+    
+    
+    public class MyChargeAdapter{
+    
+    	public string ProductRatePlanChargeId;
+    	
+    	public decimal Quantity;
+    	
+    	public string Model;
+    	
+    	public string ChargeType;
+    	
+    	public decimal Total;
+    
     }
 }

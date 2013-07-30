@@ -119,7 +119,6 @@
 								onchange="javascript:return makeAbs(this);" />
 						</apex:pageBlockSectionItem>
 						<apex:inputField value="{!zqu__Quote__c.zqu__PaymentMethod__c}" id="paymentMethod" required="true" />
-						<apex:inputField value="{!zqu__Quote__c.Invoice_Separately__c}" id="invoiceSeparate" required="false" />
 						
 						<apex:pageBlockSectionItem rendered="{!renderTerms}">
 							<apex:outputLabel rendered="{!renderTerms}"
@@ -150,6 +149,8 @@
 								</apex:actionRegion>
 							</apex:outputPanel>
 						</apex:pageBlockSectionItem>
+					<apex:inputField value="{!zqu__Quote__c.Invoice_Separately__c}" id="invoiceSeparate" required="false" />
+						
 					</apex:pageBlockSection>
 					<apex:pageBlockSection title="Additional Terms" columns="1"
 						collapsible="false">
