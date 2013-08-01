@@ -31,7 +31,7 @@ private zqu__Quote__c quote;
         
         List<MyChargeAdapter> quoteCharges = new List<MyChargeAdapter>();
         System.debug('getting quote charges for quote ' + this.quote.Id);
-        List<zqu__QuoteCharge__c> qcs = [SELECT Id, zqu__ProductRatePlanCharge__c, zqu__Quantity__c, zqu__EffectivePrice__c,zqu__Model__c FROM zqu__QuoteCharge__c WHERE zqu__Quote__c=:this.quote.Id];
+        List<zqu__QuoteCharge__c> qcs = [SELECT Id, zqu__ProductRatePlanCharge__c, zqu__Quantity__c, zqu__EffectivePrice__c,zqu__Model__c,zqu__Total__c, zqu__ChargeType__c FROM zqu__QuoteCharge__c WHERE zqu__Quote__c=:this.quote.Id];
         for(zqu__QuoteCharge__c qcs1 : qcs){
         	zqu__ProductRatePlanCharge__c prpc = this.repo.getProductRatePlanCharge(qcs1.zqu__ProductRatePlanCharge__c);
         	System.debug('using quote charge ' + qcs1.Id);
@@ -48,26 +48,28 @@ private zqu__Quote__c quote;
         	System.debug('quote charges was empty,looking at zcharges');
         	List<zqu.zChargeGroup> cgs = zqu.zQuoteUtil.getChargeGroups(quoteId);
         	for(zqu.zChargeGroup cg : cgs){
-        		for(zqu.zCharge c : cg.zCharges){
-        			MyChargeAdapter adapter = new MyChargeAdapter();
-        			adapter.ProductRatePlanChargeId = c.PRODUCT_RATE_PLAN_CHARGE_SFDC_ID;
-        			adapter.Model  =c.MODEL;
-        			try{
-        			adapter.Quantity = decimal.valueOf(c.QUANTITY);
-        			}
-        			catch(Exception e){
-        				adapter.Quantity = 1;
-        			}
-        			try{
-        			adapter.Total = decimal.valueOf(c.TOTAL);
-        			}
-        			catch(Exception e){
-        				adapter.Total = 0;
-        			}
-        			
-        			adapter.ChargeType = c.CHARGE_TYPE;
-        			System.debug('adding adapter: ' + adapter);
-        			quoteCharges.add(adapter);
+        		if(cg.groupType != zqu.zChargeGroup.TYPE_RENEWAL_REMOVEPRODUCT && cg.groupType != zqu.zChargeGroup.TYPE_AMENDMENT_REMOVEPRODUCT ){
+	        		for(zqu.zCharge c : cg.zCharges){
+	        			MyChargeAdapter adapter = new MyChargeAdapter();
+	        			adapter.ProductRatePlanChargeId = c.PRODUCT_RATE_PLAN_CHARGE_SFDC_ID;
+	        			adapter.Model  =c.MODEL;
+	        			try{
+	        			adapter.Quantity = decimal.valueOf(c.QUANTITY);
+	        			}
+	        			catch(Exception e){
+	        				adapter.Quantity = 1;
+	        			}
+	        			try{
+	        			adapter.Total = decimal.valueOf(c.TOTAL);
+	        			}
+	        			catch(Exception e){
+	        				adapter.Total = 0;
+	        			}
+	        			
+	        			adapter.ChargeType = c.CHARGE_TYPE;
+	        			System.debug('adding adapter: ' + adapter);
+	        			quoteCharges.add(adapter);
+	        		}
         		}
         	}
         }

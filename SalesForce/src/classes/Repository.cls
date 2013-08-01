@@ -221,7 +221,8 @@ public with sharing class Repository {
 				zqu__SoldToContact__r.Id,
 				zqu__BillToContact__r.Id,
 				zqu__ZuoraAccountId__c,
-				zqu__InvoiceID__c
+				zqu__InvoiceID__c,
+				zqu__Total__c
 			FROM 
 				zqu__Quote__c 
 			WHERE 

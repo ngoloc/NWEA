@@ -40,6 +40,8 @@
         <members>Repository</members>
         <members>SampleChargeSectionController</members>
         <members>SampleChargeSectionControllerTests</members>
+        <members>SetComponentActionCallout</members>
+        <members>SetComponentScheduler</members>
         <members>SetComponentsAction</members>
         <members>SetComponentsActionTests</members>
         <members>SubscriptionOption</members>
