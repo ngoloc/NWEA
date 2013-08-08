@@ -156,7 +156,12 @@ public string newAccItemLabel {get;set;}
 		}
 		else{
 			//so /apex/myVFPage?id={!Opportunity.Id} becomes /apex/myPackage__myVFPage?id={!Opportunity.Id}
-			pr = new PageReference('/apex/zqu__zqamendment');
+			if(this.selectedAmendmentType == 'amend'){
+				pr = new PageReference('/apex/zqu__zqamendment');
+			}
+			else{
+				pr = new PageReference('/apex/zqu__zqrenewal');
+			}
 			pr.getParameters().put('oppid', this.oppId);
 			if(this.selectedAccountType == 'existing'){
 				pr.getParameters().put('billingAccountId', this.selectedAccountId);
@@ -165,6 +170,9 @@ public string newAccItemLabel {get;set;}
 				pr.getParameters().put('subscriptionId', this.selectedSubscriptionId);
 			}
 		}
+		
+		
+		
 		pr.setRedirect(true);
 		return pr;
 	}

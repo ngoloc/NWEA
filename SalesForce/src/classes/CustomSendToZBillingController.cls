@@ -491,7 +491,7 @@ public with sharing class CustomSendToZBillingController {
                 rpc.price = price.toPlainString();
                 
                 System.debug('charge price is ' + rpc.price);
-                if(rpc.price == 'Flat Fee'){
+                if(charge.LIST_PRICE == 'Flat Fee'){
                 	//need to send discounted amount to zuora somehow
                 	rpc.price = charge.TOTAL;
                 	System.debug('set price to ' + rpc.price);
